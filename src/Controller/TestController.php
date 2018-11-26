@@ -14,7 +14,7 @@ class TestController extends AbstractController
      */
     public function index()
     {
-        return new Response('Test Controller');
+        return $this->render('test.html');
     }
 
 }
