@@ -2,8 +2,8 @@
 	  --input-color: #C5C5C5;
 	  --button-font-color: #000000;
 	  --button-anzahl-aufgaben-color: #FFFFFF;	
-};
+}
 
-body{background-color: black;
+body{background-color: var(--main-bg-color);
 
 }
