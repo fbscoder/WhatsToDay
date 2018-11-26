@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TestController extends AbstractController
 {
     /**
-     * @Route("/", name="blog_list")
+     * @Route("/")
      */
     public function index()
     {
