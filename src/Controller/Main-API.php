@@ -3,10 +3,9 @@
 namespace App\Controller;
 
 use Trello\Client;
-use Trello\Service;
-use Trello\Events;
+
 session_start();
-$Person = $_SESSION["Person"];
+$Person = $_SESSION["UserData"];
 
 $client = new Client();
 $client->authenticate($Person->API_KEY, $Person->TOKEN, Client::AUTH_URL_CLIENT_ID);
