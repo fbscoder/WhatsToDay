@@ -9,12 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class Test extends AbstractController
 {
-    public function __construct()
-    {
-
-    }
     /**
-     * @Route("/Test")
+     * @\Symfony\Component\Routing\Annotation\Route("/Test")
      */
     public function index()
     {
