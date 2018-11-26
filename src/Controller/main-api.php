@@ -1,12 +1,15 @@
 <?php
+
+namespace App\Controller;
+
 use Trello\Client;
 use Trello\Service;
 use Trello\Events;
 session_start();
-$person = $_SESSION["Person"];
+$Person = $_SESSION["Person"];
 
 $client = new Client();
-$client->authenticate($person->API_KEY, $person->TOKEN, Client::AUTH_URL_CLIENT_ID);
+$client->authenticate($Person->API_KEY, $Person->TOKEN, Client::AUTH_URL_CLIENT_ID);
 //$client->authenticate('aa8b7e7e0a878b7f8e6d805c78ff2526', '90dec1d14cd5336ba006af1bd79829c1a6ed45480130c3a40fb7fccf3d1927e4', Client::AUTH_URL_CLIENT_ID);
 $boards = $client->api('member')->boards()->all();
 

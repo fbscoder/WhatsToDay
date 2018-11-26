@@ -1,13 +1,19 @@
 <?php
+namespace App\Controller;
 
 class Person{
   public $ID;
   public $API_KEY;
   public $TOKEN;
+  public function __construct()
+  {
+  }
 
-  public function setPersonData($username){
-    include '../DataBase/dataBase.php';
-    $sql = "Select u.id, ak.api_key, ak.token_key from users u
+    public function setPersonData($username){
+        require_once 'WhatToDayUtilities.php';
+        $Util = new WhatToDayUtilities();
+        $conn = $Util->getDataBaseConnection();
+        $sql = "Select u.id, ak.api_key, ak.token_key from users u
             Join api_keys ak on ak.id_keys = u.id
             Where u.username = '$username'";
     $result = $conn->query($sql);
@@ -25,12 +31,14 @@ class Person{
   }
 
   public function checkIfRightPerson($array){
-    include '../DataBase/dataBase.php';
 
   }
 
   public function checkIfPersonExists(){
-    include '../DataBase/dataBase.php';
+
+      require_once 'WhatToDayUtilities.php';
+      $Util = new WhatToDayUtilities();
+      $conn = $Util->getDataBaseConnection();
     $username = "test";
     $email = "test.test@test.at";
     $sql = "select username, email from users
@@ -46,7 +54,6 @@ class Person{
   }
 
   public function SavePersonInDataBase($array){
-    include '../DataBase/dataBase.php';
     // if ($conn->query($sql) === TRUE) {
     //     echo "New record created successfully";
     // } else {
