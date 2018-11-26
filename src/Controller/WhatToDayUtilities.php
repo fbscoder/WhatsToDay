@@ -11,11 +11,11 @@ namespace App\Controller;
 
 class WhatToDayUtilities
 {
-    public function setSession($Person)
+    public static function setSession($Person)
     {
-        $_SESSION["UserData"] = $Person;
+        $_SESSION["UserFunctions"] = $Person;
     }
-    public function getDataBaseConnection()
+    public static function getDataBaseConnection()
     {
         $servername = "localhost";
         $uname = "root";

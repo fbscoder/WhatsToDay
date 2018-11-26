@@ -2,17 +2,11 @@
 
 namespace App\Controller;
 
-class UserData
+use PersonData;
+
+class UserFunctions
 {
-    public $ID;
-    public $API_KEY;
-    public $TOKEN;
-
-    public function __construct()
-    {
-    }
-
-    public function setPersonData($username)
+    public static function getPersonData($username)
     {
         require_once 'WhatToDayUtilities.php';
         $Util = new WhatToDayUtilities();
@@ -24,22 +18,21 @@ class UserData
         if ($result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-                $this->ID = sha1($row["id"]);
-                $this->API_KEY = $row["api_key"];
-                $this->TOKEN = $row["token_key"];
+                return new PersonData(sha1($row["id"]), $row["api_key"], $row["token_key"]);
             }
         } else {
             echo "0 results";
         }
         $conn->close();
+
     }
 
-    public function checkIfRightPerson($array)
+    public static function checkIfRightPerson($array)
     {
 
     }
 
-    public function checkIfPersonExists()
+    public static function checkIfPersonExists()
     {
 
         require_once 'WhatToDayUtilities.php';
@@ -59,7 +52,7 @@ class UserData
         }
     }
 
-    public function SavePersonInDataBase($array)
+    public static function SavePersonInDataBase($array)
     {
         // if ($conn->query($sql) === TRUE) {
         //     echo "New record created successfully";
