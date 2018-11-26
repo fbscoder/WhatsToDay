@@ -1,5 +1,5 @@
 <?php
-include 'person.php';
+include 'Person.php';
 $person = new Person();
 $username = "test";
 $person->checkIfPersonExists();
