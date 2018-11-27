@@ -14,16 +14,16 @@ class Login extends AbstractController
      */
     public function index()
     {
-        require_once 'UserFunctions.php';
+        require_once 'PersonUtils.php';
         require_once 'WhatToDayUtilities.php';
-        require_once 'Main_API.php';
+        require_once 'APIUtils.php';
 
         $username = "test";
-        $person = UserFunctions::getPersonData($username);
+        $person = PersonUtils::getPersonData($username);
 
         WhatToDayUtilities::setSession($person);
 
-        Main_API::test();
+        _APIUtils::test();
 
         return new Response('Test');
 

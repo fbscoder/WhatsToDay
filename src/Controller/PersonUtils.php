@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use PersonData;
 
-class UserFunctions
+class PersonUtils
 {
     public static function getPersonData($username)
     {

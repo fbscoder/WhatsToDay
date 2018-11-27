@@ -4,13 +4,13 @@ namespace App\Controller;
 
 use Trello\Client;
 
-class Main_API
+class _APIUtils
 {
 
     public static function test()
     {
         //session_start();
-        $Person = $_SESSION["UserFunctions"];
+        $Person = $_SESSION["PersonUtils"];
 
         $client = new Client();
         //$client->authenticate($Person->API_KEY, $Person->TOKEN, Client::AUTH_URL_CLIENT_ID);
