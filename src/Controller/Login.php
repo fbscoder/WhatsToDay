@@ -25,7 +25,7 @@ class Login extends AbstractController
 
         Main_API::test();
 
-        return new Response('Test');
+        return $this->render('test.html');
 
     }
 }

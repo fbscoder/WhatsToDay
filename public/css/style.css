@@ -4,6 +4,38 @@
 	  --button-anzahl-aufgaben-color: #FFFFFF;	
 }
 
-body{background-color: black;
+body{background-color: var(--main-bg-color);
+	 width:50%;
+	 margin: 0 auto!important;	
+}
+
+ul{text-align:center;
+	padding:0px!important;
+	margin:0 auto!important;
+}
+
+li{margin-top:20px;
+	border:1px solid black;
+	box-shadow: 5px 10px 8px #888888;
+	border-radius:25px!important;
+	list-style:none;
+	padding-top:5px;
+	padding-bottom:5px;
+	background-color: var(--button-anzahl-aufgaben-color);
+	font-weight:600;
+}
+
+#row_heute{padding-top:2rem;
+
+}
+
+button{margin:0 auto;
+	margin-top:20px;
+		background-color: var(--button-anzahl-aufgaben-color);
+		border-radius:25px!important;
+		border:1px solid grey;
+		width:150px;
+		height:150px;
+
 
 }
