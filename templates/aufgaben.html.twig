@@ -1,53 +1,107 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     {{ dump() }}
-    <input type="button" value="&#x227A;" id="a_back" style="display:none;" onClick="window.location.reload()">
     <div class="container-fluid">
-        <div class="hidden-div" id="hidden-div">
-            <span style="display:block;"><button style="display:block;" id="btn_heute"
-                                                 onclick="getElementById('hidden-div').style.display = 'block'; this.style.display = 'none'; myFunction(); otherFunction(); newFunction1()">Heute</button></span><br>
-
-            <span style="display:block;"><button style="display:block;" id="btn_morgen"
-                                                 onclick="getElementById('hidden-div').style.display = 'block'; this.style.display = 'none'; myFunction(); otherFunction(); newFunction()">Morgen</button></span>
+        <div class="timeButtons">
+            <span><button id="btn_today">Heute</button></span><br>
+            <span><button id="btn_tomorrow">Morgen</button></span>
         </div>
-        <div class="row" id="row_heute">
-            <div class="col">
-                <div class="hidden-div" id="hidden-div">
-                    <ul id="div_heute" style="display:none;">
-                        {% for task in taskToday %}
-                            <li>{{ task.title }}</li>
-                        {% endfor %}
-                    </ul>
-                    <ul id="div_morgen" style="display:none;">
-                        {% for task in taskTomorrow %}
-                            <li>{{ task.title }}</li>
-                        {% endfor %}
-                    </ul>
+        <div class="row">
+            <div class="col-md-12 hide_tasks">
+                <a href="#" class="btn btn-sm btn-default" id="hideTasks"><i class="fas fa-arrow-circle-left"></i></a>
+                <ul class="tasks container" id="task_today">
+                    {% for task in taskToday %}
+                        <div class="card text-center">
+                            <div class="card-header">
+                                {{ task.title }}
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{ task.description }}</p>
+                                <ul>
+                                    {% if task.checkListData != null %}
+                                        {#{% for checklist task.checkListData %}#}
+                                        {#<li>{{ checklist.name }}</li>#}
+                                        {#{% endfor %}#}
+                                    {% endif %}
+                                </ul>
+
+                            </div>
+                            <div class="card-footer text-muted">
+                                <a href="#" class="btn btn-primary">FINISH</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </ul>
+                <div class="tasks container" id="task_tomorrow">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            TITLE
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">BESCHREIBUNG</p>
+                            <ul>
+                                <li>CHECK 1</li>
+                            </ul>
+
+                        </div>
+                        <div class="card-footer text-muted">
+                            <a href="#" class="btn btn-primary">FINISH</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    {# <input type="button" value="&#x227A;" id="a_back" style="display:none;" onClick="window.location.reload()">
+     <div class="container-fluid">
+         <div class="hidden-div" id="hidden-div">
+             <span style="display:block;"><button style="display:block;" id="btn_heute"
+                                                  onclick="getElementById('hidden-div').style.display = 'block'; this.style.display = 'none'; myFunction(); otherFunction(); newFunction1()">Heute</button></span><br>
 
-    <script>
-        function myFunction() {
-            document.getElementById('div_heute').style.display = "block";
-        }
+             <span style="display:block;"><button style="display:block;" id="btn_morgen"
+                                                  onclick="getElementById('hidden-div').style.display = 'block'; this.style.display = 'none'; myFunction(); otherFunction(); newFunction()">Morgen</button></span>
+         </div>
+         <div class="row" id="row_heute">
+             <div class="col">
+                 <div class="hidden-div" id="hidden-div">
+                     <ul id="div_heute" style="display:none;">
+                         {% for task in taskToday %}
+                             <li>{{ task.title }}</li>
+                         {% endfor %}
+                     </ul>
+                     <ul id="div_morgen" style="display:none;">
+                         {% for task in taskTomorrow %}
+                             <li>{{ task.title }}</li>
+                         {% endfor %}
+                     </ul>
+                 </div>
+             </div>
+         </div>
+     </div>
 
-        function myFunction() {
-            document.getElementById('div_morgen').style.display = "block";
-        }
+     <script>
+         function myFunction() {
+             document.getElementById('div_heute').style.display = "block";
+         }
 
-        function otherFunction() {
-            document.getElementById('a_back').style.display = "block";
+         function myFunction() {
+             document.getElementById('div_morgen').style.display = "block";
+         }
 
-        }
+         function otherFunction() {
+             document.getElementById('a_back').style.display = "block";
 
-        function newFunction1() {
-            document.getElementById('btn_morgen').style.display = "none";
-        }
+         }
 
-        function newFunction() {
-            document.getElementById('btn_heute').style.display = "none";
-        }
-    </script>
+         function newFunction1() {
+             document.getElementById('btn_morgen').style.display = "none";
+         }
+
+         function newFunction() {
+             document.getElementById('btn_heute').style.display = "none";
+         }
+     </script>#}
+{% endblock %}
+{% block javascripts %}
+    <script src="js/script.js"></script>
 {% endblock %}
