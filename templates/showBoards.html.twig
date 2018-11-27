@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    {{ dump() }}
+    <div class="container-fluid">
+        <div class="row" id="row_heute">
+            <div class="col" id="div_heute">
+                <form method="GET" action="Test.php/showTasks">
+                    <ul id==selType>
+                    {% for board in boards %}
+                        <button id="boards" value="{{ board.id }}" name="board">{{ board.name }}</button>
+                    {% endfor %}
+                </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
