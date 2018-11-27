@@ -2,6 +2,8 @@
 
 namespace App\Controller\Utils;
 
+use App\Controller\Utils\Person\PersonData;
+
 class PersonUtils
 {
     public static function getPersonData($username)
