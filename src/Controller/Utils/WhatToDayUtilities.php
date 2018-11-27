@@ -30,4 +30,12 @@ class WhatToDayUtilities
         }
         return $conn;
     }
+
+    public static function isSessionNull()
+    {
+        if (isset($_SESSION['PersonUtils']) && !empty($_SESSION['PersonUtils'])) {
+            return true;
+        }
+        return false;
+    }
 }
