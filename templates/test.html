@@ -2,12 +2,93 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<!--<link rel="stylesheet/css" type="text/css" href="css/style.css">-->
+	  <link rel="stylesheet" type="text/css" href="css/style.css">
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">		
+	 <!----> 
+<style>
+
+</style>
+
 </head>
 <body>
-<div id="test">
-<p>sdsdadasdas</p>
-</div>
+<input type="button" value="&#x227A;" id="a_back" style="display:none;" onClick="window.location.reload()">
+	<div class="container-fluid">
+		<div class="hidden-div" id="hidden-div">
+			<span style="display:block;"><button style="display:block;" id="btn_heute" onclick="getElementById('hidden-div').style.display = 'block'; this.style.display = 'none'; myFunction(); otherFunction(); newFunction1()">Heute</button></span><br>
+
+			<span style="display:block;"><button style="display:block;" id="btn_morgen" onclick="getElementById('hidden-div').style.display = 'block'; this.style.display = 'none'; myFunction(); otherFunction(); newFunction()">Morgen</button></span>
+		</div>
+		<div class="row" id="row_heute">
+			<div class="col">
+				<div class="hidden-div" id="hidden-div">	
+					<ul id="div_heute" style="display:none;">
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+					</ul>
+					<ul id="div_morgen" style="display:none;">
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+					</ul>		
+				</div>
+			</div>	
+		</div>
+	</div>
+
+<script>
+	function myFunction() {
+   document.getElementById('div_heute').style.display = "block";
+}
+
+function myFunction() {
+   document.getElementById('div_morgen').style.display = "block";
+}
+
+function otherFunction(){
+	document.getElementById('a_back').style.display = "block";
+
+}
+
+function newFunction1(){
+	document.getElementById('btn_morgen').style.display = "none";
+}
+
+function newFunction(){
+	document.getElementById('btn_heute').style.display = "none";
+}
+
+	//function myFunction() {
+   // var x = document.getElementById("div_heute");
+    //if (x.style.display = "block") {
+      //  x.style.display === "none";
+   // } else {
+     //   x.style.display = "none";
+    //}
+//}
+
+
+//$(document).ready(function(){
+  //  $("button").click(function(){
+    //    $("ul").toggle(1000);
+    //});
+//});
+
+
+</script>	
 </body>
 </html>
