@@ -6,14 +6,14 @@
  * Time: 14:08
  */
 
-namespace App\Controller;
+namespace App\Controller\Utils;
 
 
 class WhatToDayUtilities
 {
     public static function setSession($Person)
     {
-        $_SESSION["UserFunctions"] = $Person;
+        $_SESSION["PersonUtils"] = $Person;
     }
     public static function getDataBaseConnection()
     {
@@ -29,5 +29,13 @@ class WhatToDayUtilities
             die("Connection failed: " . $conn->connect_error);
         }
         return $conn;
+    }
+
+    public static function isSessionNull()
+    {
+        if (isset($_SESSION['PersonUtils']) && !empty($_SESSION['PersonUtils'])) {
+            return true;
+        }
+        return false;
     }
 }

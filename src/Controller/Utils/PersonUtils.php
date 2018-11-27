@@ -1,16 +1,12 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Utils;
 
-use PersonData;
-
-class UserFunctions
+class PersonUtils
 {
     public static function getPersonData($username)
     {
-        require_once 'WhatToDayUtilities.php';
-        $Util = new WhatToDayUtilities();
-        $conn = $Util->getDataBaseConnection();
+        $conn = WhatToDayUtilities::getDataBaseConnection();
         $sql = "Select u.id, ak.api_key, ak.token_key from users u
             Join api_keys ak on ak.id_keys = u.id
             Where u.username = '$username'";
@@ -34,10 +30,7 @@ class UserFunctions
 
     public static function checkIfPersonExists()
     {
-
-        require_once 'WhatToDayUtilities.php';
-        $Util = new WhatToDayUtilities();
-        $conn = $Util->getDataBaseConnection();
+        $conn = WhatToDayUtilities::getDataBaseConnection();
         $username = "test";
         $email = "test.test@test.at";
         $sql = "select username, email from users
