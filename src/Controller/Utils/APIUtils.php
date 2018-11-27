@@ -15,7 +15,7 @@ class APIUtils
     private static function getClient()
     {
         $client = new Client();
-        $person = $_SESSION["PersonUtils"];
+        #$person = $_SESSION["PersonUtils"];
         //$client->authenticate($person->API_KEY, $person->TOKEN, Client::AUTH_URL_CLIENT_ID);
         $client->authenticate('aa8b7e7e0a878b7f8e6d805c78ff2526', '90dec1d14cd5336ba006af1bd79829c1a6ed45480130c3a40fb7fccf3d1927e4', Client::AUTH_URL_CLIENT_ID);
         return $client;
@@ -25,24 +25,24 @@ class APIUtils
     {
         $client = APIUtils::getClient();
 
-        //Board array
+        /*//Board array
         $boards = $client->api("member")->boards()->all();
-//        //List array
-//        $cardList = $client->api("boards")->lists()->all($boards[1]["id"]);
-//        //Card array
-//        $cards = $client->api("lists")->cards()->all($cardList[1]["id"]);
-//        //CheckList Array for single card
-//        $checkList = $client->api("cards")->checklists()->all($cards[0]["id"]);
-//
-//        //Update dueComplete to complete //
-//        //$cards[1]["dueComplete"] = 1;
-//        //$client->api("cards")->update($cards[1]["id"], $cards[1]);
-//        // !!!!!!! //
-//
-//        echo "<pre>";
-//        print_r($checkList);
-        //APIUtils::getCountedTasks(APIUtils::getBoardTasksToday($boards[0]));
-        //APIUtils::getBoardTasksTomorrow($boards[0]);
+        //List array
+        $cardList = $client->api("boards")->lists()->all($boards[1]["id"]);
+        //Card array
+        $cards = $client->api("lists")->cards()->all($cardList[1]["id"]);
+        //CheckList Array for single card
+        $checkList = $client->api("cards")->checklists()->all($cards[0]["id"]);
+
+        //Update dueComplete to complete //
+        //$cards[1]["dueComplete"] = 1;
+        //$client->api("cards")->update($cards[1]["id"], $cards[1]);
+        // !!!!!!! //
+
+        echo "<pre>";
+        print_r($checkList);
+        APIUtils::getCountedTasks(APIUtils::getBoardTasksToday($boards[0]));
+        APIUtils::getBoardTasksTomorrow($boards[0]);*/
 
 
     }
@@ -50,7 +50,7 @@ class APIUtils
     private static function getTaskList($board, $dateToCheck)
     {
         $client = APIUtils::getClient();
-        $cardList = $client->api("boards")->lists()->all($board["id"]);
+        $cardList = $client->api("boards")->lists()->all($board);
         if (count($cardList) != 0) {
             $taskList = [];
             for ($i = 0; $i < count($cardList); $i++) {
@@ -92,21 +92,21 @@ class APIUtils
                     }
                 }
             }
-            echo "<pre>";
-            print_r($taskList);
+            /*echo "<pre>";
+            print_r($taskList);*/
             return $taskList;
         }
     }
 
     public static function getBoardTasksToday($board)
     {
-        echo "<h1> TODAY </h1>";
+//        echo "<h1> TODAY </h1>";
         return APIUtils::getTaskList($board, date('Ymd'));
     }
 
     public static function getBoardTasksTomorrow($board)
     {
-        echo "<h1> TOMORROW </h1>";
+//        echo "<h1> TOMORROW </h1>";
         $date_format = "Ymd";
         $today = mktime();
         $d = date('d', $today);
@@ -118,7 +118,7 @@ class APIUtils
 
     public static function getCountedTasks($taskList)
     {
-        echo count($taskList);
+//        echo count($taskList);
         return count($taskList);
     }
     public static function getBoards()

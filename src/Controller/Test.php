@@ -46,6 +46,10 @@ class Test extends AbstractController
      */
     public function showTask()
     {
-        return new Response('Keine Tasks verfügbar');
+        $params['taskToday'] = APIUtils::getBoardTasksToday($_GET['board']);
+        $params['taskCount'] = APIUtils::getCountedTasks(APIUtils::getBoardTasksToday($_GET['board']));
+        $params['taskTomorrow'] = APIUtils::getBoardTasksTomorrow($_GET['board']);
+//        return new Response('Keine Tasks verfügbar');
+        return $this->render('aufgaben.html.twig', $params);
     }
 }
