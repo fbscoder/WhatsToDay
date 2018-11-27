@@ -5,12 +5,12 @@
     <div class="container-fluid">
         <div class="row" id="row_heute">
             <div class="col" id="div_heute">
-                <form method="GET" action="Test.php/showTasks">
+                <form method="GET" action="/showTasks">
                     <ul id==selType>
-                    {% for board in boards %}
-                        <button id="boards" value="{{ board.id }}" name="board">{{ board.name }}</button><br>
-                    {% endfor %}
-                </ul>
+                        {% for board in boards %}
+                            <button id="boards" value="{{ board.id }}" name="board">{{ board.name }}</button>
+                        {% endfor %}
+                    </ul>
                 </form>
             </div>
         </div>
