@@ -23,7 +23,7 @@ class Login extends AbstractController
 
         WhatToDayUtilities::setSession($person);
 
-        _APIUtils::test();
+        APIUtils::test();
 
         return new Response('Test');
 

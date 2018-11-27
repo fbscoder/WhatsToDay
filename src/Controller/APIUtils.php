@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Trello\Client;
 
-class _APIUtils
+class APIUtils
 {
 
     public static function test()
