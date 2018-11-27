@@ -40,4 +40,12 @@ class Test extends AbstractController
         $params['boards'] = APIUtils::getBoards();
         return $this->render('showBoards.html.twig', $params);
     }
+
+    /**
+     * @Route("/showTasks")
+     */
+    public function showTask()
+    {
+        return new Response('Keine Tasks verfügbar');
+    }
 }
