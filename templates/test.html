@@ -20,7 +20,9 @@
 <input type="button" value="&#x227A;" id="a_back" style="display:none;" onClick="window.location.reload()">
 	<div class="container-fluid">
 		<div class="hidden-div" id="hidden-div">
-			<span style="display:block;"><button onclick="getElementById('hidden-div').style.display = 'block'; this.style.display = 'none'; myFunction(); otherFunction()">Heute</button></span>
+			<span style="display:block;"><button style="display:block;" id="btn_heute" onclick="getElementById('hidden-div').style.display = 'block'; this.style.display = 'none'; myFunction(); otherFunction(); newFunction1()">Heute</button></span><br>
+
+			<span style="display:block;"><button style="display:block;" id="btn_morgen" onclick="getElementById('hidden-div').style.display = 'block'; this.style.display = 'none'; myFunction(); otherFunction(); newFunction()">Morgen</button></span>
 		</div>
 		<div class="row" id="row_heute">
 			<div class="col">
@@ -33,7 +35,16 @@
 						<li>Aufgaben</li>
 						<li>Aufgaben</li>
 						<li>Aufgaben</li>
-					</ul>	
+					</ul>
+					<ul id="div_morgen" style="display:none;">
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+						<li>Aufgaben</li>
+					</ul>		
 				</div>
 			</div>	
 		</div>
@@ -44,10 +55,23 @@
    document.getElementById('div_heute').style.display = "block";
 }
 
+function myFunction() {
+   document.getElementById('div_morgen').style.display = "block";
+}
+
 function otherFunction(){
 	document.getElementById('a_back').style.display = "block";
 
 }
+
+function newFunction1(){
+	document.getElementById('btn_morgen').style.display = "none";
+}
+
+function newFunction(){
+	document.getElementById('btn_heute').style.display = "none";
+}
+
 	//function myFunction() {
    // var x = document.getElementById("div_heute");
     //if (x.style.display = "block") {
