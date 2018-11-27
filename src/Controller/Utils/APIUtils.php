@@ -41,7 +41,7 @@ class APIUtils
 //
 //        echo "<pre>";
 //        print_r($checkList);
-        //APIUtils::getBoardTasksToday($boards[0]);
+        //APIUtils::getCountedTasks(APIUtils::getBoardTasksToday($boards[0]));
         //APIUtils::getBoardTasksTomorrow($boards[0]);
 
 
@@ -101,7 +101,7 @@ class APIUtils
     public static function getBoardTasksToday($board)
     {
         echo "<h1> TODAY </h1>";
-        APIUtils::getTaskList($board, date('Ymd'));
+        return APIUtils::getTaskList($board, date('Ymd'));
     }
 
     public static function getBoardTasksTomorrow($board)
@@ -113,7 +113,13 @@ class APIUtils
         $m = date('m', $today);
         $y = date('Y', $today);
         $tomorrow = mktime(0, 0, 0, $m, ($d + 1), $y);
-        APIUtils::getTaskList($board, gmdate($date_format, $tomorrow));
+        return APIUtils::getTaskList($board, gmdate($date_format, $tomorrow));
+    }
+
+    public static function getCountedTasks($taskList)
+    {
+        echo count($taskList);
+        return count($taskList);
     }
     public static function getBoards()
     {
