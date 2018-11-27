@@ -7,9 +7,7 @@ class PersonUtils
     public static function getPersonData($username)
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();
-        $sql = "Select u.id, ak.api_key, ak.token_key from users u
-            Join api_keys ak on ak.id_keys = u.id
-            Where u.username = '$username'";
+        $sql = "Select u.id, ak.api_key, ak.token_key from users u Join api_keys ak on ak.id_keys = u.id Where u.username = '$username'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             // output data of each row
