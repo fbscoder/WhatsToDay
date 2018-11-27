@@ -21,7 +21,7 @@ class Login extends AbstractController
         WhatToDayUtilities::setSession(PersonUtils::getPersonData($username));
 
         //APIUtils::test();
-        return new Response('Test');
+        return $this->render('test.html');
 
 
     }
