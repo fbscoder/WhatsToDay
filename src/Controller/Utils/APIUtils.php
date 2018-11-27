@@ -115,7 +115,15 @@ class APIUtils
         $tomorrow = mktime(0, 0, 0, $m, ($d + 1), $y);
         APIUtils::getTaskList($board, gmdate($date_format, $tomorrow));
     }
+    public static function getBoards()
+    {
+        $Person = $_SESSION["PersonUtils"];
+        $client = new Client();
+        $client->authenticate('aa8b7e7e0a878b7f8e6d805c78ff2526', '90dec1d14cd5336ba006af1bd79829c1a6ed45480130c3a40fb7fccf3d1927e4', Client::AUTH_URL_CLIENT_ID);
+        $boards = $client->api("member")->boards()->all();
 
+        return $boards;
+    }
 }
 
 
