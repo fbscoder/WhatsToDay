@@ -1,5 +1,6 @@
 <?php
-namespace App\Controller;
+
+namespace App\Controller\Utils;
 
 class PersonData{
     public $ID;

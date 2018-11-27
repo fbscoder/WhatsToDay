@@ -6,7 +6,7 @@
  * Time: 14:08
  */
 
-namespace App\Controller;
+namespace App\Controller\Utils;
 
 
 class WhatToDayUtilities

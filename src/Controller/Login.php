@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 
+use App\Controller\Utils\APIUtils;
+use App\Controller\Utils\PersonUtils;
+use App\Controller\Utils\WhatToDayUtilities;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,10 +17,6 @@ class Login extends AbstractController
      */
     public function index()
     {
-        require_once 'PersonUtils.php';
-        require_once 'WhatToDayUtilities.php';
-        require_once 'APIUtils.php';
-
         $username = "test";
         $person = PersonUtils::getPersonData($username);
 
