@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Marcell
+ * Date: 28.11.2018
+ * Time: 09:41
+ */
 
 namespace App\Controller;
 
@@ -6,21 +12,20 @@ namespace App\Controller;
 use App\Controller\Utils\APIUtils;
 use App\Controller\Utils\PersonUtils;
 use App\Controller\Utils\WhatToDayUtilities;
-use Symfony\Component\HttpFoundation\Response;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
 
-class Login extends AbstractController
+class Board extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/Boards")
      */
-    public function index()
+    public function showBoard()
     {
         $username = "test";
         WhatToDayUtilities::setSession(PersonUtils::getPersonData($username));
-
-        //APIUtils::test();
-        return new Response('');
+        $params['boards'] = APIUtils::getBoards();
+        return $this->render('showBoards.html.twig', $params);
     }
+
 }

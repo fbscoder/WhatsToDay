@@ -5,6 +5,7 @@
     --button-anzahl-aufgaben-color: #FFFFFF;
 }
 
+
 body {
     background-color: var(--main-bg-color);
     margin: 0 auto !important;
@@ -16,17 +17,26 @@ body {
     margin: 0 auto !important;
 }
 
-/*.tasks li {*/
-/*margin-top: 6%;*/
-/*border: 1px solid black;*/
-/*box-shadow: 5px 10px 8px #888888;*/
-/*border-radius: 25px !important;*/
-/*list-style: none;*/
-/*padding-top: 2%;*/
-/*padding-bottom: 2%;*/
-/*background-color: var(--button-anzahl-aufgaben-color);*/
-/*font-weight: 600;*/
-/*}*/
+
+.tasks li {
+    /*margin-left: 10%;*/
+    margin-bottom: 3%;
+}
+
+.tasks ul p {
+    margin-top: 2%;
+    margin-bottom: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card-header {
+    font-weight: 700;
+}
 
 #boards {
     width: 300px;
@@ -58,11 +68,42 @@ body {
 .fa-arrow-circle-left {
     font-size: 30px;
     color: gray;
+}
 
+.btn-gray {
+    color: black;
+    background-color: lightgray;
+    border-color: gray;
 }
 
 #hideTasks {
     position: absolute;
     left: 0;
     top: 0;
+}
+
+.task_card {
+    margin-bottom: 3%;
+}
+
+div.collapsed {
+    border-bottom: 0;
+}
+
+.custom-control {
+    padding-left: 0;
+}
+
+html.touch *:hover {
+    pointer-events: none !important;
+    all: unset !important;
+}
+
+a:hover {
+    color: black;
+}
+
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.18);
 }

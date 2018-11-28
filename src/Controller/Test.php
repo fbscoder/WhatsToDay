@@ -30,22 +30,5 @@ class Test extends AbstractController
         return new Response('');
     }
 
-    /**
-     * @Route("/Boards")
-     */
-    public function showBoard()
-    {
-        $username = "test";
-        WhatToDayUtilities::setSession(PersonUtils::getPersonData($username));
-        $params['boards'] = APIUtils::getBoards();
-        return $this->render('showBoards.html.twig', $params);
-    }
 
-    /**
-     * @Route("/showTasks")
-     */
-    public function showTask()
-    {
-        return new Response('Keine Tasks verfügbar');
-    }
 }
