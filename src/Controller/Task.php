@@ -11,6 +11,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Controller\Utils\APIUtils;
 
 class Task extends AbstractController
 {
@@ -19,7 +20,9 @@ class Task extends AbstractController
      */
     public function showTask()
     {
-        return $this->render('test.html');
+        $params['taskToday'] = APIUtils::getBoardTasksToday($_GET['board']);
+        $params['taskCount'] = APIUtils::getCountedTasks(APIUtils::getBoardTasksToday($_GET['board']));
+        $params['taskTomorrow'] = APIUtils::getBoardTasksTomorrow($_GET['board']);
+        return $this->render('aufgaben.html.twig', $params);
     }
-
 }
