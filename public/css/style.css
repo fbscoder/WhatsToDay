@@ -103,6 +103,10 @@ a:hover {
     color: black;
 }
 
+button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0);
+}
 .btn:focus {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.18);
@@ -110,4 +114,9 @@ a:hover {
 
 .card-header-rounded, .card-rounded {
     border-radius: 25px !important;
+}
+
+.card-header-rounded {
+    background: none;
+    border: none;
 }
