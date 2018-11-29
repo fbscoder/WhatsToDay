@@ -24,10 +24,10 @@ class Test extends AbstractController
     public function index()
     {
         $username = "test";
-        WhatToDayUtilities::setSession(PersonUtils::getPersonData($username));
-        APIUtils::test();
+        //WhatToDayUtilities::setSession(PersonUtils::getPersonData($username));
+        //APIUtils::test();
 
-        return new Response('');
+        return $this->render('board.html');
     }
 
 
