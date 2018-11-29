@@ -5,14 +5,31 @@
     <div class="container-fluid">
         <div class="row" id="row_heute">
             <div class="col" id="div_heute">
-                <form method="GET" action="/showTasks">
-                    <ul id==selType>
-                        {% for board in boards %}
-                            <button id="boards" value="{{ board.id }}" name="board">{{ board.name }}</button> <br>
-                        {% endfor %}
-                    </ul>
+                <form method="GET" action="/showTasks" id="boardForm">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="tasks container">
+                                    {% for board in boards %}
+                                        {#<button id="boards" value="{{ board.id }}" name="board">#}
+                                        <div class="card text-center task_card card-rounded">
+                                            <button class="card-header card-header-rounded" value="{{ board.id }}"
+                                                    name="board">
+                                                {{ board.name }}
+                                            </button>
+                                        </div>
+
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="js/submitForm.js"></script>
 {% endblock %}

@@ -52,10 +52,11 @@ class APIUtils
         if (count($cardList) != 0) {
             $taskList = [];
             for ($i = 0; $i < count($cardList); $i++) {
-                $taskData = null;
+
                 $cards = $client->api("lists")->cards()->all($cardList[$i]["id"]);
                 if (count($cards) != 0) {
                     for ($x = 0; $x < count($cards); $x++) {
+                        $taskData = null;
                         $card = $cards[$x];
                         $title = $card["name"];
                         $description = $card["desc"];
@@ -90,7 +91,7 @@ class APIUtils
                     }
                 }
             }
-            print_r($taskList);
+//            print_r($taskList);
             return $taskList;
         }
     }
