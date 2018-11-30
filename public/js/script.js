@@ -1,33 +1,15 @@
-function hideTasks() {
-    document.getElementsByClassName('timeButtons')[0].style.display = "block";
-    document.getElementsByClassName('hide_tasks')[0].style.display = "block";
-    document.getElementsByClassName('hide_tasks')[0].style.display = "none";
-
-}
-
-function showTomorrow() {
-    document.getElementsByClassName('timeButtons')[0].style.display = "none";
-    document.getElementById("task_today").style.display = "none";
-    document.getElementById('task_tomorrow').style.display = "block";
-    document.getElementsByClassName('hide_tasks')[0].style.display = "block";
-}
-
-function showToday() {
-    document.getElementsByClassName('timeButtons')[0].style.display = "none";
-    document.getElementById('task_tomorrow').style.display = "none";
-    document.getElementById("task_today").style.display = "block";
-    document.getElementsByClassName('hide_tasks')[0].style.display = "block";
-
-}
-
 $(document).ready(function () {
     $("#hideTasks").click(function () {
-        hideTasks();
+        $("#tasks").removeClass("show");
     });
     $("#btn_today").click(function () {
-        showToday();
+        document.getElementById("task_tomorrow").style.display = "none";
+        document.getElementById("task_today").style.display = "block";
+        $("#tasks").addClass("show");
     });
     $("#btn_tomorrow").click(function () {
-        showTomorrow();
+        document.getElementById("task_today").style.display = "none";
+        document.getElementById("task_tomorrow").style.display = "block";
+        $("#tasks").addClass("show");
     });
 });

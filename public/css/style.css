@@ -13,13 +13,10 @@ body {
 
 .tasks {
     text-align: center;
-    padding: 0 !important;
-    margin: 0 auto !important;
 }
 
 
 .tasks li {
-    /*margin-left: 10%;*/
     margin-bottom: 3%;
 }
 
@@ -42,10 +39,6 @@ ul {
     width: 300px;
     height: 50px;
     box-shadow: 5px 10px 5px #888888;
-}
-
-.hide_tasks {
-    display: none;
 }
 
 .timeButtons button {
@@ -93,12 +86,6 @@ div.collapsed {
 .custom-control {
     padding-left: 0;
 }
-
-html.touch *:hover {
-    pointer-events: none !important;
-    all: unset !important;
-}
-
 a:hover {
     color: black;
 }
@@ -112,11 +99,30 @@ button:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.18);
 }
 
-.card-header-rounded, .card-rounded {
+.card-header, .card, .card-footer {
     border-radius: 25px !important;
 }
 
 .card-header-rounded {
     background: none;
     border: none;
+}
+
+#tasks {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color: var(--main-bg-color);
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: 1s ease;
+}
+
+.show {
+    width: 100% !important;
+    left: 0 !important;
+    margin-right: 0;
+    margin-left: 0;
 }
