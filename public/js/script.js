@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $("#hideTasks").click(function () {
         $("#tasks").removeClass("show");

@@ -13,6 +13,11 @@ body {
 
 .tasks {
     text-align: center;
+    margin-top: 10%;
+    position: absolute;
+    right: 1%;
+    left: 1%;
+    white-space: nowrap;
 }
 
 
@@ -83,9 +88,6 @@ div.collapsed {
     border-bottom: 0;
 }
 
-.custom-control {
-    padding-left: 0;
-}
 a:hover {
     color: black;
 }
