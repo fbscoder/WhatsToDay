@@ -54,7 +54,6 @@ class APIUtils
         if (count($cardList) != 0) {
             $taskList = [];
             for ($i = 0; $i < count($cardList); $i++) {
-
                 $cards = $client->api("lists")->cards()->all($cardList[$i]["id"]);
                 if (count($cards) != 0) {
                     for ($x = 0; $x < count($cards); $x++) {

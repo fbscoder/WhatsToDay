@@ -116,9 +116,9 @@ button:focus {
     left: 100%;
     right: 0;
     background-color: var(--main-bg-color);
-    overflow: hidden;
     width: 0;
     height: 100%;
+    overflow: hidden;
     transition: 1s ease;
 }
 
@@ -127,4 +127,5 @@ button:focus {
     left: 0 !important;
     margin-right: 0;
     margin-left: 0;
+    overflow: visible!important;
 }
