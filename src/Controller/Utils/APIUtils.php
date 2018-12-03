@@ -60,78 +60,60 @@ class APIUtils
     private static function getTaskList($board, $dateToCheck)
     {
         $client = APIUtils::getClient();
-        $cardList = $client->api("boards")->lists()->all($board);
-        if (count($cardList) != 0) {
-            $taskList = [];
-            for ($i = 0; $i < count($cardList); $i++) {
-                $cards = $client->api("lists")->cards()->all($cardList[$i]["id"]);
-                if (count($cards) != 0) {
-                    for ($x = 0; $x < count($cards); $x++) {
-                        $taskData = null;
-                        $card = $cards[$x];
-                        $title = $card["name"];
-                        $description = $card["desc"];
-                        $endDate = $card["due"];
-                        $cardId = $card["id"];
-                        if ($dateToCheck == date('Ymd', strtotime($endDate)) && !$card["dueComplete"]) {
-                            $checkList = $client->api("cards")->checklists()->all($card["id"]);
-                            if (count($checkList) != 0) {
-                                $checkListData = [];
-                                for ($y = 0; $y < count($checkList); $y++) {
-                                    $checkData = [];
-                                    $singleCheckList = $checkList[$y]["checkItems"];
-                                    $checkListName = $checkList[$y]["name"];
-                                    if (count($singleCheckList) != 0) {
-                                        for ($z = 0; $z < count($singleCheckList); $z++) {
-                                            $check = $singleCheckList[$z];
-                                            $isChecked = true;
-                                            if ($check["state"] == "incomplete") {
-                                                $isChecked = false;
-                                            }
-                                            $checkName = $check["name"];
-                                            $checkData[] = new CheckData($checkName, $isChecked);
-                                        }
-                                    }
-                                    $checkListData[] = new CheckListData($checkListName, $checkData);
-                                }
-                                $taskData = new TaskData($cardId, $title, $description, $checkListData);
-                            }
-                            if ($taskData == null)
-                                $taskData = new TaskData($cardId, $title, $description, null);
-                            $taskList[] = $taskData;
+        $taskList = [];
+        foreach ($client->api("boards")->cards()->all($board) as $card) {
+            $endDate = $card["due"];
+            if ($dateToCheck == date('Ymd', strtotime($endDate)) && !$card["dueComplete"]) {
+                $taskData = null;
+                $title = $card["name"];
+                $description = $card["desc"];
+                $cardId = $card["id"];
+                $checkListData = [];
+                foreach ($checkList = $client->api("cards")->checklists()->all($card["id"]) as $checkList) {
+                    $checkListName = $checkList["name"];
+                    $checkData = [];
+                    foreach ($client->api("checklists")->items()->all($checkList["id"]) as $checkItem) {
+                        $isChecked = true;
+                        if ($checkItem["state"] == "incomplete") {
+                            $isChecked = false;
                         }
+                        $checkName = $checkItem["name"];
+                        $checkData[] = new CheckData($checkName, $isChecked);
                     }
+                    $checkListData[] = new CheckListData($checkListName, $checkData);
                 }
+                if ($taskData == null && $checkListData == [])
+                    $taskData = new TaskData($cardId, $title, $description, null);
+                else {
+                    $taskData = new TaskData($cardId, $title, $description, $checkListData);
+                }
+                $taskList[] = $taskData;
             }
-//            print_r($taskList);
-            return $taskList;
-        }
+        };
+        return $taskList;
     }
 
-    public static function getBoardTasksToday($board)
+    static function getBoardTasksToday($board)
     {
         return APIUtils::getTaskList($board, date('Ymd'));
     }
 
-    public static function getBoardTasksTomorrow($board)
+    public
+    static function getBoardTasksTomorrow($board)
     {
         $datetime = new DateTime('tomorrow');
         $datetime = $datetime->format('Ymd');
-//        $date_format = "Ymd";
-//        $today = mktime();
-//        $d = date('d', $today);
-//        $m = date('m', $today);
-//        $y = date('Y', $today);
-//        $tomorrow = mktime(0, 0, 0, $m, ($d + 1), $y);
         return APIUtils::getTaskList($board, $datetime);
     }
 
-    public static function getCountedTasks($taskList)
+    public
+    static function getCountedTasks($taskList)
     {
         return count($taskList);
     }
 
-    public static function getBoards()
+    public
+    static function getBoards()
     {
         $client = APIUtils::getClient();
         $boards = $client->api("member")->boards()->all();
