@@ -62,6 +62,7 @@ class APIUtils
                         $title = $card["name"];
                         $description = $card["desc"];
                         $endDate = $card["due"];
+                        $cardId = $card["id"];
                         if ($dateToCheck == date('Ymd', strtotime($endDate)) && !$card["dueComplete"]) {
                             $checkList = $client->api("cards")->checklists()->all($card["id"]);
                             if (count($checkList) != 0) {
@@ -83,10 +84,10 @@ class APIUtils
                                     }
                                     $checkListData[] = new CheckListData($checkListName, $checkData);
                                 }
-                                $taskData = new TaskData($title, $description, $checkListData);
+                                $taskData = new TaskData($cardId, $title, $description, $checkListData);
                             }
                             if ($taskData == null)
-                                $taskData = new TaskData($title, $description, null);
+                                $taskData = new TaskData($cardId, $title, $description, null);
                             $taskList[] = $taskData;
                         }
                     }

@@ -14,15 +14,18 @@ class TaskData
     public $title;
     public $description;
     public $checkListData;
+    public $id;
 
     /**
      * TaskData constructor.
-     * @param $title
-     * @param $description
+     * @param null $id
+     * @param string $title
+     * @param string $description
      * @param $checkListData
      */
-    public function __construct($title = "", $description = "", $checkListData = null)
+    public function __construct($id = null, $title = "", $description = "", $checkListData = null)
     {
+        $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->checkListData = $checkListData;

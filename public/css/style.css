@@ -96,6 +96,7 @@ button:focus {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0);
 }
+
 .btn:focus {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.18);
@@ -127,5 +128,35 @@ button:focus {
     left: 0 !important;
     margin-right: 0;
     margin-left: 0;
-    overflow: visible!important;
+}
+
+#task_today, #task_tomorrow {
+    background-color: var(--main-bg-color);
+}
+
+.checkbox-title {
+    font-weight: 500;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+.modal-dialog {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+}
+
+.description-modal-unchecked {
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .modal-dialog {
+        min-height: calc(100vh - 20px);
+    }
 }
