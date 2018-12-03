@@ -25,6 +25,8 @@ class Task extends AbstractController
         $params['taskTomorrow'] = APIUtils::getBoardTasksTomorrow($_GET['board']);
         $params['taskTomorrowCount'] = APIUtils::getCountedTasks(APIUtils::getBoardTasksTomorrow($_GET['board']));
 
+        if ($_POST["card_id"] != null)
+            APIUtils::setTaskToFinish($_POST["card_id"]);
         return $this->render('aufgaben.html.twig', $params);
     }
 }

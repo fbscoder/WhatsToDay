@@ -16,10 +16,25 @@ function setTaskValuesInModal(id, title, button) {
         $(".modal .modal-body").append('<p class="description-modal-unchecked"></p>');
         $(".modal .modal-body .description-modal-unchecked").text(textWithUnchecked);
     }
-
-
+    $("#cardForm").attr('action', document.URL);
 }
 
-$(document).ready(function () {
-
-});
+//
+// $(document).ready(function () {
+//
+//     $('form').on('submit', function (e) {
+//
+//         //e.preventDefault();
+//
+//         $.ajax({
+//             type: 'post',
+//             url: '../src/Controller/Test.php',
+//             data: $('form').serialize(),
+//             success: function () {
+//                 alert('form was submitted');
+//             }
+//         });
+//
+//     });
+//
+// });

@@ -8,10 +8,7 @@
 
 namespace App\Controller;
 
-
 use App\Controller\Utils\APIUtils;
-use App\Controller\Utils\PersonUtils;
-use App\Controller\Utils\WhatToDayUtilities;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,11 +20,9 @@ class Test extends AbstractController
      */
     public function index()
     {
-        $username = "test";
-        //WhatToDayUtilities::setSession(PersonUtils::getPersonData($username));
-        //APIUtils::test();
 
-        return $this->render('board.html');
+        //header('/Boards');
+        return new Response("");
     }
 
 

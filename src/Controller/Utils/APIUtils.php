@@ -24,6 +24,15 @@ class APIUtils
         return $client;
     }
 
+    public static function setTaskToFinish($cardId)
+    {
+        $client = APIUtils::getClient();
+        $card = $client->api("cards")->show($cardId);
+        $card["dueComplete"] = 1;
+        $client->api("cards")->update($cardId, $card);
+
+    }
+
     public static function test()
     {
         $client = APIUtils::getClient();
