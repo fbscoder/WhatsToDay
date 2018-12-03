@@ -21,10 +21,9 @@ class Task extends AbstractController
     public function showTask()
     {
         $params['taskToday'] = APIUtils::getBoardTasksToday($_GET['board']);
-        $params['taskTodayCount'] = APIUtils::getCountedTasks(APIUtils::getBoardTasksToday($_GET['board']));
+        $params['taskTodayCount'] = APIUtils::getCountedTasks($params['taskToday']);
         $params['taskTomorrow'] = APIUtils::getBoardTasksTomorrow($_GET['board']);
-        $params['taskTomorrowCount'] = APIUtils::getCountedTasks(APIUtils::getBoardTasksTomorrow($_GET['board']));
-
+        $params['taskTomorrowCount'] = APIUtils::getCountedTasks($params['taskTomorrow']);
         return $this->render('aufgaben.html.twig', $params);
     }
 }
