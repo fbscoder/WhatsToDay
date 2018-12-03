@@ -6,6 +6,7 @@ use App\Controller\Utils\Task\CheckData;
 use App\Controller\Utils\Task\CheckListData;
 use App\Controller\Utils\Task\TaskData;
 use Trello\Client;
+use DateTime;
 
 /**
  * @property Client client
@@ -104,13 +105,15 @@ class APIUtils
 
     public static function getBoardTasksTomorrow($board)
     {
-        $date_format = "Ymd";
-        $today = mktime();
-        $d = date('d', $today);
-        $m = date('m', $today);
-        $y = date('Y', $today);
-        $tomorrow = mktime(0, 0, 0, $m, ($d + 1), $y);
-        return APIUtils::getTaskList($board, gmdate($date_format, $tomorrow));
+        $datetime = new DateTime('tomorrow');
+        $datetime = $datetime->format('Ymd');
+//        $date_format = "Ymd";
+//        $today = mktime();
+//        $d = date('d', $today);
+//        $m = date('m', $today);
+//        $y = date('Y', $today);
+//        $tomorrow = mktime(0, 0, 0, $m, ($d + 1), $y);
+        return APIUtils::getTaskList($board, $datetime);
     }
 
     public static function getCountedTasks($taskList)
