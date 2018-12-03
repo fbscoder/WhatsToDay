@@ -12,15 +12,16 @@
                                     {% for board in boards %}
                                         {#<button id="boards" value="{{ board.id }}" name="board">#}
                                         <div class="card text-center task_card card-rounded">
-                                            <button class="card-header card-header-rounded" value="{{ board.id }}"
+                                            <button id="{{ board.id }}" class="card-header card-header-rounded"
+                                                    type="button" onclick="buttonClick('{{ board.id }}')"
+                                                    value="{{ board.id }}"
                                                     name="board">
                                                 {{ board.name }}
                                             </button>
                                         </div>
-
                                     {% endfor %}
                                 </div>
-
+                                <button id="boardSubmit" type="button">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -30,5 +31,14 @@
     </div>
 {% endblock %}
 {% block javascripts %}
-    <script src="js/submitForm.js"></script>
+    <script>
+        function buttonClick(id) {
+            $(".card").click(function () {
+                var button = document.getElementById(id);
+                button.classList.add('button-active');
+                // document.getElementsByClassName("card-header").classList.add('button-active');
+            });
+        }
+    </script>
+    {#<script src="js/submitForm.js"></script>#}
 {% endblock %}
