@@ -1,3 +1,14 @@
+function binder() {
+    $("#tasks").addClass("show");
+
+    $("#tasks").bind('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd',
+        function () {
+            $("#tasks").css({'white-space': "normal"});
+            $("#tasks").css({'overflow': "visible"});
+            $("#tasks").unbind("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd");
+        });
+}
+
 $(document).ready(function () {
     $("#hideTasks").click(function () {
         $("#tasks").css({'overflow': "hidden"});
@@ -7,25 +18,11 @@ $(document).ready(function () {
     $("#btn_today").click(function () {
         $("#task_tomorrow").css({'display': "none"});
         $("#task_today").css({'display': "block"});
-        $("#tasks").addClass("show");
-        $("#tasks").css({'white-space': "nowrap"});
-
-        $("#tasks").one('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd',
-            function () {
-                $("#tasks").css({'white-space': "normal"});
-                $("#tasks").css({'overflow': "visible"});
-            });
+        binder();
     });
     $("#btn_tomorrow").click(function () {
         $("#task_today").css({'display': "none"});
         $("#task_tomorrow").css({'display': "block"});
-        $("#tasks").addClass("show");
-        $("#tasks").css({'white-space': "nowrap"});
-
-        $("#tasks").one('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd',
-            function () {
-                $("#tasks").css({'white-space': "normal"});
-                $("#tasks").css({'overflow': "visible"});
-            });
+        binder();
     });
 });
