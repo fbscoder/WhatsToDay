@@ -57,6 +57,9 @@ ul {
     border: 1px solid grey;
     width: 150px;
     height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
     margin-bottom: 5%;
 }
 
@@ -210,10 +213,3 @@ p {
     margin-right: 0;
 }
 
-@media only screen and (max-width: 400px) {
-    .timeButtons {
-        position: absolute;
-        left: 31%;
-        top: 32%;
-    }
-}
