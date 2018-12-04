@@ -62,9 +62,6 @@ ul {
     border: 1px solid grey;
     width: 150px;
     height: 150px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -75%);
     margin-bottom: 5%;
 }
 
@@ -173,24 +170,16 @@ button:focus {
 }
 
 .boardButton {
-    margin-bottom: 2%;
+    margin-bottom: 1vh;
     border-radius: 25px;
     width: 100%;
-
 }
 
 #boardSubmit {
-    background: #7fbdff !important;
-    border: 2px solid cornflowerblue;
-    font-weight: 500;
-}
-
-#boardReset {
     color: white;
     background: #93979d;
     border: 2px solid black;
     font-weight: 500;
-
 }
 
 #errorTxt {
@@ -212,7 +201,7 @@ p {
     text-align: center;
     height: 12vh;
     background-color: var(--main-bg-color);
-    padding-bottom: 16vh;
+    padding-bottom: 15vh;
 }
 
 .button-bottom .row {
