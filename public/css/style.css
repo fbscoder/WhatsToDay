@@ -17,17 +17,22 @@ body {
     position: absolute;
     right: 1%;
     left: 1%;
-    margin-bottom: 95px;
 }
 
 
-.tasks li {
+.tasks li, #boards li {
     margin-bottom: 3%;
 }
 
-.tasks ul p {
+.tasks ul p, #boards ul p {
     margin-top: 2%;
     margin-bottom: 0;
+}
+
+#boards {
+    right: 1%;
+    left: 1%;
+    text-align: center;
 }
 
 ul {
@@ -45,11 +50,11 @@ ul {
     background-color: #696969 !important;
 }
 
-#boards {
-    width: 300px;
-    height: 50px;
-    box-shadow: 5px 10px 5px #888888;
-}
+/*#boards {*/
+/*width: 300px;*/
+/*height: 50px;*/
+/*box-shadow: 5px 10px 5px #888888;*/
+/*}*/
 
 .timeButtons button {
     background-color: var(--button-anzahl-aufgaben-color);
@@ -205,7 +210,9 @@ p {
     z-index: 1;
     right: 0;
     text-align: center;
-    height: 95px;
+    height: 12vh;
+    background-color: var(--main-bg-color);
+    padding-bottom: 16vh;
 }
 
 .button-bottom .row {
@@ -213,3 +220,11 @@ p {
     margin-right: 0;
 }
 
+.boards {
+    margin-top: 1%;
+    margin-bottom: 20vh;
+}
+
+body {
+    height: 100vh;
+}

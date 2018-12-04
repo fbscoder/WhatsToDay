@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/public/css/style.css" description="&#10;.button-bottom {&#10;    position: fixed;&#10;    left: 0..." line="200" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5200451e-dd5b-4069-a7d0-b98349ff43ae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/aufgaben.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aufgaben.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Utils/APIUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Utils/APIUtils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/showBoards.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/showBoards.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Utils/APIUtils.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1088">
-              <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+            <state relative-caret-position="255">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
               <folding>
                 <element signature="e#40#80#0#PHP" expanded="true" />
               </folding>
@@ -56,21 +59,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/showBoards.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
+            <state relative-caret-position="304">
+              <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
               <folding>
-                <element signature="e#354#2527#0#HTML" />
-                <element signature="e#1205#2009#0#Twig" />
                 <element signature="e#2374#3414#0#HTML" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/aufgaben.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
+            <state relative-caret-position="535">
               <caret line="92" column="7" selection-start-line="92" selection-start-column="7" selection-end-line="92" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -83,11 +84,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="126" column="18" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
+            <state relative-caret-position="243">
+              <caret line="212" selection-start-line="212" selection-end-line="212" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="211" selection-start-line="211" selection-end-line="211" />
             </state>
           </provider>
         </entry>
@@ -104,9 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>board</find>
-      <find>card</find>
-      <find>lists</find>
       <find>boards</find>
       <find>get</find>
       <find>id</find>
@@ -133,6 +140,10 @@
       <find>#tasks</find>
       <find>margin-righ</find>
       <find>�</find>
+      <find>.tasks</find>
+      <find>#boards</find>
+      <find>.boards</find>
+      <find>.button-bottom</find>
     </findStrings>
     <replaceStrings>
       <replace>$person</replace>
@@ -183,7 +194,6 @@
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/test.html" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/style.css" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/board.html" />
         <option value="$PROJECT_DIR$/public/js/submitForm.js" />
         <option value="$PROJECT_DIR$/templates/board.html" />
@@ -200,11 +210,12 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Controller/Task.php" />
         <option value="$PROJECT_DIR$/templates/error.html.twig" />
+        <option value="$PROJECT_DIR$/public/js/script.js" />
+        <option value="$PROJECT_DIR$/templates/aufgaben.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/Utils/APIUtils.php" />
         <option value="$PROJECT_DIR$/templates/showBoards.html.twig" />
-        <option value="$PROJECT_DIR$/public/js/script.js" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/templates/aufgaben.html.twig" />
+        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/style.css" />
       </list>
     </option>
   </component>
@@ -622,14 +633,22 @@
       <option name="project" value="LOCAL" />
       <updated>1543924784866</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Style">
+      <created>1543928193608</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1543928193608</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99468000" />
+    <option name="totallyTimeSpent" value="104829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3222672" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -678,7 +697,6 @@
     <MESSAGE value="API wichtige funktionen" />
     <MESSAGE value="APIUtils:&#10;Get Task Tomorrow and Today." />
     <MESSAGE value="APIUtils:&#10;Return hinzugefügt.&#10;Function:&#10;Count Tasklist" />
-    <MESSAGE value="Style" />
     <MESSAGE value="Test:&#10;API_KEY" />
     <MESSAGE value="Oberfläche für Boards" />
     <MESSAGE value="SubmitForm" />
@@ -686,7 +704,8 @@
     <MESSAGE value="Sicherheitsabfrage von den einzelnen Tasks." />
     <MESSAGE value="UPDATE Added possibility to select more boards" />
     <MESSAGE value="Boards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Boards" />
+    <MESSAGE value="Style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Style" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -810,7 +829,6 @@
     <entry file="file://$PROJECT_DIR$/templates/style.css" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/test.html" />
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/style.css" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/board.html" />
     <entry file="file://$PROJECT_DIR$/templates/Aufgaben.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -946,18 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/showBoards.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-          <folding>
-            <element signature="e#354#2527#0#HTML" />
-            <element signature="e#1205#2009#0#Twig" />
-            <element signature="e#2374#3414#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -965,26 +971,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="126" column="18" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Utils/APIUtils.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1088">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+        <state relative-caret-position="255">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
             <element signature="e#40#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/showBoards.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+          <folding>
+            <element signature="e#2374#3414#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/aufgaben.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
+        <state relative-caret-position="535">
           <caret line="92" column="7" selection-start-line="92" selection-start-column="7" selection-end-line="92" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -993,6 +1002,20 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="e#7589#7596#1#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="211" selection-start-line="211" selection-end-line="211" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="212" selection-start-line="212" selection-end-line="212" />
         </state>
       </provider>
     </entry>
