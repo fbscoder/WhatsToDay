@@ -3,8 +3,7 @@
 {% block title %}Boards{% endblock %}
 
 {% block body %}
-
-    <div class="container-fluid">
+    <div class="container-fluid" id="container">
         <div class="row" id="row_heute">
             <div class="col" id="div_heute">
                 <form method="GET" action="/showTasks" id="boardForm">
@@ -57,11 +56,23 @@
             </div>
         </div>
     </div>
+    </div>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
 
     <script>
+        $(function () {
+
+            // Init xpull plugin for demo
+            $('#xpull1').xpull({
+                'callback': function () {
+
+                }
+            });
+
+        });
 
         function buttonClick(id) {
 

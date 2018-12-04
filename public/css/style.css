@@ -209,3 +209,11 @@ p {
     margin-left: 0;
     margin-right: 0;
 }
+
+@media only screen and (max-width: 400px) {
+    .timeButtons {
+        position: absolute;
+        left: 31%;
+        top: 32%;
+    }
+}
