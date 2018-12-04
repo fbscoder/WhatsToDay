@@ -1,28 +1,46 @@
-function binder() {
-    $("#tasks").addClass("show");
-
-    $("#tasks").bind('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd',
-        function () {
-            $("#tasks").css({'white-space': "normal"});
-            $("#tasks").css({'overflow': "visible"});
-            $("#tasks").unbind("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd");
-        });
-}
-
 $(document).ready(function () {
     $("#hideTasks").click(function () {
-        $("#tasks").css({'overflow': "hidden"});
-        $("#tasks").css({'white-space': "nowrap"});
-        $("#tasks").removeClass("show");
+        $('#tasks').animate({
+            'margin-right': '100%',
+        }, {
+            duration: 1000,
+            start: function () {
+                $("#tasks").css({'overflow': "hidden"});
+            },
+            complete: function () {
+                $("#tasks").css({'overflow': "hidden"});
+            }
+        });
     });
     $("#btn_today").click(function () {
-        $("#task_tomorrow").css({'display': "none"});
-        $("#task_today").css({'display': "block"});
-        binder();
+        $('#tasks').animate({
+            'margin-right': '0',
+        }, {
+            duration: 1000,
+            start: function () {
+                $("#task_tomorrow").css({'display': "none"});
+                $("#task_today").css({'display': "block"});
+            },
+            complete: function () {
+                $("#tasks").css({'overflow': "visible"});
+            }
+        });
     });
     $("#btn_tomorrow").click(function () {
-        $("#task_today").css({'display': "none"});
-        $("#task_tomorrow").css({'display': "block"});
-        binder();
+
+        $('#tasks').animate({
+            'margin-right': '0',
+        }, {
+            duration: 1000,
+            start: function () {
+                $("#task_today").css({'display': "none"});
+                $("#task_tomorrow").css({'display': "block"});
+            },
+            complete: function () {
+                $("#tasks").css({'overflow': "visible"});
+            }
+        });
     });
+
+
 });
