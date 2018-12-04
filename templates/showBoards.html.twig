@@ -5,37 +5,16 @@
 {% block body %}
 
     <div class="container-fluid">
-
         <div class="row" id="row_heute">
-
             <div class="col" id="div_heute">
-
                 <form method="GET" action="/showTasks" id="boardForm">
-
                     <div class="container-fluid">
-
                         <div class="row">
-
                             <div class="col-md-12">
-
                                 <div class="tasks container">
-                                    <button id="boardSubmit"
-                                            class="btn btn-gray sticky-top text-center boardButton"
-                                            onclick="submitForm()"
-                                            type="button">Submit
-                                    </button>
-                                    <button id="boardReset"
-                                            class="btn btn-gray sticky-top text-center boardButton"
-                                            onclick="resetForm()"
-                                            type="button">Reset
-                                    </button>
-
                                     {% for board in boards %}
-
                                         {#<button id="boards" value="{{ board.id }}" name="board">#}
-
                                         <div class="card text-center task_card card-rounded">
-
                                             <button id="{{ board.id }}" class="card-header card-header-rounded"
 
                                                     type="button" onclick="buttonClick('{{ board.id }}')"
@@ -51,24 +30,33 @@
                                         </div>
 
                                     {% endfor %}
-
                                     <input type="hidden" id="selectedBoards" name="selectedBoards" value="">
                                 </div>
-
                             </div>
-
                         </div>
-
+                        <div class="button-bottom">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button id="boardSubmit"
+                                            class="btn btn-gray sticky-top text-center boardButton"
+                                            onclick="submitForm()"
+                                            type="button">Submit
+                                    </button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button id="boardReset"
+                                            class="btn btn-gray sticky-top text-center boardButton"
+                                            onclick="resetForm()"
+                                            type="button">Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </form>
-
             </div>
-
         </div>
-
     </div>
-
 {% endblock %}
 
 {% block javascripts %}
@@ -83,9 +71,7 @@
 
                 button.classList.remove('button-active');
 
-            }
-
-            else {
+            } else {
 
                 button.classList.add('button-active');
 

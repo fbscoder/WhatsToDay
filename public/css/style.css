@@ -17,7 +17,7 @@ body {
     position: absolute;
     right: 1%;
     left: 1%;
-    white-space: nowrap;
+    margin-bottom: 95px;
 }
 
 
@@ -118,18 +118,16 @@ button:focus {
 #tasks {
     position: absolute;
     bottom: 0;
-    left: 100%;
     right: 0;
     background-color: var(--main-bg-color);
     width: 0;
     height: 100%;
     overflow: hidden;
-    transition: 1s ease;
+    transition: 1s ease width;
 }
 
 .show {
     width: 100% !important;
-    left: 0 !important;
     margin-right: 0;
     margin-left: 0;
 }
@@ -168,7 +166,7 @@ button:focus {
 .boardButton {
     margin-bottom: 2%;
     border-radius: 25px;
-    width: 50%;
+    width: 100%;
 
 }
 
@@ -189,4 +187,19 @@ button:focus {
 #errorTxt {
     margin-top: 10%;
     color: black;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.button-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    right: 0;
+    text-align: center;
+    height: 95px;
 }
