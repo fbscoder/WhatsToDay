@@ -20,8 +20,9 @@
                                             </button>
                                         </div>
                                     {% endfor %}
+                                    <input type="hidden" id="selectedBoards" name="selectedBoards" value="">
+                                    <button id="boardSubmit" onclick="submitForm()" type="button">Submit</button>
                                 </div>
-                                <button id="boardSubmit" type="button">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -33,12 +34,28 @@
 {% block javascripts %}
     <script>
         function buttonClick(id) {
-            $(".card").click(function () {
-                var button = document.getElementById(id);
+            var button = document.getElementById(id);
+            if (button.classList.contains('button-active')) {
+                button.classList.remove('button-active');
+            }
+            else {
                 button.classList.add('button-active');
-                // document.getElementsByClassName("card-header").classList.add('button-active');
-            });
+            }
         }
+
+        function submitForm() {
+            var boards = [];
+            var i = 0;
+            $("#boardForm .button-active").each(function (index) {
+                valu = $(this).val();
+                boards[i] = valu;
+                i++;
+            });
+            console.log(JSON.stringify(boards));
+            document.getElementById('selectedBoards').value = JSON.stringify(boards);
+            $("#boardForm").submit();
+        }
+
     </script>
     {#<script src="js/submitForm.js"></script>#}
 {% endblock %}
