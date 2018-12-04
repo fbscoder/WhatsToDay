@@ -1,61 +1,120 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Boards{% endblock %}
+
 {% block body %}
+
     <div class="container-fluid">
+
         <div class="row" id="row_heute">
+
             <div class="col" id="div_heute">
+
                 <form method="GET" action="/showTasks" id="boardForm">
+
                     <div class="container-fluid">
+
                         <div class="row">
+
                             <div class="col-md-12">
+
                                 <div class="tasks container">
+                                    <button id="boardSubmit"
+                                            class="btn btn-gray sticky-top text-center" onclick="submitForm()"
+                                            type="button">Submit
+                                    </button>
+
                                     {% for board in boards %}
+
                                         {#<button id="boards" value="{{ board.id }}" name="board">#}
+
                                         <div class="card text-center task_card card-rounded">
+
                                             <button id="{{ board.id }}" class="card-header card-header-rounded"
+
                                                     type="button" onclick="buttonClick('{{ board.id }}')"
+
                                                     value="{{ board.id }}"
+
                                                     name="board">
+
                                                 {{ board.name }}
+
                                             </button>
+
                                         </div>
+
                                     {% endfor %}
+
                                     <input type="hidden" id="selectedBoards" name="selectedBoards" value="">
-                                    <button id="boardSubmit" onclick="submitForm()" type="button">Submit</button>
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </form>
+
             </div>
+
         </div>
+
     </div>
+
 {% endblock %}
+
 {% block javascripts %}
+
     <script>
+
         function buttonClick(id) {
+
             var button = document.getElementById(id);
+
             if (button.classList.contains('button-active')) {
+
                 button.classList.remove('button-active');
+
             }
+
             else {
+
                 button.classList.add('button-active');
+
             }
+
         }
+
 
         function submitForm() {
+
             var boards = [];
+
             var i = 0;
+
             $("#boardForm .button-active").each(function (index) {
+
                 valu = $(this).val();
+
                 boards[i] = valu;
+
                 i++;
+
             });
+
             console.log(JSON.stringify(boards));
+
             document.getElementById('selectedBoards').value = JSON.stringify(boards);
+
             $("#boardForm").submit();
+
         }
 
+
     </script>
+
     {#<script src="js/submitForm.js"></script>#}
+
 {% endblock %}

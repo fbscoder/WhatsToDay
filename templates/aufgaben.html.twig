@@ -6,7 +6,7 @@
             <span><button id="btn_today">Heute ( {{ taskTodayCount }} )</button></span><br>
             <span><button id="btn_tomorrow">Morgen ( {{ taskTomorrowCount }} )</button></span>
         </div>
-        <div class="row" id="tasks">
+        <div class="row" id="tasks" style="word-break: normal">
             <div class="col-md-12">
                 <a href="#" class="btn btn-sm btn-default" id="hideTasks"><i class="fas fa-arrow-circle-left"></i></a>
                 <div class="tasks" id="task_today">
@@ -15,7 +15,7 @@
                             <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
                                  href="#task_1_{{ loop.index }}"
                                  aria-controls="task_1_{{ loop.index }}">
-                                {{ task.title }}
+                                <p>{{ task.title }}</p>
                             </div>
                             <div class="collapse" id="task_1_{{ loop.index }}">
                                 <div class="card-body ">
@@ -49,7 +49,7 @@
                                             onclick="setTaskValuesInModal('{{ task.id }}','{{ task.title }}',this)"
                                             class="btn btn-gray" data-toggle="modal"
                                             data-target="#finish_task">
-                                        Abschlie√üen
+                                        Abschlie&szlig;en
                                     </button>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                             <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
                                  href="#task_2_{{ loop.index }}"
                                  aria-controls="task_2_{{ loop.index }}">
-                                {{ task.title }}
+                                <p>{{ task.title }}</p>
                             </div>
                             <div class="collapse" id="task_2_{{ loop.index }}">
                                 <div class="card-body ">
@@ -96,7 +96,7 @@
                                             onclick="setTaskValuesInModal('{{ task.id }}','{{ task.title }}',this)"
                                             class="btn btn-gray" data-toggle="modal"
                                             data-target="#finish_task">
-                                        Abschlie√üen
+                                        Abschlieﬂen
                                     </button>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
                         <form method="POST" id="cardForm">
                             <button id="card_id" name="card_id" type="submit" class="btn btn-gray" value="">Aufgabe
-                                Abschlie√üen
+                                Abschlieﬂen
                             </button>
                         </form>
                     </div>

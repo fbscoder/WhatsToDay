@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}Fehler {% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row" id="errorRow">
+            <div class="col-md text-center">
+                <h1 id="errorTxt">{{ error }}</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}

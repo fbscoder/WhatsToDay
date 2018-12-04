@@ -41,7 +41,8 @@ ul {
 }
 
 .button-active {
-    opacity: 0.5;
+    color: white;
+    background-color: #696969 !important;
 }
 #boards {
     width: 300px;
@@ -162,4 +163,18 @@ button:focus {
     .modal-dialog {
         min-height: calc(100vh - 20px);
     }
+}
+
+#boardSubmit {
+    margin-bottom: 2%;
+    background: #7fbdff !important;
+    border-radius: 25px;
+    width: 100%;
+    border: 2px solid cornflowerblue;
+    font-weight: 500;
+}
+
+#errorTxt {
+    margin-top: 10%;
+    color: black;
 }
