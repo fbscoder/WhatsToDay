@@ -25,7 +25,6 @@ class Task extends AbstractController
         try {
             if (isset($_POST['card_id']))
                 APIUtils::setTaskToFinish($_POST["card_id"]);
-
             $boards = json_decode($_GET['selectedBoards']);
             $count = 0;
             foreach ($boards as $i => $board) {

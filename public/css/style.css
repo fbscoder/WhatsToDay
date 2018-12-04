@@ -165,13 +165,25 @@ button:focus {
     }
 }
 
-#boardSubmit {
+.boardButton {
     margin-bottom: 2%;
-    background: #7fbdff !important;
     border-radius: 25px;
-    width: 100%;
+    width: 50%;
+
+}
+
+#boardSubmit {
+    background: #7fbdff !important;
     border: 2px solid cornflowerblue;
     font-weight: 500;
+}
+
+#boardReset {
+    color: white;
+    background: #93979d;
+    border: 2px solid black;
+    font-weight: 500;
+
 }
 
 #errorTxt {

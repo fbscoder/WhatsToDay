@@ -20,8 +20,14 @@
 
                                 <div class="tasks container">
                                     <button id="boardSubmit"
-                                            class="btn btn-gray sticky-top text-center" onclick="submitForm()"
+                                            class="btn btn-gray sticky-top text-center boardButton"
+                                            onclick="submitForm()"
                                             type="button">Submit
+                                    </button>
+                                    <button id="boardReset"
+                                            class="btn btn-gray sticky-top text-center boardButton"
+                                            onclick="resetForm()"
+                                            type="button">Reset
                                     </button>
 
                                     {% for board in boards %}
@@ -103,13 +109,18 @@
                 i++;
 
             });
-
-            console.log(JSON.stringify(boards));
-
             document.getElementById('selectedBoards').value = JSON.stringify(boards);
 
             $("#boardForm").submit();
 
+        }
+
+        function resetForm() {
+            $("#boardForm .button-active").each(function () {
+                thisButton = $(this);
+                id = thisButton.attr('id');
+                document.getElementById(id).classList.remove('button-active');
+            });
         }
 
 
