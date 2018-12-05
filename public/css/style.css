@@ -213,9 +213,9 @@ p {
 
 .boards {
     margin-top: 1%;
-    margin-bottom: 20vh;
+    margin-bottom: 18vh;
 }
 
-body {
-    height: 100vh;
+.navbar-brand {
+    color: var(--main-bg-color);
 }
