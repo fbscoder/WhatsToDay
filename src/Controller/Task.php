@@ -23,6 +23,8 @@ class Task extends AbstractController
     public function showTask()
     {
         try {
+            $params['taskTodayCount'] = 0;
+            $params['taskTomorrowCount'] = 0;
             if (isset($_POST['card_id']))
                 APIUtils::setTaskToFinish($_POST["card_id"]);
             $boards = json_decode($_GET['selectedBoards']);
@@ -46,18 +48,23 @@ class Task extends AbstractController
                     $count++;
                 }
             }
-            if (empty($task) || empty($tasksTomorrow))
+            if (empty($task) && empty($tasksTomorrow))
                 throw new \Exception('Es sind aktuelle keine Tasks zu erledigen.');
+            elseif (!empty($tasks) && empty($tasksTomorrow)) {
+                $tasksTomorrow = 'No Tasks defined for tomorrow';
+            } elseif (!empty($tasksTomorrow) && empty($tasks)) {
+                $tasks = "No Task defined for today";
+            }
             $params['taskToday'] = $tasks;
             $params['taskTomorrow'] = $tasksTomorrow;
 
-            $params['taskToday'] = array_values($params['taskToday']);
-            $params['taskTomorrow'] = array_values($params['taskTomorrow']);
-
-            $params['taskTodayCount'] = APIUtils::getCountedTasks($params['taskToday']);
-            $params['taskTomorrowCount'] = APIUtils::getCountedTasks($params['taskTomorrow']);
-
-            #$test = $this->render('yourTemplate.html.twig')->getContent();
+            if (is_array($params['taskToday'])) {
+                $params['taskToday'] = array_values($params['taskToday']);
+                $params['taskTodayCount'] = APIUtils::getCountedTasks($params['taskToday']);
+            } elseif (is_array($params['taskTomorrow'])) {
+                $params['taskTomorrow'] = array_values($params['taskTomorrow']);
+                $params['taskTomorrowCount'] = APIUtils::getCountedTasks($params['taskTomorrow']);
+            }
             return $this->render('aufgaben.html.twig', $params);
         } catch (\Exception $exception) {
             $params['error'] = $exception->getMessage();

@@ -62,6 +62,9 @@ ul {
     border: 1px solid grey;
     width: 150px;
     height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
     margin-bottom: 5%;
 }
 
