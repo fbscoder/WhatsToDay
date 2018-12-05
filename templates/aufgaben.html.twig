@@ -3,13 +3,7 @@
 {% block body %}
     <div class="container-fluid">
         <div id="xpullButtons">
-            <div class="xpull">
-                <div class="xpull__start-msg">
-                    <div class="xpull__arrow"></div>
-                </div>
-                <div class="xpull__spinner">
-                    <div class="xpull__spinner-circle"></div>
-                </div>
+            <div class="xpull" id="xpullButtonsDiv">
             </div>
             <div class="timeButtons">
                 <span><button id="btn_today">Heute ( {{ taskTodayCount }} )</button></span><br>
@@ -21,13 +15,7 @@
             <div class="col-md-12">
                 <a href="#" class="btn btn-sm btn-default" id="hideTasks"><i class="fas fa-arrow-circle-left"></i></a>
                 <div id="xpullTask">
-                    <div class="xpull">
-                        <div class="xpull__start-msg">
-                            <div class="xpull__arrow"></div>
-                        </div>
-                        <div class="xpull__spinner">
-                            <div class="xpull__spinner-circle"></div>
-                        </div>
+                    <div class="xpull" id="xpullTaskDiv">
                     </div>
                     <div class="tasks" id="task_today">
                         {% if taskToday is iterable %}

@@ -11,6 +11,7 @@ $(document).ready(function () {
                 $("#tasks").css({'overflow': "hidden"});
             }
         });
+        $('#xpullButtonsDiv').css({'display': "block"});
     });
     $("#btn_today").click(function () {
         $('#tasks').animate({
@@ -25,6 +26,7 @@ $(document).ready(function () {
                 $("#tasks").css({'overflow': "visible"});
             }
         });
+        $('#xpullButtonsDiv').css({'display': "none"});
     });
     $("#btn_tomorrow").click(function () {
 
@@ -40,6 +42,7 @@ $(document).ready(function () {
                 $("#tasks").css({'overflow': "visible"});
             }
         });
+        $('#xpullButtonsDiv').css({'display': "none"});
     });
 
 
