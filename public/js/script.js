@@ -1,4 +1,19 @@
 $(document).ready(function () {
+    if (sessionStorage.getItem('reloadSite') !== null) {
+        if (sessionStorage.getItem('reloadSite') === 'today') {
+            $("#task_tomorrow").css({'display': "none"});
+            $("#task_today").css({'display': "block"});
+        } else {
+            $("#task_today").css({'display': "none"});
+            $("#task_tomorrow").css({'display': "block"});
+        }
+        $("#tasks").css({'overflow': "visible"});
+        $("#tasks").css({'margin-right': "0"});
+        $("#tasks").css({'height': "0"});
+        $(".timeButtons").css({'display': 'none'});
+        sessionStorage.clear();
+    }
+
     $("#hideTasks").click(function () {
         $(".timeButtons").css({'display': 'block'});
         $('#tasks').animate({
@@ -11,12 +26,11 @@ $(document).ready(function () {
             },
             complete: function () {
                 $("#tasks").css({'overflow': "hidden"});
-                $('#xpullButtonsDiv').css({'display': "block"});
             }
         });
     });
     $("#btn_today").click(function () {
-        $('#xpullButtonsDiv').css({'display': "none"});
+        // $('#xpullTaskToday').css({'display': "none"});
         $('#tasks').animate({
             'margin-right': '0',
         }, {
@@ -33,7 +47,7 @@ $(document).ready(function () {
         });
     });
     $("#btn_tomorrow").click(function () {
-        $('#xpullButtonsDiv').css({'display': "none"});
+        // $('#xpullTaskTomorrow').css({'display': "none"});
 
         $('#tasks').animate({
             'margin-right': '0',
@@ -54,31 +68,17 @@ $(document).ready(function () {
     // Init xpull plugin for demo
     $('#task_today').xpull({
         'callback': function () {
-            sessionStorage.setItem('reloadSite', 'true');
+            sessionStorage.setItem('reloadSite', 'today');
             location.reload();
-            window.onload = function () {
-                $("#task_tomorrow").css({'display': "none"});
-                $("#task_today").css({'display': "block"});
-                $("#tasks").css({'overflow': "visible"});
-                $(".timeButtons").css({'display': 'none'});
-                $("#tasks").css({'height': "0"});
-            };
         }
     });
     $('#task_tomorrow').xpull({
         'callback': function () {
-            sessionStorage.setItem('reloadSite', 'false');
+            sessionStorage.setItem('reloadSite', 'tomorrow');
             location.reload();
-            window.onload = function () {
-                $("#task_today").css({'display': "none"});
-                $("#task_tomorrow").css({'display': "block"});
-                $("#tasks").css({'overflow': "visible"});
-                $(".timeButtons").css({'display': 'none'});
-                $("#tasks").css({'height': "0"});
-            };
         }
     });
-    $('#xpullButtons').xpull({
+    $('.timeButtons').xpull({
         'callback': function () {
             location.reload();
         }
