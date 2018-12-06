@@ -222,3 +222,7 @@ p {
 .navbar-fixed-top-margin{
     margin-top: 65px;
 }
+
+#hideTasks {
+    z-index: 100;
+}

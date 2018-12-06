@@ -2,13 +2,11 @@
 {% block title %}Aufgaben Liste{% endblock %}
 {% block body %}
     <div class="container-fluid">
-        <div id="xpullButtons">
-            <div class="xpull" id="xpullButtonsDiv">
+        <div class="timeButtons">
+            <div class="xpull" id="xpullButtons">
             </div>
-            <div class="timeButtons">
-                <span><button id="btn_today">Heute ( {{ taskTodayCount }} )</button></span><br>
-                <span><button id="btn_tomorrow">Morgen ( {{ taskTomorrowCount }} )</button></span>
-            </div>
+            <span><button id="btn_today">Heute ({{ taskTodayCount }})</button></span><br>
+            <span><button id="btn_tomorrow">Morgen ({{ taskTomorrowCount }})</button></span>
         </div>
 
         <div class="row" id="tasks" style="word-break: normal">
