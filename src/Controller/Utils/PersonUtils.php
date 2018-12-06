@@ -6,15 +6,14 @@ use App\Controller\Utils\Person\PersonData;
 
 class PersonUtils
 {
-    public static function getPersonData($emal)
+    public static function getPersonData($email)
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();
-        $sql = "Select u.id, t.token_key from users u Join token t on t.id_keys = u.id Where u.email = '$emal'";
+        $sql = "Select u.id, t.token from users u Join token t on t.u_id = u.id Where u.email = '$email'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-            // output data of each row
             while ($row = $result->fetch_assoc()) {
-                return new PersonData(sha1($row["id"]), $row["token_key"]);
+                return new PersonData(sha1($row["id"]), $row["token"]);
             }
         } else {
             echo "0 results";
@@ -26,19 +25,26 @@ class PersonUtils
     public static function checkIfRightPerson($email, $password)
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();
-        $passwordHash = hash('SHA1',$password);
-
-
-        return false;
+        $passwordHash = hash('SHA1', $password);
+        $sql = "select u.id, t.token from users u
+                JOIN token t ON u.id = t.u_id
+            where u.email = '$email' and u.password = '$passwordHash'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                return true;
+            }
+        } else {
+            return false;
+        }
     }
 
     public static function checkIfPersonExists()
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();
-        $username = "test";
         $email = "test.test@test.at";
-        $sql = "select username, email from users
-            where username = '$username' or email = '$email'";
+        $sql = "select email from users
+            where  email = '$email'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             print "ERROR";

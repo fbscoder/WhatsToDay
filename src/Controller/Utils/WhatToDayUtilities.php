@@ -13,7 +13,7 @@ class WhatToDayUtilities
 {
     public static function setSession($Person)
     {
-        $_SESSION["PersonUtils"] = $Person;
+        $_SESSION["PersonData"] = $Person;
     }
     public static function getDataBaseConnection()
     {
