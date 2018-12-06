@@ -5,36 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5200451e-dd5b-4069-a7d0-b98349ff43ae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/console" beforeDir="false" afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/phpunit" beforeDir="false" afterPath="$PROJECT_DIR$/bin/phpunit" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Board.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Board.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Utils/APIUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Utils/APIUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Utils/WhatToDayUtilities.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Utils/WhatToDayUtilities.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/APIUtils.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Board.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Person/PersonData.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/PersonUtils.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Task.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Task/CheckData.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Task/CheckListData.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Task/TaskData.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Utils/APIUtils.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Utils/Person/PersonData.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Utils/PersonUtils.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Utils/Task/CheckData.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Utils/Task/CheckListData.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Utils/Task/TaskData.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/Utils/WhatToDayUtilities.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Utils/WhatToDayUtilities.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,10 +37,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="62" column="51" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+            <state relative-caret-position="323">
+              <caret line="29" column="57" selection-start-line="29" selection-end-line="30" />
               <folding>
                 <element signature="e#35#72#0#PHP" expanded="true" />
               </folding>
@@ -74,30 +58,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Utils/WhatToDayUtilities.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Board.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+              <caret line="24" selection-start-line="24" selection-end-line="25" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Utils/APIUtils.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Task.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="241">
+              <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
               <folding>
-                <element signature="e#40#80#0#PHP" expanded="true" />
+                <element signature="e#119#147#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -203,10 +178,8 @@
         <option value="$PROJECT_DIR$/templates/error.html.twig" />
         <option value="$PROJECT_DIR$/templates/showBoards.html.twig" />
         <option value="$PROJECT_DIR$/public/css/aufgaben.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Task.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/style.css" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/public/css/login_style.css" />
         <option value="$PROJECT_DIR$/templates/login.html.twig" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
@@ -216,10 +189,12 @@
         <option value="$PROJECT_DIR$/templates/Utils/PersonUtils.php" />
         <option value="$PROJECT_DIR$/templates/Utils/WhatToDayUtilities.php" />
         <option value="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Board.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Login.php" />
         <option value="$PROJECT_DIR$/src/Controller/Utils/WhatToDayUtilities.php" />
         <option value="$PROJECT_DIR$/src/Controller/Utils/APIUtils.php" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Login.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Board.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Task.php" />
       </list>
     </option>
   </component>
@@ -393,6 +368,11 @@
             <path>
               <item name="WhatsToDay" type="b2602c69:ProjectViewProjectNode" />
               <item name="WhatsToDay" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WhatsToDay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WhatsToDay" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -489,7 +469,7 @@
       <workItem from="1543901163403" duration="1208000" />
       <workItem from="1543906228580" duration="8593000" />
       <workItem from="1543991774055" duration="8961000" />
-      <workItem from="1544097559839" duration="4675000" />
+      <workItem from="1544097559839" duration="5225000" />
     </task>
     <task id="LOCAL-00001" summary="Rename">
       <created>1543302613856</created>
@@ -673,17 +653,24 @@
       <option name="project" value="LOCAL" />
       <updated>1544099347002</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Login Page">
+      <created>1544102319349</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1544102319349</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119521000" />
+    <option name="totallyTimeSpent" value="120071000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33360323" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33360323" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3285968" />
@@ -691,7 +678,7 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.3285968" />
       <window_info anchor="bottom" id="Run" order="4" />
-      <window_info anchor="bottom" id="Debug" order="5" visible="true" weight="0.42628774" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.42628774" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="8" />
@@ -842,13 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
@@ -861,13 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="128" column="18" selection-start-line="128" selection-start-column="18" selection-end-line="128" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1921">
-          <caret line="113" column="35" selection-start-line="113" selection-start-column="35" selection-end-line="113" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -889,16 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1042">
-          <caret line="70" column="61" selection-start-line="70" selection-start-column="11" selection-end-line="70" selection-end-column="61" />
-          <folding>
-            <element signature="e#119#147#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1001,12 +964,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Login.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/Utils/APIUtils.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state relative-caret-position="176">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding>
-            <element signature="e#35#72#0#PHP" expanded="true" />
+            <element signature="e#40#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1014,23 +977,47 @@
     <entry file="file://$PROJECT_DIR$/src/Controller/Utils/WhatToDayUtilities.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="62" column="51" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Board.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+          <caret line="24" selection-start-line="24" selection-end-line="25" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Utils/APIUtils.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/Login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        <state relative-caret-position="323">
+          <caret line="29" column="57" selection-start-line="29" selection-end-line="30" />
           <folding>
-            <element signature="e#40#80#0#PHP" expanded="true" />
+            <element signature="e#35#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Task.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+          <folding>
+            <element signature="e#119#147#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

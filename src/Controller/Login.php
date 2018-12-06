@@ -15,6 +15,10 @@ class Login extends AbstractController
      */
     public function index()
     {
+        if (!isset($_SESSION))
+            session_start();
+        if (isset($_SESSION["PersonData"]))
+            unset($_SESSION["PersonData"]);
         if ((isset($_POST["email"]) && !empty($_POST["email"])) && isset($_POST["password"]) && !empty($_POST["password"])) {
             $email = $_POST["email"];
             $password = $_POST["password"];

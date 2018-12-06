@@ -22,6 +22,8 @@ class Task extends AbstractController
      */
     public function showTask()
     {
+        if (!isset($_SESSION["PersonData"]))
+            return $this->redirectToRoute('app_login_index');
         try {
             $params['taskTodayCount'] = 0;
             $params['taskTomorrowCount'] = 0;

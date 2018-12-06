@@ -22,6 +22,8 @@ class Board extends AbstractController
      */
     public function showBoard()
     {
+        if (!isset($_SESSION["PersonData"]))
+            return $this->redirectToRoute('app_login_index');
         $params['boards'] = APIUtils::getBoards();
         return $this->render('showBoards.html.twig', $params);
     }
