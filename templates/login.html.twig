@@ -30,16 +30,15 @@
 {% block body %}
     {% block header %}{% endblock %}
     <div class="card card-container">
-        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"/>
+        <img id="profile-img" class="profile-img-card" src="img/icon.png"/>
         <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin">
-            <span id="reauth-email" class="reauth-email"></span>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+        <form class="form-signin" action="/" method="POST" >
+            <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail Adresse" required autofocus>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Passwort" required>
+            <button class="btn btn-gray" type="submit">Log-in</button>
         </form><!-- /form -->
         <a href="#" class="forgot-password">
-            Forgot the password?
+            Passwort vergessen?
         </a>
     </div><!-- /card-container -->
 {% endblock %}

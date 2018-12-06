@@ -15,10 +15,15 @@ class Login extends AbstractController
      */
     public function index()
     {
-        //$username = "test";
-        //WhatToDayUtilities::setSession(PersonUtils::getPersonData($username));
+        if (isset($_POST)) {
+            $ok = PersonUtils::checkIfRightPerson($_POST["email"], $_POST["password"]);
+            if($ok){
+                WhatToDayUtilities::setSession(PersonUtils::getPersonData($_POST["email"]));
+                header("/Boards");
+            }
+            //ERROR
+        }
 
-        //APIUtils::test();
         return $this->render('login.html.twig');
     }
 }

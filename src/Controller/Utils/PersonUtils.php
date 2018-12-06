@@ -23,9 +23,11 @@ class PersonUtils
 
     }
 
-    public static function checkIfRightPerson($array)
+    public static function checkIfRightPerson($email, $password)
     {
+        $passwordHash = hash('SHA1',$password);
 
+        return false;
     }
 
     public static function checkIfPersonExists()

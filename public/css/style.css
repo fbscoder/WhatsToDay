@@ -219,3 +219,6 @@ p {
 .navbar-brand {
     color: var(--main-bg-color);
 }
+.navbar-fixed-top-margin{
+    margin-top: 65px;
+}
