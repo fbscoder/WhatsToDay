@@ -3,6 +3,8 @@
 namespace App\Controller\Utils;
 
 use App\Controller\Utils\Person\PersonData;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class PersonUtils
 {
@@ -62,6 +64,14 @@ class PersonUtils
         // } else {
         //     echo "Error: " . $sql . "<br>" . $conn->error;
         // }
+    }
+    /**
+     * @\Sensio\Bundle\FrameworkExtraBundle\Configuration\Route  ("/changePassword")
+     */
+    public function changePassword()
+    {
+        echo 'test123';
+        return new Response('Test');
     }
 }
 

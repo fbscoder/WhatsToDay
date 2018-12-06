@@ -77,11 +77,25 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <form action="/changePassword" method="post">
+                            <div class="form-group">
+                                <label for="passwordOld">Altes Password:</label>
+                                <input type="password" class="form-control" name="passwordOld" id="passwordOld">
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordNew">Neues Password:</label>
+                                <input type="password" class="form-control" name="passwordNew" id="passwordNew">
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordNewRepeat">Passwort wiederholen:</label>
+                                <input type="password" class="form-control" name="passwordNewRepeat" id="passwordNewRepeat">
+                            </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
-                        <button type="button" class="btn btn-gray">Passwort ändern</button>
+                        <button type="submit" class="btn btn-gray">Passwort ändern</button>
+                        </form>
                     </div>
                 </div>
             </div>
