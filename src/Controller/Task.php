@@ -65,7 +65,8 @@ class Task extends AbstractController
             if (is_array($params['taskToday'])) {
                 $params['taskToday'] = array_values($params['taskToday']);
                 $params['taskTodayCount'] = APIUtils::getCountedTasks($params['taskToday']);
-            } elseif (is_array($params['taskTomorrow'])) {
+            }
+            if (is_array($params['taskTomorrow'])) {
                 $params['taskTomorrow'] = array_values($params['taskTomorrow']);
                 $params['taskTomorrowCount'] = APIUtils::getCountedTasks($params['taskTomorrow']);
             }
