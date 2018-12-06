@@ -14,116 +14,117 @@
         <div class="row" id="tasks" style="word-break: normal">
             <div class="col-md-12">
                 <a href="#" class="btn btn-sm btn-default" id="hideTasks"><i class="fas fa-arrow-circle-left"></i></a>
-                <div id="xpullTask">
-                    <div class="xpull" id="xpullTaskDiv">
+                <div class="tasks" id="task_today">
+                    <div class="xpull" id="xpullTaskToday">
                     </div>
-                    <div class="tasks" id="task_today">
-                        {% if taskToday is iterable %}
-                            {% for task in taskToday %}
-                                <div class="card text-center task_card">
-                                    <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
-                                         href="#task_1_{{ loop.index }}"
-                                         aria-controls="task_1_{{ loop.index }}">
-                                        <p>{{ task.title }}</p>
-                                    </div>
-                                    <div class="collapse" id="task_1_{{ loop.index }}">
-                                        <div class="card-body ">
-                                            {% if task.description != null %}
-                                                <p class="card-text">{{ task.description }}</p>
+                    {% if taskToday is iterable %}
+                        {% for task in taskToday %}
+                            <div class="card text-center task_card">
+                                <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
+                                     href="#task_1_{{ loop.index }}"
+                                     aria-controls="task_1_{{ loop.index }}">
+                                    <p>{{ task.title }}</p>
+                                </div>
+                                <div class="collapse" id="task_1_{{ loop.index }}">
+                                    <div class="card-body ">
+                                        {% if task.description != null %}
+                                            <p class="card-text">{{ task.description }}</p>
+                                        {% endif %}
+                                        <ul>
+                                            {% if task.checkListData != null %}
+                                                {% for checklist in task.checkListData %}
+                                                    <p class="checkbox-title">{{ checklist.name }}</p>
+                                                    {% if checklist.check %}
+                                                        {% for subTask in checklist.check %}
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox"
+                                                                           class="custom-control-input"
+                                                                           id="checkBox_1_{{ loop.index }}" disabled
+                                                                           {% if subTask.isChecked %}checked{% endif %}>
+                                                                    <label class="custom-control-label"
+                                                                           for="checkBox_1_{{ loop.index }}">{{ subTask.name }}</label>
+                                                                </div>
+                                                            </li>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                {% endfor %}
                                             {% endif %}
-                                            <ul>
-                                                {% if task.checkListData != null %}
-                                                    {% for checklist in task.checkListData %}
-                                                        <p class="checkbox-title">{{ checklist.name }}</p>
-                                                        {% if checklist.check %}
-                                                            {% for subTask in checklist.check %}
-                                                                <li>
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox"
-                                                                               class="custom-control-input"
-                                                                               id="checkBox_1_{{ loop.index }}" disabled
-                                                                               {% if subTask.isChecked %}checked{% endif %}>
-                                                                        <label class="custom-control-label"
-                                                                               for="checkBox_1_{{ loop.index }}">{{ subTask.name }}</label>
-                                                                    </div>
-                                                                </li>
-                                                            {% endfor %}
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                {% endif %}
-                                            </ul>
-                                        </div>
-                                        <div class="card-footer text-muted">
-                                            <!-- Button trigger modal -->
-                                            <button type="button"
-                                                    onclick="setTaskValuesInModal('{{ task.id }}','{{ task.title }}',this)"
-                                                    class="btn btn-gray" data-toggle="modal"
-                                                    data-target="#finish_task">
-                                                Abschlie&szlig;en
-                                            </button>
-                                        </div>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <!-- Button trigger modal -->
+                                        <button type="button"
+                                                onclick="setTaskValuesInModal('{{ task.id }}','{{ task.title }}',this)"
+                                                class="btn btn-gray" data-toggle="modal"
+                                                data-target="#finish_task">
+                                            Abschlie&szlig;en
+                                        </button>
                                     </div>
                                 </div>
-                            {% endfor %}
-                        {% else %}
-                            <p>{{ taskToday }}</p>
-                        {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>{{ taskToday }}</p>
+                    {% endif %}
+                </div>
+                <div class="tasks" id="task_tomorrow">
+                    <div class="xpull" id="xpullTaskTomorrow">
                     </div>
-                    <div class="tasks" id="task_tomorrow">
-                        {% if taskTomorrow is iterable %}
-                            {% for task in taskTomorrow %}
-                                <div class="card text-center task_card">
-                                    <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
-                                         href="#task_2_{{ loop.index }}"
-                                         aria-controls="task_2_{{ loop.index }}">
-                                        <p>{{ task.title }}</p>
-                                    </div>
-                                    <div class="collapse" id="task_2_{{ loop.index }}">
-                                        <div class="card-body ">
-                                            {% if task.description != null %}
-                                                <p class="card-text">{{ task.description }}</p>
+                    {% if taskTomorrow is iterable %}
+                        {% for task in taskTomorrow %}
+                            <div class="card text-center task_card">
+                                <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
+                                     href="#task_2_{{ loop.index }}"
+                                     aria-controls="task_2_{{ loop.index }}">
+                                    <p>{{ task.title }}</p>
+                                </div>
+                                <div class="collapse" id="task_2_{{ loop.index }}">
+                                    <div class="card-body ">
+                                        {% if task.description != null %}
+                                            <p class="card-text">{{ task.description }}</p>
+                                        {% endif %}
+                                        <ul>
+                                            {% if task.checkListData != null %}
+                                                {% for checklist in task.checkListData %}
+                                                    <p class="checkbox-title">{{ checklist.name }}</p>
+                                                    {% if checklist.check %}
+                                                        {% for subTask in checklist.check %}
+                                                            <li>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox"
+                                                                           class="custom-control-input"
+                                                                           id="checkBox_2_{{ loop.index }}" disabled
+                                                                           {% if subTask.isChecked %}checked{% endif %}>
+                                                                    <label class="custom-control-label"
+                                                                           for="checkBox_2_{{ loop.index }}">{{ subTask.name }}</label>
+                                                                </div>
+                                                            </li>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                {% endfor %}
                                             {% endif %}
-                                            <ul>
-                                                {% if task.checkListData != null %}
-                                                    {% for checklist in task.checkListData %}
-                                                        <p class="checkbox-title">{{ checklist.name }}</p>
-                                                        {% if checklist.check %}
-                                                            {% for subTask in checklist.check %}
-                                                                <li>
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <input type="checkbox"
-                                                                               class="custom-control-input"
-                                                                               id="checkBox_2_{{ loop.index }}" disabled
-                                                                               {% if subTask.isChecked %}checked{% endif %}>
-                                                                        <label class="custom-control-label"
-                                                                               for="checkBox_2_{{ loop.index }}">{{ subTask.name }}</label>
-                                                                    </div>
-                                                                </li>
-                                                            {% endfor %}
-                                                        {% endif %}
-                                                    {% endfor %}
-                                                {% endif %}
-                                            </ul>
-                                        </div>
-                                        <div class="card-footer text-muted">
-                                            <!-- Button trigger modal -->
-                                            <button type="button"
-                                                    onclick="setTaskValuesInModal('{{ task.id }}','{{ task.title }}',this)"
-                                                    class="btn btn-gray" data-toggle="modal"
-                                                    data-target="#finish_task">
-                                                Abschließen
-                                            </button>
-                                        </div>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <!-- Button trigger modal -->
+                                        <button type="button"
+                                                onclick="setTaskValuesInModal('{{ task.id }}','{{ task.title }}',this)"
+                                                class="btn btn-gray" data-toggle="modal"
+                                                data-target="#finish_task">
+                                            Abschließen
+                                        </button>
                                     </div>
                                 </div>
-                            {% endfor %}
-                        {% else %}
-                            <p>{{ taskTomorrow }}</p>
-                        {% endif %}
-                    </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>{{ taskTomorrow }}</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Modal -->
@@ -151,10 +152,8 @@
             </div>
         </div>
     </div>
-    </div>
     <script>
         $(function () {
-
 
         });
     </script>

@@ -52,17 +52,35 @@ $(document).ready(function () {
     });
 
     // Init xpull plugin for demo
-    $('#xpullTask').xpull({
+    $('#task_today').xpull({
         'callback': function () {
+            sessionStorage.setItem('reloadSite', 'true');
             location.reload();
-            console.log('Released...');
+            window.onload = function () {
+                $("#task_tomorrow").css({'display': "none"});
+                $("#task_today").css({'display': "block"});
+                $("#tasks").css({'overflow': "visible"});
+                $(".timeButtons").css({'display': 'none'});
+                $("#tasks").css({'height': "0"});
+            };
+        }
+    });
+    $('#task_tomorrow').xpull({
+        'callback': function () {
+            sessionStorage.setItem('reloadSite', 'false');
+            location.reload();
+            window.onload = function () {
+                $("#task_today").css({'display': "none"});
+                $("#task_tomorrow").css({'display': "block"});
+                $("#tasks").css({'overflow': "visible"});
+                $(".timeButtons").css({'display': 'none'});
+                $("#tasks").css({'height': "0"});
+            };
         }
     });
     $('#xpullButtons').xpull({
         'callback': function () {
             location.reload();
-            console.log('Released...');
         }
     });
-
 });
