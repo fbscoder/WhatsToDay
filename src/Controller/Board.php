@@ -22,8 +22,8 @@ class Board extends AbstractController
      */
     public function showBoard()
     {
-        $username = "test";
-        WhatToDayUtilities::setSession(PersonUtils::getPersonData($username));
+        $email = "test.test@test.at";
+        WhatToDayUtilities::setSession(PersonUtils::getPersonData($email));
         $params['boards'] = APIUtils::getBoards();
         return $this->render('showBoards.html.twig', $params);
     }

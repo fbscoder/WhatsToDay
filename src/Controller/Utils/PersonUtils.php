@@ -6,10 +6,10 @@ use App\Controller\Utils\Person\PersonData;
 
 class PersonUtils
 {
-    public static function getPersonData($username)
+    public static function getPersonData($emal)
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();
-        $sql = "Select u.id, t.token_key from users u Join token t on t.id_keys = u.id Where u.username = '$username'";
+        $sql = "Select u.id, t.token_key from users u Join token t on t.id_keys = u.id Where u.email = '$emal'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             // output data of each row
@@ -25,7 +25,9 @@ class PersonUtils
 
     public static function checkIfRightPerson($email, $password)
     {
+        $conn = WhatToDayUtilities::getDataBaseConnection();
         $passwordHash = hash('SHA1',$password);
+
 
         return false;
     }
