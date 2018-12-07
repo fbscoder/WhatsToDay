@@ -65,13 +65,29 @@ class PersonUtils
         //     echo "Error: " . $sql . "<br>" . $conn->error;
         // }
     }
+
     /**
      * @\Sensio\Bundle\FrameworkExtraBundle\Configuration\Route  ("/changePassword")
      */
     public function changePassword()
     {
-        echo 'test123';
-        return new Response('Test');
+        $conn = WhatToDayUtilities::getDataBaseConnection();
+        if (isset($_SESSION['PersonData'])) {
+            $sql = "select password from users where id =" . $_SESSION['PersonData']->ID;
+            $result = $conn->query($sql)->fetch_assoc();
+            $oldPasswordHashed = hash('SHA1', $_POST['passwordOld']);
+            if ($oldPasswordHashed == $result['password'] && $_POST['passwordNew'] === $_POST['passwordNewRepeat']) {
+                $newPasswordHash = hash('SHA1', $_POST['passwordNewRepeat']);
+                $sql = $conn->prepare('UPDATE users SET password = ' . "'" . $newPasswordHash . "'" . ' 
+                WHERE id =' . $_SESSION['PersonData']->ID);
+                $sql->execute();
+            } elseif ($oldPasswordHashed != $result['password'] && $_POST['passwordNew'] === $_POST['passwordNewRepeat']) {
+                return new Response('Ihr altes Passwort stimmt nicht mit den eingegebenen Passwort überein.');
+            } elseif ($oldPasswordHashed == $result['password'] && $_POST['passwordNew'] != $_POST['passwordNewRepeat']) {
+                return new Response('Ihr neuen Passwörter stimmen nicht überein!');
+            }
+        }
+
     }
 }
 
