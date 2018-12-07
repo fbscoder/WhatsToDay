@@ -20,18 +20,18 @@ class Login extends AbstractController
         if (isset($_SESSION["PersonData"]))
             unset($_SESSION["PersonData"]);
         if ((isset($_POST["email"]) && !empty($_POST["email"])) && isset($_POST["password"]) && !empty($_POST["password"])) {
-            $email = $_POST["email"];
             $password = $_POST["password"];
-            unset($_POST["email"]);
-            unset($_POST["password"]);
+            $email = $_POST["email"];
             $ok = PersonUtils::checkIfRightPerson($email, $password);
             if ($ok) {
                 WhatToDayUtilities::setSession(PersonUtils::getPersonData($email));
                 return $this->redirectToRoute('app_board_showboard');
             } else {
                 echo "<script>
-                    sessionStorage.setItem('login','false');
+                    sessionStorage.setItem('login', '$email');
                 </script>";
+                unset($_POST["email"]);
+                unset($_POST["password"]);
             }
 
         }

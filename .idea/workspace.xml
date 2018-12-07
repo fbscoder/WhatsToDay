@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5200451e-dd5b-4069-a7d0-b98349ff43ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/js/board.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/task.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/finishTasks.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/submitForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/aufgaben.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aufgaben.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/showBoards.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/showBoards.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,11 +34,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/board.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+            <state relative-caret-position="34">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -64,7 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$Person</find>
       <find>&quot;overflow:hidden!important&quot;</find>
       <find>task_</find>
       <find>task</find>
@@ -92,8 +101,9 @@
       <find>transform</find>
       <find>xpullButtons</find>
       <find>timeButtons</find>
-      <find>time</find>
       <find>display</find>
+      <find>time</find>
+      <find>xpull</find>
     </findStrings>
     <replaceStrings>
       <replace>$person</replace>
@@ -117,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Controller/UserFunctions.php" />
         <option value="$PROJECT_DIR$/src/Controller/PersonData2.php" />
         <option value="$PROJECT_DIR$/src/Controller/PersonData.php" />
         <option value="$PROJECT_DIR$/src/Controller/Main_API.php" />
@@ -151,13 +160,10 @@
         <option value="$PROJECT_DIR$/templates/Utils/WhatToDayUtilities.php" />
         <option value="$PROJECT_DIR$/src/Controller/Utils/WhatToDayUtilities.php" />
         <option value="$PROJECT_DIR$/src/Controller/Utils/APIUtils.php" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Login.php" />
         <option value="$PROJECT_DIR$/src/Controller/Board.php" />
         <option value="$PROJECT_DIR$/src/Controller/Task.php" />
         <option value="$PROJECT_DIR$/public/js/xpull.js" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/public/js/login.js" />
         <option value="$PROJECT_DIR$/public/js/xpull_functions.js" />
         <option value="$PROJECT_DIR$/public/js/submitForm.js" />
         <option value="$PROJECT_DIR$/public/js/boards.js" />
@@ -165,9 +171,13 @@
         <option value="$PROJECT_DIR$/public/js/finishTasks.js" />
         <option value="$PROJECT_DIR$/public/js/tasks.js" />
         <option value="$PROJECT_DIR$/public/js/script.js" />
+        <option value="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/aufgaben.html.twig" />
         <option value="$PROJECT_DIR$/templates/showBoards.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" />
+        <option value="$PROJECT_DIR$/public/js/board.js" />
+        <option value="$PROJECT_DIR$/public/js/login.js" />
+        <option value="$PROJECT_DIR$/src/Controller/Login.php" />
       </list>
     </option>
   </component>
@@ -668,11 +678,25 @@
       <option name="project" value="LOCAL" />
       <updated>1544173142504</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="javascript files">
+      <created>1544174154867</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1544174154867</updated>
+    </task>
+    <task id="LOCAL-00030" summary="javascript files">
+      <created>1544177155675</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1544177155675</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124641000" />
+    <option name="totallyTimeSpent" value="128465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -736,7 +760,8 @@
     <MESSAGE value="Navbar" />
     <MESSAGE value="Login Page" />
     <MESSAGE value="Tasks&#10;xpull verbessert" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tasks&#10;xpull verbessert" />
+    <MESSAGE value="javascript files" />
+    <option name="LAST_COMMIT_MESSAGE" value="javascript files" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -761,13 +786,6 @@
     <entry file="file://$PROJECT_DIR$/composer.lock" />
     <entry file="file://$PROJECT_DIR$/src/Controller/finishTask.php" />
     <entry file="file://$PROJECT_DIR$/unzip.php" />
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/board.html" />
     <entry file="file://$PROJECT_DIR$/templates/error.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -896,48 +914,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-859">
-          <caret line="62" column="51" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/board.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#buttonClick#0" />
-            <element signature="n#!!block;n#submitForm#0" />
-            <element signature="n#!!block;n#resetForm#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/finishTasks.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/showBoards.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="56" column="25" lean-forward="true" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/aufgaben.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="161" selection-start-line="161" selection-end-line="161" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -958,23 +936,6 @@
             <element signature="e#2413#2554#0" />
             <element signature="e#2587#2731#0" />
             <element signature="e#2762#2844#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="57" selection-start-line="29" selection-end-line="30" />
-          <folding>
-            <element signature="e#35#72#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1013,10 +974,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-201">
+          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <caret line="17" column="65" lean-forward="true" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/aufgaben.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="161" column="30" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/showBoards.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="82" selection-start-line="31" selection-start-column="71" selection-end-line="31" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/board.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
         </state>
       </provider>
     </entry>
