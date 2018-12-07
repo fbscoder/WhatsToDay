@@ -231,3 +231,8 @@ p {
 .timeButtons .row {
     text-align: center;
 }
+
+.warning {
+    text-align: center;
+    color: red;
+}

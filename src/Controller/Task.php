@@ -53,7 +53,7 @@ class Task extends AbstractController
                 }
             }
             if (empty($task) && empty($tasksTomorrow))
-                throw new \Exception('Es sind aktuelle keine Tasks zu erledigen.');
+                throw new \Exception('Es sind aktuell keine Tasks zu erledigen.');
             elseif (!empty($tasks) && empty($tasksTomorrow)) {
                 $tasksTomorrow = 'No Tasks defined for tomorrow';
             } elseif (!empty($tasksTomorrow) && empty($tasks)) {

@@ -69,7 +69,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="password_label">Password ändern</h5>
+                        <h5 class="modal-title" id="password_label">Passwort ändern</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -77,11 +77,11 @@
                     <div class="modal-body">
                         <form action="/changePassword" id="changePasswordForm" method="post">
                             <div class="form-group">
-                                <label for="passwordOld">Altes Password:</label>
+                                <label for="passwordOld">Altes Passwort:</label>
                                 <input type="password" class="form-control" name="passwordOld" id="passwordOld">
                             </div>
                             <div class="form-group">
-                                <label for="passwordNew">Neues Password:</label>
+                                <label for="passwordNew">Neues Passwort:</label>
                                 <input type="password" class="form-control" name="passwordNew" id="passwordNew">
                             </div>
                             <div class="form-group">
@@ -131,6 +131,10 @@
     {% endblock %}
 </div>
 <script>
+
+    // TODO
+    // Javascript in eingenes JS File auslagenern
+
     $("#changePasswordForm").submit(function (event) {
         event.preventDefault(); //prevent default action
         var form_data = $(this).serialize(); //Encode form elements for submission
@@ -140,26 +144,30 @@
             type: 'post',
             data: form_data,
             success: function (output) {
-                $("#alert").attr('class', 'hidden');
+                var alert = $("#alert");
+                alert.attr('class', 'hidden');
                 if (output === "success") {
-                    $("#alert").addClass('alert alert-success');
-                    $("#alert").removeClass('hidden');
-                    $("#alert").text("Ihr Passwort wurde geändert");
+                    alert.addClass('alert alert-success');
+                    alert.removeClass('hidden');
+                    alert.text("Ihr Passwort wurde geändert");
                 }
                 else if (output === "oldPasswordWrong") {
-                    $("#alert").addClass('alert alert-dark');
-                    $("#alert").removeClass('hidden');
-                    $("#alert").text("Ihr altes Passwort stimmt nicht mit den eingegebenen Passwort überein.");
+                    alert.addClass('alert alert-dark warning');
+                    alert.removeClass('hidden');
+                    alert.text("Ihr altes Passwort stimmt nicht mit den eingegebenen Passwort überein.");
                 }
                 else if (output === "passwordNotMatching") {
-                    $("#alert").addClass('alert alert-dark');
-                    $("#alert").removeClass('hidden');
-                    $("#alert").text("Ihr neuen Passwörter stimmen nicht überein!");
+                    alert.addClass('alert alert-dark warning');
+                    alert.removeClass('hidden');
+                    alert.text("Ihr neuen Passwörter stimmen nicht überein!");
                 }
-                console.log(output);
+                $("#passwordOld").val('');
+                $("#passwordNew").val('');
+                $("#passwordNewRepeat").val('');
             }
         })
     });
+
 </script>
 </body>
 {% block javascripts %}{% endblock %}
