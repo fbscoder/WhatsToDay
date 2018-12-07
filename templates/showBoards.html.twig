@@ -54,58 +54,5 @@
 {% endblock %}
 
 {% block javascripts %}
-
-    <script>
-
-        function buttonClick(id) {
-
-            var button = document.getElementById(id);
-
-            if (button.classList.contains('button-active')) {
-
-                button.classList.remove('button-active');
-
-            } else {
-
-                button.classList.add('button-active');
-
-            }
-
-        }
-
-
-        function submitForm() {
-
-            var boards = [];
-
-            var i = 0;
-
-            $("#boardForm .button-active").each(function (index) {
-
-                valu = $(this).val();
-
-                boards[i] = valu;
-
-                i++;
-
-            });
-            document.getElementById('selectedBoards').value = JSON.stringify(boards);
-
-            $("#boardForm").submit();
-
-        }
-
-        function resetForm() {
-            $("#boardForm .button-active").each(function () {
-                thisButton = $(this);
-                id = thisButton.attr('id');
-                document.getElementById(id).classList.remove('button-active');
-            });
-        }
-
-
-    </script>
-
-    {#<script src="js/submitForm.js"></script>#}
-
+    <script src="js/board.js"></script>
 {% endblock %}

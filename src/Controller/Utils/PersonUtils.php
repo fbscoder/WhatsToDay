@@ -15,7 +15,7 @@ class PersonUtils
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                return new PersonData(sha1($row["id"]), $row["token"]);
+                return new PersonData($row["id"], $row["token"]);
             }
         } else {
             echo "0 results";
