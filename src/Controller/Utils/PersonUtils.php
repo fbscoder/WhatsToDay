@@ -4,7 +4,6 @@ namespace App\Controller\Utils;
 
 use App\Controller\Utils\Person\PersonData;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 
 class PersonUtils
 {
@@ -81,10 +80,11 @@ class PersonUtils
                 $sql = $conn->prepare('UPDATE users SET password = ' . "'" . $newPasswordHash . "'" . ' 
                 WHERE id =' . $_SESSION['PersonData']->ID);
                 $sql->execute();
+                return new Response('success');
             } elseif ($oldPasswordHashed != $result['password'] && $_POST['passwordNew'] === $_POST['passwordNewRepeat']) {
-                return new Response('Ihr altes Passwort stimmt nicht mit den eingegebenen Passwort überein.');
+                return new Response('oldPasswordWrong');
             } elseif ($oldPasswordHashed == $result['password'] && $_POST['passwordNew'] != $_POST['passwordNewRepeat']) {
-                return new Response('Ihr neuen Passwörter stimmen nicht überein!');
+                return new Response('passwordNotMatching');
             }
         }
 

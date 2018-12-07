@@ -75,7 +75,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="/changePassword" method="post">
+                        <form action="/changePassword" id="changePasswordForm" method="post">
                             <div class="form-group">
                                 <label for="passwordOld">Altes Password:</label>
                                 <input type="password" class="form-control" name="passwordOld" id="passwordOld">
@@ -87,6 +87,8 @@
                             <div class="form-group">
                                 <label for="passwordNewRepeat">Passwort wiederholen:</label>
                                 <input type="password" class="form-control" name="passwordNewRepeat" id="passwordNewRepeat">
+                            </div>
+                            <div class="hidden" role="alert" id="alert">
                             </div>
 
                     </div>
@@ -128,7 +130,37 @@
     {% block body %}
     {% endblock %}
 </div>
+<script>
+    $("#changePasswordForm").submit(function (event) {
+        event.preventDefault(); //prevent default action
+        var form_data = $(this).serialize(); //Encode form elements for submission
 
+        $.ajax({
+            url: '/changePassword',
+            type: 'post',
+            data: form_data,
+            success: function (output) {
+                $("#alert").attr('class', 'hidden');
+                if (output === "success") {
+                    $("#alert").addClass('alert alert-success');
+                    $("#alert").removeClass('hidden');
+                    $("#alert").text("Ihr Passwort wurde geändert");
+                }
+                else if (output === "oldPasswordWrong") {
+                    $("#alert").addClass('alert alert-dark');
+                    $("#alert").removeClass('hidden');
+                    $("#alert").text("Ihr altes Passwort stimmt nicht mit den eingegebenen Passwort überein.");
+                }
+                else if (output === "passwordNotMatching") {
+                    $("#alert").addClass('alert alert-dark');
+                    $("#alert").removeClass('hidden');
+                    $("#alert").text("Ihr neuen Passwörter stimmen nicht überein!");
+                }
+                console.log(output);
+            }
+        })
+    });
+</script>
 </body>
 {% block javascripts %}{% endblock %}
 </html>
