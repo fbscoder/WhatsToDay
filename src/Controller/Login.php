@@ -29,7 +29,9 @@ class Login extends AbstractController
                 WhatToDayUtilities::setSession(PersonUtils::getPersonData($email));
                 return $this->redirectToRoute('app_board_showboard');
             } else {
-                //ERROR
+                echo "<script>
+                    sessionStorage.setItem('login','false');
+                </script>";
             }
 
         }

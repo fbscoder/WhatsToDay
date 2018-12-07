@@ -128,3 +128,13 @@
 .navbar-fixed-top-margin{
     margin-top: 0;
 }
+
+.alert {
+    text-align: center;
+    color: red;
+    display: block;
+}
+
+.hidden {
+    display: none;
+}

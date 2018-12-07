@@ -83,4 +83,8 @@ $(document).ready(function () {
             location.reload();
         }
     });
+    if (sessionStorage.getItem('login') !== null) {
+        $('#alertLogin').removeClass('hidden');
+        sessionStorage.clear()
+    }
 });
