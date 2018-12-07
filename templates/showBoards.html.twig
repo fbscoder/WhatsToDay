@@ -12,20 +12,13 @@
                         {% for board in boards %}
                             {#<button id="boards" value="{{ board.id }}" name="board">#}
                             <div class="card text-center task_card card-rounded">
-                                <button id="{{ board.id }}" class="card-header card-header-rounded"
-
-                                        type="button" onclick="buttonClick('{{ board.id }}')"
-
+                                <button id="{{ board.id }}" class="card-header board-button card-header-rounded"
+                                        type="button"
                                         value="{{ board.id }}"
-
                                         name="board">
-
                                     {{ board.name }}
-
                                 </button>
-
                             </div>
-
                         {% endfor %}
                         <input type="hidden" id="selectedBoards" name="selectedBoards" value="">
                     </div>
@@ -37,14 +30,12 @@
                 <div class="col-md-6 boardSubmit">
                     <button id="boardSubmit"
                             class="btn btn-gray sticky-top text-center boardButton"
-                            onclick="submitForm()"
                             type="button">Submit
                     </button>
                 </div>
                 <div class="col-md-6 boardReset">
                     <button id="boardReset"
                             class="btn btn-gray sticky-top text-center boardButton"
-                            onclick="resetForm()"
                             type="button">Reset
                     </button>
                 </div>

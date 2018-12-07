@@ -1,50 +1,23 @@
-function buttonClick(id) {
-
-    var button = document.getElementById(id);
-
-    if (button.classList.contains('button-active')) {
-
-        button.classList.remove('button-active');
-
-    } else {
-
-        button.classList.add('button-active');
-
-    }
-
-}
-
-function submitForm() {
-
-    var boards = [];
-
-    var i = 0;
-
-    $("#boardForm .button-active").each(function (index) {
-
-        valu = $(this).val();
-
-        boards[i] = valu;
-
-        i++;
-
-    });
-    document.getElementById('selectedBoards').value = JSON.stringify(boards);
-
-    $("#boardForm").submit();
-
-}
-
-function resetForm() {
-    $("#boardForm .button-active").each(function () {
-        thisButton = $(this);
-        id = thisButton.attr('id');
-        document.getElementById(id).classList.remove('button-active');
-    });
-}
-
 $(document).ready(function () {
-    $(".card").click(function () {
-        document.getElementById("boardForm").submit();
+    $(".board-button").click(function () {
+        if ($(this).hasClass('button-active')) {
+            $(this).removeClass('button-active');
+        } else {
+            $(this).addClass('button-active');
+        }
+    });
+    $("#boardSubmit").click(function () {
+        var boards = [];
+        var i = 0;
+        $("#boardForm .button-active").each(function () {
+            valu = $(this).val();
+            boards[i] = valu;
+            i++;
+        });
+        $("#selectedBoards").val(JSON.stringify(boards));
+        $("#boardForm").submit();
+    });
+    $("#boardReset").click(function () {
+        $("#boardForm .button-active").removeClass("button-active");
     });
 });
