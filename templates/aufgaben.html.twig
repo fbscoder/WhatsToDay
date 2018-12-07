@@ -5,8 +5,14 @@
         <div class="timeButtons">
             <div class="xpull" id="xpullButtons">
             </div>
-            <span><button id="btn_today">Heute ({{ taskTodayCount }})</button></span><br>
-            <span><button id="btn_tomorrow">Morgen ({{ taskTomorrowCount }})</button></span>
+            <div class="row">
+                <div class="col-md-12">
+                    <button id="btn_today">Heute ({{ taskTodayCount }})</button>
+                </div>
+                <div class="col-md-12">
+                    <button id="btn_tomorrow">Morgen ({{ taskTomorrowCount }})</button>
+                </div>
+            </div>
         </div>
 
         <div class="row" id="tasks" style="word-break: normal">
@@ -149,7 +155,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 {% endblock %}
 {% block javascripts %}

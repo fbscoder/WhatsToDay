@@ -62,10 +62,8 @@ ul {
     border: 1px solid grey;
     width: 150px;
     height: 150px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -75%);
     margin-bottom: 5%;
+
 }
 
 .timeButtons {
@@ -73,6 +71,8 @@ ul {
     position: fixed;
     top: 50%;
     left: 50%;
+    margin-top: 25px;
+    transform: translate(-50%, -50%);
 }
 
 .fa-arrow-circle-left {
@@ -219,10 +219,15 @@ p {
 .navbar-brand {
     color: var(--main-bg-color);
 }
-.navbar-fixed-top-margin{
+
+.navbar-fixed-top-margin {
     margin-top: 65px;
 }
 
 #hideTasks {
     z-index: 100;
+}
+
+.timeButtons .row {
+    text-align: center;
 }
