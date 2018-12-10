@@ -26,7 +26,6 @@ class Register extends AbstractController
             $email = $_POST["email"];
             $question = $_POST["question"];
             $answer = $_POST["answer"];
-            unset($_POST);
             echo "<script>
                     localStorage.setItem('email', '$email');
                     localStorage.setItem('question', '$question');
@@ -47,6 +46,7 @@ class Register extends AbstractController
             $token = $_POST["token"];
             $question = $_POST["question"];
             $answer = sha1($_POST["answer"]);
+            unset($_POST);
             //Check the password
             if ($token != null) {
                 if ($password == $password_repeat) {

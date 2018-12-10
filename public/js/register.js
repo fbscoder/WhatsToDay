@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    if (localStorage.getItem('email') !== null)
+        $("#email").val(localStorage.getItem('email'));
+    if (localStorage.getItem('question') !== null)
+        $('#question option[value="' + localStorage.getItem("question") + '"]').attr("selected", "selected");
+    if (localStorage.getItem('answer') !== null)
+        $("#answer").val(localStorage.getItem('answer'));
+
     //ERROR Text
     if (localStorage.getItem("register") !== null) {
         $("#alertLogin").text(localStorage.getItem("register"));
@@ -34,11 +41,4 @@ $(document).ready(function () {
             error: authenticationFailure
         });
     });
-
-    if (localStorage.getItem('email') !== null)
-        $("#email").val(localStorage.getItem('email'));
-    if (localStorage.getItem('question') !== null)
-        $('#question option[value="' + localStorage.getItem("question") + '"]').attr("selected", "selected");
-    if (localStorage.getItem('answer') !== null)
-        $("#answer").val(localStorage.getItem('answer'));
 });
