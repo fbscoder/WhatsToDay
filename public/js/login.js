@@ -28,7 +28,7 @@ $(document).ready(function () {
                     alert.attr('class', 'hidden');
                     alert.addClass('alert alert-dark ');
                     alert.removeClass('hidden');
-                    alert.text("Es gibt keinen User mit der eingegebenen Email Addresse, bitte überprüfen Sie die Eingaben");
+                    alert.text("Ihre Email Addresse oder Sicherheitsfrage ist falsche, bitte überprüfen Sie Ihre Eingabe");
                 }
             }
         });
