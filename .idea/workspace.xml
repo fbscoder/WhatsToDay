@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5200451e-dd5b-4069-a7d0-b98349ff43ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/css/register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/library/client.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/Register.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/register.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/login_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,31 +43,40 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
+        <entry file="file://$PROJECT_DIR$/templates/register.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Utils/APIUtils.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-              <folding>
-                <element signature="e#40#80#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="192">
+              <caret line="54" column="42" lean-forward="true" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/login.html.twig">
+        <entry file="file://$PROJECT_DIR$/public/js/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="21" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/task.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="37" selection-start-line="37" selection-end-line="51" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+              <folding>
+                <element signature="e#35#72#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,11 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Controller/Utils/TaskData.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Utils/Task/CheckData.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Utils/Task/CheckListData.php" />
-        <option value="$PROJECT_DIR$/templates/test.html" />
-        <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/test.html" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/board.html" />
         <option value="$PROJECT_DIR$/templates/board.html" />
         <option value="$PROJECT_DIR$/src/Controller/Utils/Task/TaskData.php" />
@@ -145,7 +158,6 @@
         <option value="$PROJECT_DIR$/unzip.php" />
         <option value="$PROJECT_DIR$/templates/error.html.twig" />
         <option value="$PROJECT_DIR$/public/css/aufgaben.html.twig" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/style.css" />
         <option value="$PROJECT_DIR$/public/css/login_style.css" />
         <option value="$PROJECT_DIR$/src/Controller/Utils/Person/PersonData.php" />
@@ -163,12 +175,10 @@
         <option value="$PROJECT_DIR$/public/js/finishTasks.js" />
         <option value="$PROJECT_DIR$/public/js/tasks.js" />
         <option value="$PROJECT_DIR$/public/js/script.js" />
-        <option value="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" />
         <option value="$PROJECT_DIR$/templates/aufgaben.html.twig" />
         <option value="$PROJECT_DIR$/templates/showBoards.html.twig" />
         <option value="$PROJECT_DIR$/public/js/board.js" />
         <option value="$PROJECT_DIR$/public/js/login.js" />
-        <option value="$PROJECT_DIR$/src/Controller/Login.php" />
         <option value="$USER_HOME$/AppData/Local/Temp/fz3temp-2/login.js" />
         <option value="$PROJECT_DIR$/public/js/library/fontawesome-5.5.0.min.js" />
         <option value="$PROJECT_DIR$/public/js/library/jquery-3.3.1.min.js" />
@@ -179,11 +189,19 @@
         <option value="$PROJECT_DIR$/public/js/library/b.min.js" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/Controller/Login.php" />
+        <option value="$PROJECT_DIR$/public/css/register.css" />
+        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/templates/login.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Register.php" />
+        <option value="$PROJECT_DIR$/templates/register.html.twig" />
+        <option value="$PROJECT_DIR$/public/js/client.js" />
+        <option value="$PROJECT_DIR$/public/js/register.js" />
       </list>
     </option>
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpDebugGeneral" listening_started="true" notify_if_session_was_finished_without_being_paused="false" />
   <component name="PhpServers">
     <servers>
       <server host="dev.local" id="73f3921d-e4c1-49da-a1b0-e7206dcf3bc9" name="Server" use_path_mappings="true">
@@ -370,6 +388,13 @@
             <path>
               <item name="WhatsToDay" type="b2602c69:ProjectViewProjectNode" />
               <item name="WhatsToDay" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="library" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WhatsToDay" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WhatsToDay" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -384,22 +409,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
               <item name="Utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WhatsToDay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WhatsToDay" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
-              <item name="Person" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WhatsToDay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WhatsToDay" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-              <item name="Utils" type="462c0819:PsiDirectoryNode" />
-              <item name="Task" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WhatsToDay" type="b2602c69:ProjectViewProjectNode" />
@@ -431,18 +440,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\public\css\library\fontawesome" />
-      <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\templates" />
-      <recent name="D:\Repositorys\berufsschuleProjekt\dist\htdocs\templates" />
-      <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\public\favicon" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\public\js\library" />
+      <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\public\js" />
       <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\public\css\library\fontawesome\css" />
       <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\src\Controller" />
       <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay" />
-      <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\src\Controller" />
       <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\templates" />
+      <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\public\css\library\fontawesome" />
+      <recent name="D:\Repositorys\berufsschuleProjekt\dist\htdocs\templates" />
+      <recent name="D:\Berufsschule\4.Lehrjahr\PP\WhatsToDay\WhatsToDay\public\favicon" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -485,7 +495,7 @@
       <workItem from="1543991774055" duration="8961000" />
       <workItem from="1544097559839" duration="5225000" />
       <workItem from="1544425220855" duration="194000" />
-      <workItem from="1544425442145" duration="698000" />
+      <workItem from="1544425442145" duration="9177000" />
     </task>
     <task id="LOCAL-00001" summary="Rename">
       <created>1543302613856</created>
@@ -711,11 +721,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544192335444</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Registrierung">
+      <created>1544426188684</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1544426188685</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133190000" />
+    <option name="totallyTimeSpent" value="141669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -724,7 +741,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35060728" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Code comment" />
+      <window_info anchor="bottom" id="Code comment" weight="0.3285968" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3285968" />
       <window_info anchor="bottom" id="Inspection Results" order="1" weight="0.3285968" />
       <window_info anchor="bottom" id="Message" order="2" />
@@ -782,55 +799,12 @@
     <MESSAGE value="Tasks&#10;xpull verbessert" />
     <MESSAGE value="javascript files" />
     <MESSAGE value="bootstrap und jquery gedownloaded" />
-    <option name="LAST_COMMIT_MESSAGE" value="bootstrap und jquery gedownloaded" />
+    <MESSAGE value="Registrierung" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registrierung" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/error.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17577" column="17" selection-start-line="17577" selection-start-column="17" selection-end-line="17577" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/aufgaben.html.twig" />
-    <entry file="file://$PROJECT_DIR$/vendor/cdaguerre/php-trello-api/lib/Trello/ClientInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/cdaguerre/php-trello-api/lib/Trello/HttpClient/HttpClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/cdaguerre/php-trello-api/lib/Trello/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="178" column="33" selection-start-line="178" selection-start-column="20" selection-end-line="178" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/style.css" />
     <entry file="file://$PROJECT_DIR$/src/Entity/user.php" />
     <entry file="file://$PROJECT_DIR$/templates/Utils/Utils/PersonUtils.php" />
     <entry file="file://$PROJECT_DIR$/public/css/xpull.css">
@@ -844,13 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="189" selection-start-line="189" selection-end-line="189" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/HttpKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
         </state>
       </provider>
     </entry>
@@ -879,7 +846,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/login_style.css">
+    <entry file="file://$PROJECT_DIR$/public/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="128" column="18" selection-start-line="128" selection-start-column="18" selection-end-line="128" selection-end-column="18" />
@@ -897,29 +864,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/submitForm.js" />
     <entry file="file://$PROJECT_DIR$/public/js/finishTasks.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/task.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <element signature="e#87#637#0" />
-            <element signature="e#677#1121#0" />
-            <element signature="e#1162#1731#0" />
-            <element signature="e#1775#2348#0" />
-            <element signature="e#2413#2554#0" />
-            <element signature="e#2587#2731#0" />
-            <element signature="e#2762#2844#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Task.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -944,32 +888,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="65" lean-forward="true" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/login.js" />
     <entry file="file://$PROJECT_DIR$/public/js/library/fontawesome-5.5.0.min.js" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="e#35#72#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/library/jquery-3.3.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1055,20 +975,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Utils/APIUtils.php">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="17">
+          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/http-kernel/HttpKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/register.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="69" />
           <folding>
-            <element signature="e#40#80#0#PHP" expanded="true" />
+            <element signature="e#35#72#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="42" column="44" selection-start-line="42" selection-start-column="44" selection-end-line="42" selection-end-column="44" />
+        <state relative-caret-position="195">
+          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/cdaguerre/php-trello-api/lib/Trello/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="151" column="73" lean-forward="true" selection-start-line="151" selection-start-column="73" selection-end-line="151" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Utils/PersonUtils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#40#83#0#PHP" expanded="true" />
+            <element signature="e#156#669#0#PHP" />
+            <element signature="e#675#1248#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Utils/APIUtils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding>
+            <element signature="e#40#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/library/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1148">
+          <caret line="173" column="25" selection-start-line="173" selection-start-column="25" selection-end-line="173" selection-end-column="25" />
+          <folding>
+            <element signature="e#15#38#0" />
+            <element signature="e#40#114#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
+          <folding>
+            <element signature="e#35#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/library/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="421" column="30" selection-start-line="421" selection-start-column="30" selection-end-line="421" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="54" column="42" lean-forward="true" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="37" selection-start-line="37" selection-end-line="51" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="21" selection-end-column="10" />
         </state>
       </provider>
     </entry>

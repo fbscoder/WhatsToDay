@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}Login{% endblock %}
+{% block title %}Registrieren{% endblock %}
 {% block stylesheets %}
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -18,12 +18,10 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">#}
-    {#<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"#}
-    {#rel="stylesheet">#}
     <link rel="stylesheet" type="text/css" href="/css/library/bootstrap.4.1.3.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
 
 {% endblock %}
 {% block body %}
@@ -31,22 +29,39 @@
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" src="img/icon.png"/>
         <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin" action="/" method="POST" >
-            <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail Adresse" required autofocus>
+        <form class="form-signin" action="/Register" method="POST">
+            <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail Adresse" required
+                   autofocus>
             <input type="password" name="password" id="password" class="form-control" placeholder="Passwort" required>
+            <input type="password" name="password_repeat" id="password_repeat" class="form-control"
+                   placeholder="Passwort wiederholen" required>
+            <div class="form-group">
+                <select id="question" name="question" class="form-control">
+                    <option value="1" selected>Was war der Name Ihres ersten Haustieres?</option>
+                    <option value="2">Wie lautet der Mädchenname Ihrer Mutter?</option>
+                    <option value="3">Wie lautet Ihr Traumurlaubs Ziel?</option>
+                </select>
+            </div>
+            <input type="text" name="answer" id="answer" class="form-control" placeholder="Antwort" required>
+            <div class="form-group">
+                <input type="text" class="form-control" name="token" id="token" aria-describedby="token_help"
+                       placeholder="Token hier hinein kopieren" required>
+                <small id="token_help" class="form-text text-muted"><a
+                            href="https://trello.com/1/authorize?expiration=never&scope=read,write,account&response_type=token&name=Server%20Token&key=aa8b7e7e0a878b7f8e6d805c78ff2526"
+                            target="_blank">Hier</a> können Sie Ihren Token erhalten!
+                </small>
+            </div>
             <div class="alert alert-dark alert hidden" role="alert" id="alertLogin">
                 Username oder Passwort ist falsch, bitte überprüfen Sie Ihre Eingabe!
             </div>
-            <button class="btn btn-gray" type="submit">Log-in</button>
+            <button class="btn btn-gray" type="submit">Registrieren</button>
         </form><!-- /form -->
-        <a href="/Register" class="forgot-password">
-            Sind Sie noch nicht registriert?
-        </a>
-        <a href="#" class="forgot-password">
-            Passwort vergessen?
+        <a href="/" class="forgot-password">
+            Sie haben bereits ein Konto?
         </a>
     </div><!-- /card-container -->
 {% endblock %}
 {% block javascripts %}
-    <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
+    <script src="https://api.trello.com/1/client.js?key=aa8b7e7e0a878b7f8e6d805c78ff2526"></script>
 {% endblock %}

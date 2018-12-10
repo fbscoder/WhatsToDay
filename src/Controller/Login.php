@@ -33,7 +33,6 @@ class Login extends AbstractController
                 unset($_POST["email"]);
                 unset($_POST["password"]);
             }
-
         }
 
         return $this->render('login.html.twig');

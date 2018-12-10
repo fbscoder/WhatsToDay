@@ -40,29 +40,33 @@ class PersonUtils
         }
     }
 
-    public static function checkIfPersonExists()
+    public static function checkIfPersonExists($email)
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();
-        $email = "test.test@test.at";
         $sql = "select email from users
             where  email = '$email'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-            print "ERROR";
             return true;
         } else {
-            echo "Success";
             return false;
         }
     }
 
-    public static function SavePersonInDataBase($array)
+    public static function SavePersonInDataBase($email, $password, $question, $answer, $token)
     {
-        // if ($conn->query($sql) === TRUE) {
-        //     echo "New record created successfully";
-        // } else {
-        //     echo "Error: " . $sql . "<br>" . $conn->error;
-        // }
+        $conn = WhatToDayUtilities::getDataBaseConnection();
+        $sql = "INSERT INTO users (password,email,question,answer) VALUES('$password','$email', '$question','$answer')";
+
+        if (mysqli_query($conn, $sql)) {
+            $last_id = $conn->insert_id;
+            $sql = "INSERT INTO token (u_id,token) VALUES('$last_id', '$token')";
+            mysqli_query($conn, $sql);
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     /**
