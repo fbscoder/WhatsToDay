@@ -59,7 +59,7 @@
                     <form method="post" action="/verifySecurityQuestion" id="forgotPasswordForm">
                         <div class="form-group">
                             <label for="enteredEmail">Email:</label>
-                            <input type="email" class="form-control" name="enteredEmail" id="enteredEmail">
+                            <input type="email" class="form-control" name="enteredEmail" id="enteredEmail" required>
                         </div>
 
                         <div class="form-group">
@@ -73,7 +73,7 @@
                         <div class="form-group">
                             <label for="SecurityQuestionAnswer">Antwort:</label>
                             <input type="text" class="form-control" name="SecurityQuestionAnswer"
-                                   id="SecurityQuestionAnswer">
+                                   id="SecurityQuestionAnswer" required>
                         </div>
                         <input type="hidden" name="question" id="questionHidden">
                         <div class="hidden" role="alert" id="alert_1">
@@ -102,12 +102,12 @@
                     <form method="post" action="/changeForgottenPassword" id="changeForgotPasswordForm">
                         <div class="form-group">
                             <label for="passwordNew">Passwort Neu:</label>
-                            <input type="password" class="form-control" name="passwordNew" id="passwordNew">
+                            <input type="password" class="form-control" name="passwordNew" id="passwordNew" required>
                         </div>
                         <div class="form-group">
                             <label for="passwordNew">Passwort wiederholen:</label>
                             <input type="password" class="form-control" name="passwordVerification"
-                                   id="passwordVerification">
+                                   id="passwordVerification" required>
                         </div>
                         <input type="hidden" id="userId" name="userId">
                         <div class="hidden" role="alert" id="alertPasswordReset">
