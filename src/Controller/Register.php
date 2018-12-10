@@ -25,7 +25,6 @@ class Register extends AbstractController
         if ((isset($_POST["email"]) && !empty($_POST["email"])) &&
             (isset($_POST["password"]) && !empty($_POST["password"])) &&
             (isset($_POST["password_repeat"]) && !empty($_POST["password_repeat"])) &&
-            (isset($_POST["token"]) && !empty($_POST["token"])) &&
             (isset($_POST["question"]) && !empty($_POST["question"])) &&
             (isset($_POST["answer"]) && !empty($_POST["answer"]))) {
             $password = sha1($_POST["password"]);
@@ -35,21 +34,29 @@ class Register extends AbstractController
             $question = $_POST["question"];
             $answer = sha1($_POST["answer"]);
             //Check the password
-            if ($password == $password_repeat) {
-                //Checks if the person already exists in the dataBase
-                if (!PersonUtils::checkIfPersonExists($email)) {
-                    if (PersonUtils::SavePersonInDataBase($email, $password, $question, $answer, $token)) {
-                        WhatToDayUtilities::setSession(PersonUtils::getPersonData($email));
-                        return $this->redirectToRoute('app_board_showboard');
+            if ($token != null) {
+                if ($password == $password_repeat) {
+                    //Checks if the person already exists in the dataBase
+                    if (!PersonUtils::checkIfPersonExists($email)) {
+                        if (PersonUtils::SavePersonInDataBase($email, $password, $question, $answer, $token)) {
+                            WhatToDayUtilities::setSession(PersonUtils::getPersonData($email));
+                            return $this->redirectToRoute('app_board_showboard');
+                        }
+                    } else {
+                        echo "<script>
+                    localStorage.setItem('register', 'Die E-Mail ($email) ist bereits in verwendung!');
+                </script>";
                     }
                 } else {
-                    //ERROR E-Mail wurde bereits verwendet!
+                    echo "<script>
+                    localStorage.setItem('register', 'Ihr Passwort stimmt nicht überein!');
+                </script>";
                 }
             } else {
-                //ERROR passwort stimmt nicht überein!
+                echo "<script>
+                    localStorage.setItem('register', 'Sie haben keinen Token generieren lassen!');
+                </script>";
             }
-        } else {
-            //ERROR sind alle felder ausgefüllt?
         }
 
         return $this->render('register.html.twig');

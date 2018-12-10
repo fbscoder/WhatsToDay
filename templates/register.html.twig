@@ -32,32 +32,30 @@
         <form class="form-signin" action="/Register" method="POST">
             <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail Adresse" required
                    autofocus>
-            <input type="password" name="password" id="password" class="form-control" placeholder="Passwort" required>
-            <input type="password" name="password_repeat" id="password_repeat" class="form-control"
+            <input type="password" minlength="8" name="password" id="password" class="form-control"
+                   placeholder="Passwort (minimum 8 Zeichen)" required>
+            <input type="password" minlength="8" name="password_repeat" id="password_repeat" class="form-control"
                    placeholder="Passwort wiederholen" required>
             <div class="form-group">
                 <select id="question" name="question" class="form-control">
                     <option value="1" selected>Was war der Name Ihres ersten Haustieres?</option>
                     <option value="2">Wie lautet der Mädchenname Ihrer Mutter?</option>
-                    <option value="3">Wie lautet Ihr Traumurlaubs Ziel?</option>
+                    <option value="3">Was ist Ihr Traumurlaubs Ziel?</option>
                 </select>
             </div>
             <input type="text" name="answer" id="answer" class="form-control" placeholder="Antwort" required>
             <div class="form-group">
-                <input type="text" class="form-control" name="token" id="token" aria-describedby="token_help"
-                       placeholder="Token hier hinein kopieren" required>
-                <small id="token_help" class="form-text text-muted"><a
-                            href="https://trello.com/1/authorize?expiration=never&scope=read,write,account&response_type=token&name=Server%20Token&key=aa8b7e7e0a878b7f8e6d805c78ff2526"
-                            target="_blank">Hier</a> können Sie Ihren Token erhalten!
-                </small>
+                <input style="cursor: pointer;" type="text" class="form-control" name="token" id="token"
+                       aria-describedby="token_help"
+                       placeholder="Klicke hier um Ihren Token zu generieren." required readonly>
             </div>
             <div class="alert alert-dark alert hidden" role="alert" id="alertLogin">
-                Username oder Passwort ist falsch, bitte überprüfen Sie Ihre Eingabe!
+                Überprüfen Sie Ihre Eingabe!
             </div>
             <button class="btn btn-gray" type="submit">Registrieren</button>
         </form><!-- /form -->
         <a href="/" class="forgot-password">
-            Sie haben bereits ein Konto?
+            Haben Sie bereits ein Konto?
         </a>
     </div><!-- /card-container -->
 {% endblock %}
