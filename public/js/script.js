@@ -20,7 +20,7 @@ $(document).ready(function () {
                 else if (output === "emailNoMatch") {
                     alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
-                    alert.text("Ihre alte Email Addresse stimmt nicht überein");
+                    alert.text("Ihre E-Mail Adresse ist nicht hinterlegt!");
                 }
                 $("#emailOld").val('');
                 $("#emailNew").val('');
@@ -44,17 +44,17 @@ $(document).ready(function () {
                 if (output === "success") {
                     alert.addClass('alert alert-success');
                     alert.removeClass('hidden');
-                    alert.text("Ihr Passwort wurde geändert");
+                    alert.text("Ihr Passwort wurde geändert!");
                 }
                 else if (output === "oldPasswordWrong") {
                     alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
-                    alert.text("Ihr altes Passwort stimmt nicht mit den eingegebenen Passwort überein.");
+                    alert.text("Ihr altes Passwort stimmt nicht!");
                 }
                 else if (output === "passwordNotMatching") {
                     alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
-                    alert.text("Ihr neuen Passwörter stimmen nicht überein!");
+                    alert.text("Ihren neuen Passwörter stimmen nicht überein!");
                 }
                 $("#passwordOld").val('');
                 $("#passwordNew").val('');

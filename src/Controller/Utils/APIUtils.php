@@ -27,16 +27,8 @@ class APIUtils
         $client = new Client();
         $person = $_SESSION["PersonData"];
         $client->authenticate('aa8b7e7e0a878b7f8e6d805c78ff2526', $person->TOKEN, Client::AUTH_URL_CLIENT_ID);
-        //$client->authenticate('aa8b7e7e0a878b7f8e6d805c78ff2526', 'ec0c8c9c53c3931330d1186a26ff4038127862bcb8d4fd4455189b1e5f96a0f2', Client::AUTH_URL_CLIENT_ID);
-        //$client->authenticate('aa8b7e7e0a878b7f8e6d805c78ff2526', '90dec1d14cd5336ba006af1bd79829c1a6ed45480130c3a40fb7fccf3d1927e4', Client::AUTH_URL_CLIENT_ID);
 
         return $client;
-    }
-
-    public static function test()
-    {
-        $client = APIUtils::getClient();
-
     }
 
     public static function checkOrUncheckCheckBox()

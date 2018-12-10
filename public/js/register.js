@@ -23,7 +23,7 @@ $(document).ready(function () {
     //User API-Token denied
     authenticationFailure = function () {
         //ERROR token wurde nicht angenommen
-        $("#alertLogin").text("Sie haben abgelehnt den Token zu generieren!");
+        $("#alertLogin").text("Sie haben den Token nicht akzeptiert!");
         $("#alertLogin").removeClass("hidden");
     };
 

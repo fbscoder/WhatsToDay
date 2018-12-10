@@ -58,7 +58,7 @@ class Register extends AbstractController
                         }
                     } else {
                         echo "<script>
-                    localStorage.setItem('register', 'Die E-Mail ($email) ist bereits in verwendung!');
+                    localStorage.setItem('register', 'Die E-Mail ($email) ist bereits in Verwendung!');
                 </script>";
                     }
                 } else {

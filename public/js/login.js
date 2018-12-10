@@ -28,7 +28,7 @@ $(document).ready(function () {
                     alert.attr('class', 'hidden');
                     alert.addClass('alert alert-dark ');
                     alert.removeClass('hidden');
-                    alert.text("Ihre Email Addresse oder Sicherheitsfrage ist falsche, bitte überprüfen Sie Ihre Eingabe");
+                    alert.text("Ihre Email Addresse oder Sicherheitsfrage ist falsch, bitte überprüfen Sie Ihre Eingabe!");
                 }
             }
         });
