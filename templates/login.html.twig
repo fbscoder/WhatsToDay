@@ -31,8 +31,9 @@
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" src="img/icon.png"/>
         <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin" action="/" method="POST" >
-            <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail Adresse" required autofocus>
+        <form class="form-signin" action="/" method="POST">
+            <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail Adresse" required
+                   autofocus>
             <input type="password" name="password" id="password" class="form-control" placeholder="Passwort" required>
             <div class="alert alert-dark alert hidden" role="alert" id="alertLogin">
                 E-Mail Adresse oder Passwort ist falsch, bitte überprüfen Sie Ihre Eingabe!
@@ -43,9 +44,87 @@
             Sind Sie noch nicht registriert?
         </a>
         <a href="#" class="forgot-password">
+        <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" class="forgot-password">
             Passwort vergessen?
         </a>
-    </div><!-- /card-container -->
+    </div>
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModal"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPassword">Passwort vergessen</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="forgotPasswordModalBody">
+                    <form method="post" action="/verifySecurityQuestion" id="forgotPasswordForm">
+                        <div class="form-group">
+                            <label for="enteredEmail">Email:</label>
+                            <input type="email" class="form-control" name="enteredEmail" id="enteredEmail">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question">Sicherheitsfrage auswählen</label>
+                            <select id="question" name="question" class="form-control" disabled>
+                                <option value="1">Was war der Name Ihres ersten Haustieres?</option>
+                                <option value="2">Wie lautet der Mädchenname Ihrer Mutter?</option>
+                                <option value="3">Wie lautet Ihr Traumurlaubs Ziel?</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="SecurityQuestionAnswer">Antwort:</label>
+                            <input type="text" class="form-control" name="SecurityQuestionAnswer"
+                                   id="SecurityQuestionAnswer">
+                        </div>
+                        <input type="hidden" name="question" id="questionHidden">
+                        <div class="hidden" role="alert" id="alert_1">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" id="forgotPasswordModalFooter">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                    <button type="button" id="forgotPasswordModalSubmit" class="btn btn-gray">Absenden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="changeForgottenPassword" tabindex="-1" role="dialog"
+         aria-labelledby="forgotPasswordModal"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="forgotPassword">Passwort vergessen</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="forgotPasswordModalBody">
+                    <form method="post" action="/changeForgottenPassword" id="changeForgotPasswordForm">
+                        <div class="form-group">
+                            <label for="passwordNew">Passwort Neu:</label>
+                            <input type="password" class="form-control" name="passwordNew" id="passwordNew">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordNew">Passwort wiederholen:</label>
+                            <input type="password" class="form-control" name="passwordVerification"
+                                   id="passwordVerification">
+                        </div>
+                        <input type="hidden" id="userId" name="userId">
+                        <div class="hidden" role="alert" id="alertPasswordReset">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" id="forgotPasswordModalFooter">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                    <button type="button" id="changeForgotPasswordFormSubmit" class="btn btn-gray">Absenden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
 {% block javascripts %}
     <script src="js/login.js"></script>

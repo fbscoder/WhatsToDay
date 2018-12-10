@@ -93,5 +93,69 @@ class PersonUtils
         }
 
     }
+
+    /**
+     * @\Sensio\Bundle\FrameworkExtraBundle\Configuration\Route  ("/changeEmail")
+     */
+    public function changeEmail()
+    {
+        $conn = WhatToDayUtilities::getDataBaseConnection();
+        if (isset($_SESSION['PersonData'])) {
+            $sql = 'SELECT email from users where id =' . $_SESSION['PersonData']->ID;
+            $email = $conn->query($sql)->fetch_assoc();
+            if ($_POST['emailOld'] == $email['email']) {
+                $sql = $conn->prepare('UPDATE users SET email = ' . "'" . $_POST['emailNew'] . "'" . ' 
+                WHERE id =' . $_SESSION['PersonData']->ID);
+                $sql->execute();
+                return new Response('success');
+            } else {
+                return new Response('emailNoMatch');
+            }
+        }
+    }
+
+    /**
+     * @\Sensio\Bundle\FrameworkExtraBundle\Configuration\Route  ("/verifySecurityQuestion")
+     */
+    public function verifySecurityQuestion()
+    {
+        $conn = WhatToDayUtilities::getDataBaseConnection();
+        $sql = "SELECT id from users where email = " . "'" . $_POST['enteredEmail'] . "'" . " AND question = " . $_POST['question'] . " AND answer = " . "'" . $_POST['SecurityQuestionAnswer'] . "'";
+        $result = $conn->query($sql)->fetch_assoc();
+        if (!empty($result)) {
+            return new Response($result['id']);
+        } else {
+            return new Response('noUser');
+        }
+    }
+
+    /**
+     * @\Sensio\Bundle\FrameworkExtraBundle\Configuration\Route  ("/changeForgottenPassword")
+     */
+    public function changeForgottenPassword()
+    {
+        $conn = WhatToDayUtilities::getDataBaseConnection();
+        if ($_POST['passwordNew'] == $_POST['passwordVerification']) {
+            $passwordHash = hash('SHA1', $_POST['passwordVerification']);
+            $sql = $conn->prepare('UPDATE users SET password = ' . "'" . $passwordHash . "'" . 'WHERE id =' . $_POST['userId']);
+            $sql->execute();
+            return new Response('success');
+        } else {
+            return new Response('PasswordsDoesNotMatch');
+        }
+    }
+
+    /**
+     * @\Sensio\Bundle\FrameworkExtraBundle\Configuration\Route  ("/getSecurityQuestion")
+     */
+    public function getSecurityQuestion()
+    {
+        $conn = WhatToDayUtilities::getDataBaseConnection();
+        if (!empty($_POST['email'])) {
+            $sql = "SELECT question FROM users WHERE email = " . "'" . $_POST['email'] . "'";
+            $result = $conn->query($sql)->fetch_assoc();
+            return new Response($result['question']);
+        }
+    }
 }
 

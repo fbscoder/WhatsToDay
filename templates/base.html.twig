@@ -30,12 +30,10 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
     {% endblock %}
     {% block javascriptHead %}
-        {#<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>#}
-        {#<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>#}
-        {#<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>#}
-        <script src="/js/library/jquery-3.3.1.min.js"></script>
-        <script src="/js/library/popper-1.14.3.min.js"></script>
-        <script src="/js/library/bootstrap-4.1.3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
     {% endblock %}
 </head>
 <body>
@@ -77,9 +75,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="/changePassword" method="post">
-                        <div class="modal-body">
-
+                    <div class="modal-body">
+                        <form action="/changePassword" id="changePasswordForm" method="post">
                             <div class="form-group">
                                 <label for="passwordOld">Altes Passwort:</label>
                                 <input type="password" class="form-control" name="passwordOld" id="passwordOld">
@@ -90,21 +87,20 @@
                             </div>
                             <div class="form-group">
                                 <label for="passwordNewRepeat">Passwort wiederholen:</label>
-                                <input type="password" class="form-control" name="passwordNewRepeat"
-                                       id="passwordNewRepeat">
+                                <input type="password" class="form-control" name="passwordNewRepeat" id="passwordNewRepeat">
                             </div>
                             <div class="hidden" role="alert" id="alert">
                             </div>
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
-                            <button type="submit" class="btn btn-gray">Passwort ändern</button>
-                        </div>
-                    </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                        <button type="submit" class="btn btn-gray">Passwort ändern</button>
+
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
         <div class="modal fade" id="email_modal" tabindex="-1" role="dialog" aria-labelledby="email_label"
              aria-hidden="true">
@@ -117,63 +113,32 @@
                         </button>
                     </div>
                     <div class="modal-body">
-
+                        <form method="post" action="/changeEmail" id="changeEmailForm">
+                            <div class="form-group">
+                                <label for="emailOld">Email Alt:</label>
+                                <input type="email" class="form-control" name="emailOld" id="emailOld">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailNew">Email Neu:</label>
+                                <input type="email" class="form-control" name="emailNew" id="emailNew">
+                            </div>
+                            <div class="hidden" role="alert" id="emailAlert">
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
-                        <button type="button" class="btn btn-gray">E-Mail ändern</button>
+                        <button type="button" id="changeEmailSubmit" class="btn btn-gray">E-Mail ändern</button>
                     </div>
                 </div>
             </div>
         </div>
-
     </header>
-
-
 {% endblock %}
 <div class="navbar-fixed-top-margin">
     {% block body %}
     {% endblock %}
 </div>
-<script>
-
-    // TODO
-    // Javascript in eingenes JS File auslagenern
-
-    $("#changePasswordForm").submit(function (event) {
-        event.preventDefault(); //prevent default action
-        var form_data = $(this).serialize(); //Encode form elements for submission
-
-        $.ajax({
-            url: '/changePassword',
-            type: 'post',
-            data: form_data,
-            success: function (output) {
-                var alert = $("#alert");
-                alert.attr('class', 'hidden');
-                if (output === "success") {
-                    alert.addClass('alert alert-success');
-                    alert.removeClass('hidden');
-                    alert.text("Ihr Passwort wurde geändert");
-                }
-                else if (output === "oldPasswordWrong") {
-                    alert.addClass('alert alert-dark warning');
-                    alert.removeClass('hidden');
-                    alert.text("Ihr altes Passwort stimmt nicht mit den eingegebenen Passwort überein.");
-                }
-                else if (output === "passwordNotMatching") {
-                    alert.addClass('alert alert-dark warning');
-                    alert.removeClass('hidden');
-                    alert.text("Ihr neuen Passwörter stimmen nicht überein!");
-                }
-                $("#passwordOld").val('');
-                $("#passwordNew").val('');
-                $("#passwordNewRepeat").val('');
-            }
-        })
-    });
-
-</script>
 </body>
 {% block javascripts %}{% endblock %}
 </html>
