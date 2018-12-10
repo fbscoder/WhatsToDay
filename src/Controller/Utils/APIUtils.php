@@ -39,8 +39,13 @@ class APIUtils
 
     }
 
-    public
-    static function getBoardTasksTomorrow($board)
+    public static function checkOrUncheckCheckBox()
+    {
+        $client = APIUtils::getClient();
+
+    }
+
+    public static function getBoardTasksTomorrow($board)
     {
         $datetime = new DateTime('tomorrow');
         $datetime = $datetime->format('Ymd');
@@ -88,8 +93,7 @@ class APIUtils
         return APIUtils::getTaskList($board, date('Ymd'));
     }
 
-    public
-    static function getCountedTasks($taskList)
+    public static function getCountedTasks($taskList)
     {
         return count($taskList);
     }

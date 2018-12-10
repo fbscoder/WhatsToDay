@@ -21,12 +21,26 @@ class Register extends AbstractController
         //If session 'PersonData' is set then clear the 'PersonData' session
         if (isset($_SESSION["PersonData"]))
             unset($_SESSION["PersonData"]);
-        //Check if all input fields are set and not empty
-        if ((isset($_POST["email"]) && !empty($_POST["email"])) &&
-            (isset($_POST["password"]) && !empty($_POST["password"])) &&
-            (isset($_POST["password_repeat"]) && !empty($_POST["password_repeat"])) &&
-            (isset($_POST["question"]) && !empty($_POST["question"])) &&
-            (isset($_POST["answer"]) && !empty($_POST["answer"]))) {
+
+        if (isset($_POST["email"]) || isset($_POST["question"]) || isset($_POST["answer"])) {
+            $email = $_POST["email"];
+            $question = $_POST["question"];
+            $answer = $_POST["answer"];
+            unset($_POST);
+            echo "<script>
+                    localStorage.setItem('email', '$email');
+                    localStorage.setItem('question', '$question');
+                    localStorage.setItem('answer', '$answer');
+                </script>";
+        }
+        //Check if all input fields are set and
+        if (
+            isset($_POST["email"]) &&
+            isset($_POST["password"]) &&
+            isset($_POST["password_repeat"]) &&
+            isset($_POST["question"]) &&
+            isset($_POST["answer"])
+        ) {
             $password = sha1($_POST["password"]);
             $password_repeat = sha1($_POST["password_repeat"]);
             $email = $_POST["email"];
