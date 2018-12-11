@@ -15,10 +15,13 @@ class Login extends AbstractController
      */
     public function index()
     {
+        //If session not started start the session
         if (!isset($_SESSION))
             session_start();
+        //If session 'PersonData' is set then clear the 'PersonData' session
         if (isset($_SESSION["PersonData"]))
             unset($_SESSION["PersonData"]);
+
         if ((isset($_POST["email"]) && !empty($_POST["email"])) && isset($_POST["password"]) && !empty($_POST["password"])) {
             $password = $_POST["password"];
             $email = $_POST["email"];
@@ -27,6 +30,7 @@ class Login extends AbstractController
                 WhatToDayUtilities::setSession(PersonUtils::getPersonData($email));
                 return $this->redirectToRoute('app_board_showboard');
             } else {
+                //Sticky navBar
                 echo "<script>
                     sessionStorage.setItem('login', '$email');
                 </script>";

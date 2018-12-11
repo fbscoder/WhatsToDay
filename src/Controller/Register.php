@@ -26,6 +26,7 @@ class Register extends AbstractController
             $email = $_POST["email"];
             $question = $_POST["question"];
             $answer = $_POST["answer"];
+            //Sticky navBar
             echo "<script>
                     localStorage.setItem('email', '$email');
                     localStorage.setItem('question', '$question');
@@ -47,7 +48,7 @@ class Register extends AbstractController
             $question = $_POST["question"];
             $answer = sha1($_POST["answer"]);
             unset($_POST);
-            //Check the password
+            //Check the token
             if ($token != null) {
                 if ($password == $password_repeat) {
                     //Checks if the person already exists in the dataBase
@@ -57,16 +58,19 @@ class Register extends AbstractController
                             return $this->redirectToRoute('app_board_showboard');
                         }
                     } else {
+                        //Show error
                         echo "<script>
                     localStorage.setItem('register', 'Die E-Mail ($email) ist bereits in Verwendung!');
                 </script>";
                     }
                 } else {
+                    //Show error
                     echo "<script>
                     localStorage.setItem('register', 'Ihr Passwort stimmt nicht überein!');
                 </script>";
                 }
             } else {
+                //Show error
                 echo "<script>
                     localStorage.setItem('register', 'Sie haben keinen Token generieren lassen!');
                 </script>";

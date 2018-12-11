@@ -22,10 +22,13 @@ class Board extends AbstractController
      */
     public function showBoard()
     {
+        //If session not started start the session
         if (!isset($_SESSION))
             session_start();
+        //Check if the 'PersonData' session is set
         if (!isset($_SESSION["PersonData"]))
             return $this->redirectToRoute('app_login_index');
+
         $params['boards'] = APIUtils::getBoards();
         return $this->render('showBoards.html.twig', $params);
     }
