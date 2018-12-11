@@ -9,12 +9,23 @@
 namespace App\Controller\Utils;
 
 
+use App\Controller\Utils\Person\PersonData;
+
 class WhatToDayUtilities
 {
+    /**
+     * Set the user session
+     * @param PersonData $Person
+     */
     public static function setSession($Person)
     {
         $_SESSION["PersonData"] = $Person;
     }
+
+    /**
+     * Get the dataBase connection
+     * @return \mysqli $conn
+     */
     public static function getDataBaseConnection()
     {
         $servername = "localhost";
@@ -29,13 +40,5 @@ class WhatToDayUtilities
             die("Connection failed: " . $conn->connect_error);
         }
         return $conn;
-    }
-
-    public static function isSessionNull()
-    {
-        if (isset($_SESSION['PersonUtils']) && !empty($_SESSION['PersonUtils'])) {
-            return true;
-        }
-        return false;
     }
 }

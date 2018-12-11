@@ -5,8 +5,17 @@ namespace App\Controller\Utils;
 use App\Controller\Utils\Person\PersonData;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class PersonUtils
+ * @package App\Controller\Utils
+ */
 class PersonUtils
 {
+    /**
+     * Get the user data
+     * @param String $email
+     * @return PersonData PersonData
+     */
     public static function getPersonData($email)
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();
@@ -23,6 +32,12 @@ class PersonUtils
 
     }
 
+    /**
+     * Check if user exists and if the data is right
+     * @param String $email
+     * @param String $password
+     * @return boolean bool
+     */
     public static function checkIfRightPerson($email, $password)
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();
@@ -40,6 +55,11 @@ class PersonUtils
         }
     }
 
+    /**
+     * Checks if the user email exists
+     * @param String $email
+     * @return boolean bool true | false
+     */
     public static function checkIfPersonExists($email)
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();
@@ -53,6 +73,15 @@ class PersonUtils
         }
     }
 
+    /**
+     * Save user into dataBase
+     * @param String $email User email
+     * @param String $password User password
+     * @param String $question User question
+     * @param String $answer User answer
+     * @param String $token Trello token
+     * @return boolean bool true | false
+     */
     public static function SavePersonInDataBase($email, $password, $question, $answer, $token)
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();

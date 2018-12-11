@@ -8,9 +8,6 @@
 
 namespace App\Controller\Utils\Task;
 
-
-use App\Controller\Utils\Task\CheckData;
-
 class CheckListData
 {
     public $name;
@@ -18,8 +15,8 @@ class CheckListData
 
     /**
      * CheckListData constructor.
-     * @param $name
-     * @param $check
+     * @param string $name Trello checklist Name
+     * @param $check CheckData object
      */
     public function __construct($name = "", $check = null)
     {

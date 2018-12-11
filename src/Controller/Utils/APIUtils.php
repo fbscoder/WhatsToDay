@@ -13,6 +13,10 @@ use Trello\Client;
  */
 class APIUtils
 {
+    /**
+     * Finish the Trello card
+     * @param integer $cardId Trello card id
+     */
     public static function setTaskToFinish($cardId)
     {
         $client = APIUtils::getClient();
@@ -22,6 +26,10 @@ class APIUtils
 
     }
 
+    /**
+     * Get the Trello api client
+     * @return Client Trello api client
+     */
     private static function getClient()
     {
         $client = new Client();
@@ -31,12 +39,12 @@ class APIUtils
         return $client;
     }
 
-    public static function checkOrUncheckCheckBox()
-    {
-        $client = APIUtils::getClient();
-
-    }
-
+    /**
+     * Get all cards from tomorrow form a board
+     * @param integer $board Trello board id
+     * @return array array Trello card list
+     * @throws \Exception
+     */
     public static function getBoardTasksTomorrow($board)
     {
         $datetime = new DateTime('tomorrow');
@@ -44,6 +52,12 @@ class APIUtils
         return APIUtils::getTaskList($board, $datetime);
     }
 
+    /**
+     * Get all cards from a board
+     * @param integer $board Trllo board id
+     * @param DateTime $dateToCheck Date to check
+     * @return array array Trello card list
+     */
     private static function getTaskList($board, $dateToCheck)
     {
         $client = APIUtils::getClient();
@@ -80,18 +94,31 @@ class APIUtils
         return $taskList;
     }
 
-    static function getBoardTasksToday($board)
+    /**
+     * Get all cards from today form a board
+     * @param integer $board Trello board id
+     * @return array Trello card list
+     */
+    public static function getBoardTasksToday($board)
     {
         return APIUtils::getTaskList($board, date('Ymd'));
     }
 
+    /**
+     * Count a card list
+     * @param array $taskList card list to count
+     * @return integer int get counted Cards
+     */
     public static function getCountedTasks($taskList)
     {
         return count($taskList);
     }
 
-    public
-    static function getBoards()
+    /**
+     * Get all Trello boards from a user
+     * @return array mixed all boards from a user
+     */
+    public static function getBoards()
     {
         $client = APIUtils::getClient();
         $boards = $client->api("member")->boards()->all();

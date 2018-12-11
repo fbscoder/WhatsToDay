@@ -16,8 +16,8 @@ class CheckData
 
     /**
      * CheckData constructor.
-     * @param $name
-     * @param $isChecked
+     * @param string $name Trello checkBox title
+     * @param bool $isChecked true | false
      */
     public function __construct($name = "", $isChecked = false)
     {

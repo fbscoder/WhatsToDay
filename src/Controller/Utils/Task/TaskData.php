@@ -18,10 +18,10 @@ class TaskData
 
     /**
      * TaskData constructor.
-     * @param null $id
-     * @param string $title
-     * @param string $description
-     * @param $checkListData
+     * @param null $id Trello card id
+     * @param string $title Trello card title
+     * @param string $description Trello card description
+     * @param $checkListData Trello checklist list
      */
     public function __construct($id = null, $title = "", $description = "", $checkListData = null)
     {
