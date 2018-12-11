@@ -55,7 +55,7 @@
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#password_modal">Passwort
                             ändern</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Boards">Board ändern</a>
                     </li>
                     <li class="nav-item">
@@ -69,36 +69,38 @@
              aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="password_label">Passwort ändern</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/changePassword" id="changePasswordForm" method="post">
+                    <form action="/changePassword" id="changePasswordForm" method="post">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="password_label">Passwort ändern</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
                             <div class="form-group">
                                 <label for="passwordOld">Altes Passwort:</label>
-                                <input type="password" class="form-control" name="passwordOld" id="passwordOld">
+                                <input type="password" minlength="8" class="form-control" name="passwordOld"
+                                       id="passwordOld" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="passwordNew">Neues Passwort:</label>
-                                <input type="password" class="form-control" name="passwordNew" id="passwordNew">
+                                <input type="password" minlength="8" class="form-control" name="passwordNew"
+                                       id="passwordNew" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="passwordNewRepeat">Passwort wiederholen:</label>
-                                <input type="password" class="form-control" name="passwordNewRepeat" id="passwordNewRepeat">
+                                <input type="password" class="form-control" minlength="8" name="passwordNewRepeat"
+                                       id="passwordNewRepeat" required="required">
                             </div>
                             <div class="hidden" role="alert" id="alert">
                             </div>
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
-                        <button type="submit" class="btn btn-gray">Passwort ändern</button>
-
-                        </form>
-                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                            <button type="submit" class="btn btn-gray">Passwort ändern</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -106,30 +108,31 @@
              aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="email_label">E-Mail ändern</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="post" action="/changeEmail" id="changeEmailForm">
+                    <form method="post" action="/changeEmail" id="changeEmailForm">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="email_label">E-Mail ändern</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
                             <div class="form-group">
                                 <label for="emailOld">Email Alt:</label>
-                                <input type="email" class="form-control" name="emailOld" id="emailOld">
+                                <input type="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                                       class="form-control" name="emailOld" id="emailOld" required="required">
                             </div>
                             <div class="form-group">
                                 <label for="emailNew">Email Neu:</label>
-                                <input type="email" class="form-control" name="emailNew" id="emailNew">
+                                <input type="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                                       class="form-control" name="emailNew" id="emailNew" required="required">
                             </div>
-                            <div class="hidden" role="alert" id="emailAlert">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
-                        <button type="button" id="changeEmailSubmit" class="btn btn-gray">E-Mail ändern</button>
-                    </div>
+                            <div class="hidden" role="alert" id="emailAlert"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                            <button type="submit" id="changeEmailSubmit" class="btn btn-gray">E-Mail ändern</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

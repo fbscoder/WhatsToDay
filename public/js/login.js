@@ -9,13 +9,6 @@ $(document).ready(function () {
     }
 
     /**
-     * Submit forget password on '#forgotPasswordModalSubmit' click
-     */
-    $("#forgotPasswordModalSubmit").click(function () {
-        $("#forgotPasswordForm").submit();
-    });
-
-    /**
      * Responsive modal switch
      */
     $("#forgotPasswordForm").submit(function (event) {
@@ -40,13 +33,6 @@ $(document).ready(function () {
                 }
             }
         });
-    });
-
-    /**
-     * Submit forget password on '#changeForgotPasswordFormSubmit' click
-     */
-    $("#changeForgotPasswordFormSubmit").click(function () {
-        $("#changeForgotPasswordForm").submit();
     });
 
     /**

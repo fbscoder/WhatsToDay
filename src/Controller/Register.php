@@ -8,6 +8,10 @@ use App\Controller\Utils\WhatToDayUtilities;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+/**
+ * Class Register
+ * @package App\Controller
+ */
 class Register extends AbstractController
 {
     /**

@@ -40,23 +40,22 @@
         <a href="/Register" class="forgot-password">
             Sind Sie noch nicht registriert?
         </a>
-        <a href="#" class="forgot-password">
-        <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" class="forgot-password">
-            Passwort vergessen?
-        </a>
+        <a href="#" class="forgot-password"></a>
+        <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" class="forgot-password">Passwort
+            vergessen?</a>
     </div>
     <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModal"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="forgotPassword">Passwort vergessen</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="forgotPasswordModalBody">
-                    <form method="post" action="/verifySecurityQuestion" id="forgotPasswordForm">
+                <form method="post" action="/verifySecurityQuestion" id="forgotPasswordForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="forgotPassword">Passwort vergessen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="forgotPasswordModalBody">
                         <div class="form-group">
                             <label for="enteredEmail">Email:</label>
                             <input type="email" class="form-control" name="enteredEmail" id="enteredEmail" required>
@@ -78,12 +77,13 @@
                         <input type="hidden" name="question" id="questionHidden">
                         <div class="hidden" role="alert" id="alert_1">
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer" id="forgotPasswordModalFooter">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
-                    <button type="button" id="forgotPasswordModalSubmit" class="btn btn-gray">Absenden</button>
-                </div>
+
+                    </div>
+                    <div class="modal-footer" id="forgotPasswordModalFooter">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                        <button type="submit" id="forgotPasswordModalSubmit" class="btn btn-gray">Absenden</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -92,32 +92,34 @@
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="forgotPassword">Passwort vergessen</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="forgotPasswordModalBody">
-                    <form method="post" action="/changeForgottenPassword" id="changeForgotPasswordForm">
+                <form method="post" action="/changeForgottenPassword" id="changeForgotPasswordForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="forgotPassword">Passwort vergessen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="forgotPasswordModalBody">
                         <div class="form-group">
                             <label for="passwordNew">Passwort Neu:</label>
-                            <input type="password" class="form-control" name="passwordNew" id="passwordNew" required>
+                            <input type="password" class="form-control" minlength="8" name="passwordNew"
+                                   id="passwordNew" required>
                         </div>
                         <div class="form-group">
-                            <label for="passwordNew">Passwort wiederholen:</label>
+                            <label for="passwordVerification">Passwort wiederholen:</label>
                             <input type="password" class="form-control" name="passwordVerification"
-                                   id="passwordVerification" required>
+                                   id="passwordVerification" minlength="8" required>
                         </div>
                         <input type="hidden" id="userId" name="userId">
                         <div class="hidden" role="alert" id="alertPasswordReset">
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer" id="forgotPasswordModalFooter">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
-                    <button type="button" id="changeForgotPasswordFormSubmit" class="btn btn-gray">Absenden</button>
-                </div>
+
+                    </div>
+                    <div class="modal-footer" id="forgotPasswordModalFooter">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                        <button type="submit" id="changeForgotPasswordFormSubmit" class="btn btn-gray">Absenden</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
