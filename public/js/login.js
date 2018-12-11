@@ -27,7 +27,7 @@ $(document).ready(function () {
                 } else {
                     var alert = $("#alert_1");
                     alert.attr('class', 'hidden');
-                    alert.addClass('alert alert-dark ');
+                    alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
                     alert.text("Ihre Email Addresse oder Sicherheitsfrage ist falsch, bitte überprüfen Sie Ihre Eingabe!");
                 }
@@ -57,7 +57,7 @@ $(document).ready(function () {
                     alert.text("Ihr Passwort wurde geändert!");
                 } else if (output === "PasswordsDoesNotMatch") {
                     alert.attr('class', 'hidden');
-                    alert.addClass('alert alert-dark alert');
+                    alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
                     alert.text("Ihre Passwörter stimmen nicht überein!");
                 }
@@ -69,15 +69,39 @@ $(document).ready(function () {
      * Get Responsive security question with Ajax
      */
     $('#enteredEmail').change(function () {
+        question = $('#question');
             $.ajax({
                 url: '/getSecurityQuestion',
                 type: 'post',
                 data: {email: $('#enteredEmail').val()},
                 success: function (output) {
-                    $('#question').val(output);
+                    if (output == 1) {
+                        question.text('Was war der Name Ihres ersten Haustieres?');
+                    }
+                    else if (output == 2) {
+                        question.text('Wie lautet der Mädchenname Ihrer Mutter?');
+                    }
+                    else if (output == 3) {
+                        question.text('Wie lautet Ihr Traumurlaubs Ziel?');
+                    }
+                    else {
+                        question.text('Keine Email Addresse gefunden');
+                    }
                     $('#questionHidden').val(output);
                 }
             });
         }
     );
+    $('.modal').on('hidden.bs.modal', function (e) {
+        $(this)
+            .find("input,textarea,select")
+            .val('')
+            .end()
+            .find("input[type=checkbox], input[type=radio]")
+            .prop("checked", "")
+            .end();
+        $('#question').text('');
+    })
+
+
 });

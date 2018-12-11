@@ -185,6 +185,7 @@ class PersonUtils
             $result = $conn->query($sql)->fetch_assoc();
             return new Response($result['question']);
         }
+        return new Response('0');
     }
 }
 

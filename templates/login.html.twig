@@ -32,7 +32,7 @@
             <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail Adresse" required
                    autofocus>
             <input type="password" name="password" id="password" class="form-control" placeholder="Passwort" required>
-            <div class="alert alert-dark alert hidden" role="alert" id="alertLogin">
+            <div class="alert alert-dark warning hidden" role="alert" id="alertLogin">
                 E-Mail Adresse oder Passwort ist falsch, bitte überprüfen Sie Ihre Eingabe!
             </div>
             <button class="btn btn-gray" type="submit">Log-in</button>
@@ -57,21 +57,15 @@
                     </div>
                     <div class="modal-body" id="forgotPasswordModalBody">
                         <div class="form-group">
-                            <label for="enteredEmail">Email:</label>
-                            <input type="email" class="form-control" name="enteredEmail" id="enteredEmail" required>
+                            <input type="email" class="form-control" name="enteredEmail" placeholder="Email"
+                                   id="enteredEmail" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="question">Sicherheitsfrage auswählen</label>
-                            <select id="question" name="question" class="form-control" disabled>
-                                <option value="1">Was war der Name Ihres ersten Haustieres?</option>
-                                <option value="2">Wie lautet der Mädchenname Ihrer Mutter?</option>
-                                <option value="3">Wie lautet Ihr Traumurlaubs Ziel?</option>
-                            </select>
+                            <p id="question" class="form-control">Keine Email Addresse gefunden</p>
                         </div>
                         <div class="form-group">
-                            <label for="SecurityQuestionAnswer">Antwort:</label>
-                            <input type="text" class="form-control" name="SecurityQuestionAnswer"
+                            <input type="text" class="form-control" placeholder="Antwort" name="SecurityQuestionAnswer"
                                    id="SecurityQuestionAnswer" required>
                         </div>
                         <input type="hidden" name="question" id="questionHidden">
