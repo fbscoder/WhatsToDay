@@ -50,7 +50,7 @@ class Register extends AbstractController
             $email = $_POST["email"];
             $token = $_POST["token"];
             $question = $_POST["question"];
-            $answer = sha1($_POST["answer"]);
+            $answer = sha1(strtolower(trim($_POST["answer"])));
             unset($_POST);
             //Check the token
             if ($token != null) {

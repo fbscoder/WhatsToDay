@@ -4,7 +4,6 @@ namespace App\Controller\Utils;
 
 use App\Controller\Utils\Person\PersonData;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class PersonUtils
@@ -150,8 +149,7 @@ class PersonUtils
     public function verifySecurityQuestion()
     {
         $conn = WhatToDayUtilities::getDataBaseConnection();
-        $answer = sha1($_POST['SecurityQuestionAnswer']);
-        $sql = "SELECT id from users where email = " . "'" . $_POST['enteredEmail'] . "'" . " AND question = " . $_POST['question'] . " AND answer = " . "'" . $answer . "'";
+        $sql = "SELECT id from users where email = " . "'" . $_POST['enteredEmail'] . "'" . " AND question = " . $_POST['question'] . " AND answer = " . "'" . sha1(strtolower(trim($_POST["SecurityQuestionAnswer"]))) . "'";
         $result = $conn->query($sql)->fetch_assoc();
         if (!empty($result)) {
             return new Response($result['id']);
