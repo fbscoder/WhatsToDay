@@ -118,6 +118,8 @@ class PersonUtils
                 return new Response('oldPasswordWrong');
             } elseif ($oldPasswordHashed == $result['password'] && $_POST['passwordNew'] != $_POST['passwordNewRepeat']) {
                 return new Response('passwordNotMatching');
+            } elseif ($oldPasswordHashed != $result['password'] && $_POST['passwordNew'] != $_POST['passwordNewRepeat']) {
+                return new Response('allPasswordsWrong');
             }
         }
 

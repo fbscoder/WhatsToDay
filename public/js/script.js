@@ -41,7 +41,7 @@ $(document).ready(function () {
                     alert.removeClass('hidden');
                     alert.text("Ihr Passwort wurde geändert!");
                 }
-                else if (output === "oldPasswordWrong") {
+                else if (output === "oldPasswordWrong" || output === 'allPasswordsWrong') {
                     alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
                     alert.text("Ihr altes Passwort stimmt nicht!");
@@ -65,5 +65,10 @@ $(document).ready(function () {
             .find("input[type=checkbox], input[type=radio]")
             .prop("checked", "")
             .end();
+        $("#alert").attr('class', 'hidden');
+        $("#alert").text('');
+
+        $("#emailAlert").attr('class', 'hidden');
+        $("#emailAlert").text('');
     })
 });
