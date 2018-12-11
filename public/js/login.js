@@ -61,7 +61,6 @@ $(document).ready(function () {
                     alert.removeClass('hidden');
                     alert.text("Ihre Passwörter stimmen nicht überein!");
                 }
-                alert(output);
             }
         });
     });
