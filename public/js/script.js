@@ -1,7 +1,14 @@
 $(document).ready(function () {
+    /**
+     * Submit form on '#changeEmailSubmit' click
+     */
     $("#changeEmailSubmit").click(function () {
         $("#changeEmailForm").submit();
     });
+
+    /**
+     * Change email with Ajax
+     */
     $("#changeEmailForm").submit(function (event) {
         event.preventDefault();
         var form_data = $(this).serialize(); //Encode form elements for submission
@@ -16,8 +23,7 @@ $(document).ready(function () {
                     alert.addClass('alert alert-success');
                     alert.removeClass('hidden');
                     alert.text("Ihre Email wurde erfolgreich geändert");
-                }
-                else if (output === "emailNoMatch") {
+                } else if (output === "emailNoMatch") {
                     alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
                     alert.text("Ihre E-Mail Adresse ist nicht hinterlegt!");
@@ -27,9 +33,17 @@ $(document).ready(function () {
             }
         })
     });
+
+    /**
+     * Submit form on '#changePasswordSubmit' click
+     */
     $("#changePasswordSubmit").click(function () {
         $("#changeEmailForm").submit();
     });
+
+    /**
+     * Change password with Ajax
+     */
     $("#changePasswordForm").submit(function (event) {
         event.preventDefault(); //prevent default action
         var form_data = $(this).serialize(); //Encode form elements for submission
@@ -45,13 +59,11 @@ $(document).ready(function () {
                     alert.addClass('alert alert-success');
                     alert.removeClass('hidden');
                     alert.text("Ihr Passwort wurde geändert!");
-                }
-                else if (output === "oldPasswordWrong") {
+                } else if (output === "oldPasswordWrong") {
                     alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
                     alert.text("Ihr altes Passwort stimmt nicht!");
-                }
-                else if (output === "passwordNotMatching") {
+                } else if (output === "passwordNotMatching") {
                     alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
                     alert.text("Ihren neuen Passwörter stimmen nicht überein!");

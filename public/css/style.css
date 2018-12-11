@@ -5,7 +5,6 @@
     --button-anzahl-aufgaben-color: #FFFFFF;
 }
 
-
 body {
     background-color: var(--main-bg-color);
     margin: 0 auto !important;
@@ -49,12 +48,6 @@ ul {
     color: white;
     background-color: #696969 !important;
 }
-
-/*#boards {*/
-/*width: 300px;*/
-/*height: 50px;*/
-/*box-shadow: 5px 10px 5px #888888;*/
-/*}*/
 
 .timeButtons button {
     background-color: var(--button-anzahl-aufgaben-color);
@@ -133,12 +126,6 @@ button:focus {
     margin-right: 100%;
     margin-left: 0;
 }
-
-/*.show {*/
-/*width: 100% !important;*/
-/*margin-right: 0;*/
-/*margin-left: 0;*/
-/*}*/
 
 #task_today, #task_tomorrow {
     background-color: var(--main-bg-color);

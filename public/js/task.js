@@ -1,3 +1,9 @@
+/**
+ * Set the values in modal
+ * @param id Card id
+ * @param title Card title
+ * @param button Finish button in card
+ */
 function setTaskValuesInModal(id, title, button) {
     $(".modal #title").text(title);
     $(".modal #card_id").val(id);
@@ -35,6 +41,9 @@ $(document).ready(function () {
         sessionStorage.clear();
     }
 
+    /**
+     * Hide all tasks and show tomorrow and today buttons
+     */
     $("#hideTasks").click(function () {
         $(".timeButtons").css({'display': 'block'});
         $('#tasks').animate({
@@ -50,6 +59,10 @@ $(document).ready(function () {
             }
         });
     });
+
+    /**
+     * Hide today and tomorrow buttons and show the tasks from today
+     */
     $("#btn_today").click(function () {
         // $('#xpullTaskToday').css({'display': "none"});
         $('#tasks').animate({
@@ -67,6 +80,10 @@ $(document).ready(function () {
             }
         });
     });
+
+    /**
+     * Hide today and tomorrow buttons and show the tasks from tomorrow
+     */
     $("#btn_tomorrow").click(function () {
         // $('#xpullTaskTomorrow').css({'display': "none"});
 
@@ -86,6 +103,9 @@ $(document).ready(function () {
         });
     });
 
+    /**
+     * Xpull library refresh site with down slide (css has been removed)
+     */
     $('#task_today').xpull({
         'callback': function () {
             sessionStorage.setItem('reloadSite', 'today');

@@ -1,14 +1,23 @@
 $(document).ready(function () {
-    $('#changeForgottenPassword').modal('hide');
-    $("#alertPasswordReset").attr('class', 'hidden');
+    /**
+     * Sticky Form (email)
+     */
     if (sessionStorage.getItem('login') !== null) {
         $('#alertLogin').removeClass('hidden');
         $('#email').val(sessionStorage.getItem('login'));
-        sessionStorage.clear()
+        sessionStorage.clear();
     }
+
+    /**
+     * Submit forget password on '#forgotPasswordModalSubmit' click
+     */
     $("#forgotPasswordModalSubmit").click(function () {
         $("#forgotPasswordForm").submit();
     });
+
+    /**
+     * Responsive modal switch
+     */
     $("#forgotPasswordForm").submit(function (event) {
         event.preventDefault(); //prevent default action
         var form_data = $(this).serialize(); //Encode form elements for submission
@@ -22,8 +31,7 @@ $(document).ready(function () {
                     $('#userId').val(output);
                     $('#forgotPasswordModal').modal('hide');
                     $('#changeForgottenPassword').modal('show');
-                }
-                else {
+                } else {
                     var alert = $("#alert_1");
                     alert.attr('class', 'hidden');
                     alert.addClass('alert alert-dark ');
@@ -34,9 +42,16 @@ $(document).ready(function () {
         });
     });
 
+    /**
+     * Submit forget password on '#changeForgotPasswordFormSubmit' click
+     */
     $("#changeForgotPasswordFormSubmit").click(function () {
         $("#changeForgotPasswordForm").submit();
     });
+
+    /**
+     * Change password with Ajax
+     */
     $("#changeForgotPasswordForm").submit(function (event) {
         var alert = $("#alertPasswordReset");
         alert.attr('class', 'hidden');
@@ -54,8 +69,7 @@ $(document).ready(function () {
                     alert.addClass('alert alert-success');
                     alert.removeClass('hidden');
                     alert.text("Ihr Passwort wurde geändert!");
-                }
-                else if (output === "PasswordsDoesNotMatch") {
+                } else if (output === "PasswordsDoesNotMatch") {
                     alert.attr('class', 'hidden');
                     alert.addClass('alert alert-dark alert');
                     alert.removeClass('hidden');
@@ -65,6 +79,10 @@ $(document).ready(function () {
             }
         });
     });
+
+    /**
+     * Get Responsive security question with Ajax
+     */
     $('#enteredEmail').change(function () {
             $.ajax({
                 url: '/getSecurityQuestion',
@@ -77,5 +95,4 @@ $(document).ready(function () {
             });
         }
     );
-
 });
