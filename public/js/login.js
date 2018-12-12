@@ -69,6 +69,8 @@ $(document).ready(function () {
      * Get Responsive security question with Ajax
      */
     $('#enteredEmail').change(function () {
+        $('#SecurityQuestionAnswer').prop('disabled', false);
+        $('#forgotPasswordModalSubmit').prop('disabled', false);
         question = $('#question');
             $.ajax({
                 url: '/getSecurityQuestion',
@@ -85,7 +87,10 @@ $(document).ready(function () {
                         question.text('Wie lautet Ihr Traumurlaubs Ziel?');
                     }
                     else {
-                        question.text('Keine Email Addresse gefunden');
+                        question.text('Diese E-Mail Addresse ist nicht regestriert');
+                        question.attr('class', 'form-control warning');
+                        $('#SecurityQuestionAnswer').prop('disabled', true);
+                        $('#forgotPasswordModalSubmit').prop('disabled', true);
                     }
                     $('#questionHidden').val(output);
                 }
