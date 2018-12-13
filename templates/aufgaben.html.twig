@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}Aufgaben Liste{% endblock %}
 {% block body %}
+    {{ dump() }}
     <div class="container-fluid">
         <div class="timeButtons">
             <div class="xpull" id="xpullButtons">
@@ -22,52 +23,62 @@
                     <div class="xpull" id="xpullTaskToday">
                     </div>
                     {% if taskToday is iterable %}
-                        {% for task in taskToday %}
-                            <div class="card text-center task_card">
-                                <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
-                                     href="#task_1_{{ loop.index }}"
-                                     aria-controls="task_1_{{ loop.index }}">
-                                    <p>{{ task.title }}</p>
-                                </div>
-                                <div class="collapse" id="task_1_{{ loop.index }}">
-                                    <div class="card-body ">
-                                        {% if task.description != null %}
-                                            <p class="card-text">{{ task.description }}</p>
-                                        {% endif %}
-                                        <ul>
-                                            {% if task.checkListData != null %}
-                                                {% for checklist in task.checkListData %}
-                                                    <p class="checkbox-title">{{ checklist.name }}</p>
-                                                    {% if checklist.check %}
-                                                        {% for subTask in checklist.check %}
-                                                            <li>
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox"
-                                                                           class="custom-control-input"
-                                                                           id="checkBox_1_{{ loop.index }}" disabled
-                                                                           {% if subTask.isChecked %}checked{% endif %}>
-                                                                    <label class="custom-control-label"
-                                                                           for="checkBox_1_{{ loop.index }}">{{ subTask.name }}</label>
-                                                                </div>
-                                                            </li>
-                                                        {% endfor %}
-                                                    {% endif %}
-                                                {% endfor %}
+                        <form method="post" id="checkListForm" name="checkListForm"
+                              action="/setCheckListItemCompleted">
+                            {% for task in taskToday %}
+                                <div class="card text-center task_card">
+                                    <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
+                                         href="#task_1_{{ loop.index }}"
+                                         aria-controls="task_1_{{ loop.index }}">
+                                        <p>{{ task.title }}</p>
+                                    </div>
+                                    <div class="collapse" id="task_1_{{ loop.index }}">
+                                        <div class="card-body ">
+                                            {% if task.description != null %}
+                                                <p class="card-text">{{ task.description }}</p>
                                             {% endif %}
-                                        </ul>
-                                    </div>
-                                    <div class="card-footer text-muted">
-                                        <!-- Button trigger modal -->
-                                        <button type="button"
-                                                onclick="setTaskValuesInModal('{{ task.id }}','{{ task.title }}',this)"
-                                                class="btn btn-gray" data-toggle="modal"
-                                                data-target="#finish_task">
-                                            Abschlie&szlig;en
-                                        </button>
+                                            <ul>
+                                                {% if task.checkListData != null %}
+
+                                                    {% for checklist in task.checkListData %}
+                                                        <p class="checkbox-title">{{ checklist.name }}</p>
+                                                        {% if checklist.check %}
+                                                            {% for subTask in checklist.check %}
+                                                                <li>
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox"
+                                                                               onchange="submitForm('checkBox_{{ checklist.name }}_{{ loop.index }}','CheckListId_{{ checklist.name }}','{{ subTask.name }}')"
+                                                                               class="custom-control-input"
+                                                                               id="checkBox_{{ checklist.name }}_{{ loop.index }}"
+                                                                               {% if subTask.isChecked %}checked
+                                                                               disabled{% endif %}
+                                                                               value="{{ subTask.itemId }}">
+                                                                        <label class="custom-control-label"
+                                                                               for="checkBox_{{ checklist.name }}_{{ loop.index }}">{{ subTask.name }}</label>
+                                                                    </div>
+                                                                </li>
+                                                            {% endfor %}
+                                                        {% endif %}
+                                                        <input type="hidden" id="CheckListId_{{ checklist.name }}"
+                                                               value="{{ checklist.checkListId }}">
+
+                                                    {% endfor %}
+
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                        <div class="card-footer text-muted">
+                                            <button type="button"
+                                                    onclick="setTaskValuesInModal('{{ task.id }}','{{ task.title }}',this)"
+                                                    class="btn btn-gray" data-toggle="modal"
+                                                    data-target="#finish_task">
+                                                Abschlie&szlig;en
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        {% endfor %}
+                            {% endfor %}
+                        </form>
                     {% else %}
                         <p>{{ taskToday }}</p>
                     {% endif %}
@@ -98,10 +109,10 @@
                                                                 <div class="custom-control custom-checkbox">
                                                                     <input type="checkbox"
                                                                            class="custom-control-input"
-                                                                           id="checkBox_2_{{ loop.index }}"
+                                                                           id="checkBox_{{ checklist.name }}_{{ loop.index }}"
                                                                            {% if subTask.isChecked %}checked{% endif %}>
                                                                     <label class="custom-control-label"
-                                                                           for="checkBox_2_{{ loop.index }}">{{ subTask.name }}</label>
+                                                                           for="checkBox_{{ checklist.name }}_{{ loop.index }}">{{ subTask.name }}</label>
                                                                 </div>
                                                             </li>
                                                         {% endfor %}
@@ -111,7 +122,6 @@
                                         </ul>
                                     </div>
                                     <div class="card-footer text-muted">
-                                        <!-- Button trigger modal -->
                                         <button type="button"
                                                 onclick="setTaskValuesInModal('{{ task.id }}','{{ task.title }}',this)"
                                                 class="btn btn-gray" data-toggle="modal"
@@ -156,6 +166,36 @@
             </div>
         </div>
     </div>
+    <script>
+        function submitForm(inputId, checkListId, itemName) {
+            var value = $('#' + inputId).val();
+            sessionStorage.setItem('checkListItemValue', value);
+            sessionStorage.setItem('checkListId', $('#' + checkListId).val());
+            sessionStorage.setItem('checkItemName', itemName);
+            sessionStorage.setItem('inputId', inputId);
+            $('#checkListForm').submit();
+        }
+
+        $('#checkListForm').submit(function (event) {
+            event.preventDefault();
+            checkListItemId = sessionStorage.getItem('checkListItemValue');
+            checkListId = sessionStorage.getItem('checkListId');
+            itemName = sessionStorage.getItem('checkItemName');
+            inputId = $('#' + sessionStorage.getItem('inputId'));
+            sessionStorage.clear();
+
+            $.ajax({
+                url: '/setCheckListItemCompleted',
+                type: 'post',
+                data: {'checkListId': checkListId, 'checkListItemId': checkListItemId, 'checkItemName': itemName},
+                success: function (output) {
+                    inputId.prop('disabled', true)
+                }
+            })
+
+
+        })
+    </script>
 {% endblock %}
 {% block javascripts %}
     <script src="js/task.js"></script>

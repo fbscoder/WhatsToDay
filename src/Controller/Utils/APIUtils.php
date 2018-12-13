@@ -6,6 +6,8 @@ use App\Controller\Utils\Task\CheckData;
 use App\Controller\Utils\Task\CheckListData;
 use App\Controller\Utils\Task\TaskData;
 use DateTime;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Response;
 use Trello\Client;
 
 /**
@@ -79,9 +81,9 @@ class APIUtils
                             $isChecked = false;
                         }
                         $checkName = $checkItem["name"];
-                        $checkData[] = new CheckData($checkName, $isChecked);
+                        $checkData[] = new CheckData($checkName, $isChecked, $checkItem['id']);
                     }
-                    $checkListData[] = new CheckListData($checkListName, $checkData);
+                    $checkListData[] = new CheckListData($checkListName, $checkData, $checkList['id']);
                 }
                 if ($taskData == null && $checkListData == [])
                     $taskData = new TaskData($cardId, $title, $description, null);
@@ -91,9 +93,24 @@ class APIUtils
                 $taskList[] = $taskData;
             }
         };
+
         return $taskList;
     }
 
+    /**
+     * @Route("/setCheckListItemCompleted")
+     */
+
+    public function setCheckListItemCompleted()
+    {
+        $client = APIUtils::getClient();
+        $params['name'] = $_POST['checkItemName'];
+        $params['state'] = 'true';
+
+        $client->api('checklist')->items()->update($_POST['checkListId'], $_POST['checkListItemId'], $params);
+        return new Response('Form funktioniert');
+
+    }
     /**
      * Get all cards from today form a board
      * @param integer $board Trello board id

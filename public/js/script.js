@@ -41,19 +41,32 @@ $(document).ready(function () {
                     alert.removeClass('hidden');
                     alert.text("Ihr Passwort wurde geändert!");
                 }
-                else if (output === "oldPasswordWrong" || output === 'allPasswordsWrong') {
+                else if (output === "oldPasswordWrong") {
                     alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
                     alert.text("Ihr altes Passwort stimmt nicht!");
+
+                    $("#passwordOld").val('');
                 }
                 else if (output === "passwordNotMatching") {
                     alert.addClass('alert alert-dark warning');
                     alert.removeClass('hidden');
                     alert.text("Ihren neuen Passwörter stimmen nicht überein!");
+
+                    $("#passwordNew").val('');
+                    $("#passwordNewRepeat").val('');
+
                 }
-                $("#passwordOld").val('');
-                $("#passwordNew").val('');
-                $("#passwordNewRepeat").val('');
+                else if (output === "allPasswordsWrong") {
+                    alert.addClass('alert alert-dark warning');
+                    alert.removeClass('hidden');
+                    alert.text('Alle Ihre Eingaben waren falsch, Bitte veruschen Sie es erneut.');
+
+                    $("#passwordOld").val('');
+                    $("#passwordNew").val('');
+                    $("#passwordNewRepeat").val('');
+                }
+
             }
         })
     });

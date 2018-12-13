@@ -6,6 +6,7 @@ $(document).ready(function () {
         if ($(this).hasClass('button-active')) {
             $(this).removeClass('button-active');
         } else {
+            $('#boardSubmit').prop('disabled', false);
             $(this).addClass('button-active');
         }
     });
@@ -22,7 +23,12 @@ $(document).ready(function () {
             i++;
         });
         $("#selectedBoards").val(JSON.stringify(boards));
-        $("#boardForm").submit();
+        if (typeof boards !== 'undefined' && boards.length > 0) {
+            $("#boardForm").submit();
+        }
+        else {
+            $('#boardSubmit').prop('disabled', true);
+        }
     });
 
     /**
@@ -30,5 +36,6 @@ $(document).ready(function () {
      */
     $("#boardReset").click(function () {
         $("#boardForm .button-active").removeClass("button-active");
+        $('#boardSubmit').prop('disabled', true);
     });
 });
