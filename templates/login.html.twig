@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+{% block title %}Login{% endblock %}
+{% block stylesheets %}
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="/css/library/bootstrap.4.1.3.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+
+{% endblock %}
+{% block body %}
+    {% block header %}{% endblock %}
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="img/icon.png"/>
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin" action="/" method="POST">
+            <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail Adresse" required
+                   autofocus>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Passwort" required>
+            <div class="alert alert-dark warning hidden" role="alert" id="alertLogin">
+                E-Mail Adresse oder Passwort ist falsch, bitte überprüfen Sie Ihre Eingabe!
+            </div>
+            <button class="btn btn-gray" type="submit">Log-in</button>
+        </form><!-- /form -->
+        <a href="/Register" class="forgot-password">
+            Sind Sie noch nicht registriert?
+        </a>
+        <a href="#" class="forgot-password"></a>
+        <a href="#" data-toggle="modal" data-target="#forgotPasswordModal" class="forgot-password">Passwort
+            vergessen?</a>
+    </div>
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModal"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="post" action="/verifySecurityQuestion" id="forgotPasswordForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="forgotPassword">Passwort vergessen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="forgotPasswordModalBody">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="enteredEmail" placeholder="Email"
+                                   id="enteredEmail" required>
+                        </div>
+
+                        <div class="form-group">
+                            <p id="question" style="font-size: 0.85rem" class="form-control">Keine Email Addresse
+                                gefunden</p>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Antwort" name="SecurityQuestionAnswer"
+                                   id="SecurityQuestionAnswer" required>
+                        </div>
+                        <input type="hidden" name="question" id="questionHidden">
+                        <div class="hidden" role="alert" id="alert_1">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer" id="forgotPasswordModalFooter">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                        <button type="submit" id="forgotPasswordModalSubmit" class="btn btn-gray">Absenden</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="changeForgottenPassword" tabindex="-1" role="dialog"
+         aria-labelledby="forgotPasswordModal"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form method="post" action="/changeForgottenPassword" id="changeForgotPasswordForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="forgotPassword">Passwort vergessen</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="forgotPasswordModalBody">
+                        <div class="form-group">
+                            <label for="passwordNew">Passwort Neu:</label>
+                            <input type="password" class="form-control" minlength="8" name="passwordNew"
+                                   id="passwordNew" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordVerification">Passwort wiederholen:</label>
+                            <input type="password" class="form-control" name="passwordVerification"
+                                   id="passwordVerification" minlength="8" required>
+                        </div>
+                        <input type="hidden" id="userId" name="userId">
+                        <div class="hidden" role="alert" id="alertPasswordReset">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer" id="forgotPasswordModalFooter">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                        <button type="submit" id="changeForgotPasswordFormSubmit" class="btn btn-gray">Absenden</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script src="js/login.js"></script>
+{% endblock %}

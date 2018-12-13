@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boards{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid" id="boards">
+        <form method="GET" action="/showTasks" id="boardForm">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="boards">
+                        {% for board in boards %}
+                            {#<button id="boards" value="{{ board.id }}" name="board">#}
+                            <div class="card text-center task_card card-rounded">
+                                <button id="{{ board.id }}" class="card-header board-button card-header-rounded"
+                                        type="button"
+                                        value="{{ board.id }}"
+                                        name="board">
+                                    {{ board.name }}
+                                </button>
+                            </div>
+                        {% endfor %}
+                        <input type="hidden" id="selectedBoards" name="selectedBoards" value="">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="button-bottom">
+            <div class="row">
+                <div class="col-md-6 boardSubmit">
+                    <button id="boardSubmit"
+                            class="btn btn-gray sticky-top text-center boardButton"
+                            type="button">Submit
+                    </button>
+                </div>
+                <div class="col-md-6 boardReset">
+                    <button id="boardReset"
+                            class="btn btn-gray sticky-top text-center boardButton"
+                            type="button">Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="js/board.js"></script>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+{% block title %}Registrieren{% endblock %}
+{% block stylesheets %}
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="/css/library/bootstrap.4.1.3.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+
+{% endblock %}
+{% block body %}
+    {% block header %}{% endblock %}
+    <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="img/icon.png"/>
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin" action="/Register" method="POST">
+            <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail Adresse" required
+                   autofocus>
+            <input type="password" minlength="8" name="password" id="password" class="form-control"
+                   placeholder="Passwort (minimum 8 Zeichen)" required>
+            <input type="password" minlength="8" name="password_repeat" id="password_repeat" class="form-control"
+                   placeholder="Passwort wiederholen" required>
+            <div class="form-group">
+                <select id="question" name="question" class="form-control">
+                    <option value="1" selected>Was war der Name Ihres ersten Haustieres?</option>
+                    <option value="2">Wie lautet der Mädchenname Ihrer Mutter?</option>
+                    <option value="3">Was ist Ihr Traumurlaubs Ziel?</option>
+                </select>
+            </div>
+            <input type="text" name="answer" id="answer" class="form-control" placeholder="Antwort" required>
+            <div class="form-group">
+                <input style="cursor: pointer;" type="text" class="form-control" name="token" id="token"
+                       aria-describedby="token_help"
+                       placeholder="Klicke hier um Ihren Token zu generieren." required readonly>
+                <small id="token_help" class="form-text text-muted">Mit der Registierung bestätigen Sie unsere <a
+                            href="https://docs.google.com/viewerng/viewer?url=http://whats2day.taschenform.at/datenschutzerklaerung.pdf"
+                            target="_blank">Datenschutzerklärung</a>.
+                </small>
+
+            </div>
+            <div class="alert alert-dark alert hidden" role="alert" id="alertLogin">
+                Überprüfen Sie Ihre Eingabe!
+            </div>
+            <button class="btn btn-gray" type="submit">Registrieren</button>
+        </form><!-- /form -->
+        <a href="/" class="forgot-password">
+            Haben Sie bereits ein Konto?
+        </a>
+    </div><!-- /card-container -->
+{% endblock %}
+{% block javascripts %}
+    <script src="js/register.js"></script>
+    <script src="https://api.trello.com/1/client.js?key=aa8b7e7e0a878b7f8e6d805c78ff2526"></script>
+{% endblock %}
