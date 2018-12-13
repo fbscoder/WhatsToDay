@@ -25,6 +25,16 @@ function setTaskValuesInModal(id, title, button) {
     $("#cardForm").attr('action', document.URL);
 }
 
+function submitForm(inputId, checkListId, itemName) {
+    var input = $('#' + inputId);
+    sessionStorage.setItem('checkListItemValue', input.val());
+    sessionStorage.setItem('checkListId', $('#' + checkListId).val());
+    sessionStorage.setItem('checkItemName', itemName);
+    sessionStorage.setItem('inputId', inputId);
+    input.prop('disabled', true);
+    $('#checkListForm').submit();
+}
+
 $(document).ready(function () {
     if (sessionStorage.getItem('reloadSite') !== null) {
         if (sessionStorage.getItem('reloadSite') === 'today') {
@@ -123,4 +133,28 @@ $(document).ready(function () {
             location.reload();
         }
     });
+
+
+    $('#checkListForm').submit(function (event) {
+        event.preventDefault();
+        checkListItemId = sessionStorage.getItem('checkListItemValue');
+        checkListId = sessionStorage.getItem('checkListId');
+        itemName = sessionStorage.getItem('checkItemName');
+        inputId = $('#' + sessionStorage.getItem('inputId'));
+        sessionStorage.clear();
+
+        $.ajax({
+            url: '/setCheckListItemCompleted',
+            type: 'post',
+            data: {'checkListId': checkListId, 'checkListItemId': checkListItemId, 'checkItemName': itemName},
+            success: function (output) {
+
+            },
+            error: function (output) {
+                inputId.prop('disabled', false);
+            }
+        })
+
+
+    })
 });
