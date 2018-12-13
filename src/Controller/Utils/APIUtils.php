@@ -105,9 +105,14 @@ class APIUtils
     {
         $client = APIUtils::getClient();
         $params['name'] = $_POST['checkItemName'];
-        $params['state'] = 'true';
-
+        $params['state'] = $_POST['state'];
         $client->api('checklist')->items()->update($_POST['checkListId'], $_POST['checkListItemId'], $params);
+        $checkList = $client->api("checklists")->items()->all($_POST['checkListId']);
+        foreach ($checkList as $item) {
+            if ($item['name'] == $_POST['checkItemName']) {
+                return new Response($item['id']);
+            }
+        }
         return new Response('Form funktioniert');
 
     }

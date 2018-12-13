@@ -146,12 +146,18 @@ $(document).ready(function () {
         $.ajax({
             url: '/setCheckListItemCompleted',
             type: 'post',
-            data: {'checkListId': checkListId, 'checkListItemId': checkListItemId, 'checkItemName': itemName},
+            data: {
+                'checkListId': checkListId,
+                'checkListItemId': checkListItemId,
+                'checkItemName': itemName,
+                'state': inputId.prop('checked')
+            },
             success: function (output) {
+                inputId.val(output);
+                inputId.prop('disabled', false);
 
             },
             error: function (output) {
-                inputId.prop('disabled', false);
             }
         })
 
