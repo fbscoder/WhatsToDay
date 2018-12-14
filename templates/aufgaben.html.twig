@@ -26,6 +26,12 @@
                               action="/setCheckListItemCompleted">
                             {% for task in taskToday %}
                                 <div class="card text-center task_card">
+                                    {% if(task.personsInCard != null) %}
+                                        <a class="person-popover" tabindex="0" data-trigger="focus"
+                                           data-toggle="popover" title="Mitglieder"
+                                           data-content="{{ task.personsInCard }}"> <i
+                                                    class="fa fa-question-circle"></i></a>
+                                    {% endif %}
                                     <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
                                          href="#task_1_{{ loop.index }}"
                                          aria-controls="task_1_{{ loop.index }}">
@@ -95,6 +101,12 @@
                               action="/setCheckListItemCompleted">
                             {% for task in taskTomorrow %}
                                 <div class="card text-center task_card">
+                                    {% if(task.personsInCard != null) %}
+                                        <a class="person-popover" tabindex="0" data-trigger="focus"
+                                           data-toggle="popover" title="Mitglieder"
+                                           data-content="{{ task.personsInCard }}"> <i
+                                                    class="fa fa-question-circle"></i></a>
+                                    {% endif %}
                                     <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
                                          href="#task_1_{{ loop.index }}"
                                          aria-controls="task_1_{{ loop.index }}">

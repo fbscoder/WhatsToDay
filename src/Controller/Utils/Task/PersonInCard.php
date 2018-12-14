@@ -13,7 +13,11 @@ class PersonInCard
 {
     public $name;
 
-    public function __construct($name)
+    /**
+     * PersonInCard constructor.
+     * @param String $name
+     */
+    public function __construct($name = null)
     {
         $this->name = $name;
     }
