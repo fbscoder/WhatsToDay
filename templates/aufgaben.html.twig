@@ -33,6 +33,12 @@
                                     </div>
                                     <div class="collapse" id="task_1_{{ loop.index }}">
                                         <div class="card-body ">
+                                            {% if task.labels != 'null' %}
+                                                {% for label in task.labels %}
+                                                    <span class="badge badge-pill badge-dark"
+                                                          style="background: {{ label.color }}">{{ label.name }}</span>
+                                                {% endfor %}
+                                            {% endif %}
                                             {% if task.description != null %}
                                                 <p class="card-text">{{ task.description }}</p>
                                             {% endif %}

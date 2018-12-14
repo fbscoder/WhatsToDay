@@ -18,6 +18,7 @@ class TaskData
     public $checkListData;
     public $id;
     public $personInCard;
+    public $labels;
 
     /**
      * TaskData constructor.
@@ -35,5 +36,87 @@ class TaskData
         $this->checkListData = $checkListData;
         $this->personInCard = $personInCard;
     }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return Trello|null
+     */
+    public function getCheckListData(): ?Trello
+    {
+        return $this->checkListData;
+    }
+
+    /**
+     * @param Trello|null $checkListData
+     */
+    public function setCheckListData(?Trello $checkListData): void
+    {
+        $this->checkListData = $checkListData;
+    }
+
+    /**
+     * @return null
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param null $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLabels()
+    {
+        return $this->labels;
+    }
+
+    /**
+     * @param mixed $labels
+     */
+    public function setLabels($labels): void
+    {
+        $this->labels[] = $labels;
+    }
+
+
 
 }

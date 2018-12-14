@@ -104,10 +104,14 @@ class APIUtils
                     else {
                         $taskData = new TaskData($cardId, $title, $description, $checkListData);
                     }
+                    foreach ($card['labels'] as $i => $label) {
+                        unset($label['id']);
+                        unset($label['idBoard']);
+                        $taskData->setLabels($label);
+                    }
                     $taskList[] = $taskData;
                 }
             }
-
         };
 
         return $taskList;
