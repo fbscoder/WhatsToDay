@@ -26,6 +26,12 @@
                               action="/setCheckListItemCompleted">
                             {% for task in taskToday %}
                                 <div class="card text-center task_card">
+                                    {% if(task.personsInCard != null) %}
+                                        <a class="person-popover" tabindex="0" data-trigger="focus"
+                                           data-toggle="popover" title="Mitglieder"
+                                           data-content="{{ task.personsInCard }}"> <i
+                                                    class="fa fa-question-circle"></i></a>
+                                    {% endif %}
                                     <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
                                          href="#task_1_{{ loop.index }}"
                                          aria-controls="task_1_{{ loop.index }}">
@@ -33,6 +39,12 @@
                                     </div>
                                     <div class="collapse" id="task_1_{{ loop.index }}">
                                         <div class="card-body ">
+                                            {% if task.labels != 'null' %}
+                                                {% for label in task.labels %}
+                                                    <span class="badge badge-pill badge-dark"
+                                                          style="background: {{ label.color }}">{{ label.name }}</span>
+                                                {% endfor %}
+                                            {% endif %}
                                             {% if task.description != null %}
                                                 <p class="card-text">{{ task.description }}</p>
                                             {% endif %}
@@ -89,6 +101,12 @@
                               action="/setCheckListItemCompleted">
                             {% for task in taskTomorrow %}
                                 <div class="card text-center task_card">
+                                    {% if(task.personsInCard != null) %}
+                                        <a class="person-popover" tabindex="0" data-trigger="focus"
+                                           data-toggle="popover" title="Mitglieder"
+                                           data-content="{{ task.personsInCard }}"> <i
+                                                    class="fa fa-question-circle"></i></a>
+                                    {% endif %}
                                     <div class="card-header collapsed" style="cursor:pointer;" data-toggle="collapse"
                                          href="#task_1_{{ loop.index }}"
                                          aria-controls="task_1_{{ loop.index }}">

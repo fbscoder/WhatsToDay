@@ -65,13 +65,15 @@ class APIUtils
         $client = APIUtils::getClient();
         $taskList = [];
         $cards = null;
-        $ok = false;
+        $admin_boolean = false;
         $userID = $client->api("token")->getMember($_SESSION["PersonData"]->TOKEN);
         foreach ($client->api("boards")->members()->filter($board, "admins") as $admin) {
-            if ($userID["id"] == $admin["id"])
-                $ok = true;
+            if ($userID["id"] == $admin["id"]) {
+                $admin_boolean = true;
+                break;
+            }
         }
-        if ($ok == true) {
+        if ($admin_boolean) {
             $cards = $client->api("boards")->cards()->all($board);
         } else {
             $cards = $client->api("member")->cards()->all($userID["id"]);
@@ -85,6 +87,18 @@ class APIUtils
                     $title = $card["name"];
                     $description = $card["desc"];
                     $cardId = $card["id"];
+
+                    $memberList = [];
+                    if ($admin_boolean) {
+                        foreach ($card["idMembers"] as $memberId) {
+                            //echo "<pre>";
+                            //print_r($card["idMembers"]);
+                            //  echo $client->api("member")->show($memberId)["fullName"];
+                            $memberList[] = $client->api("member")->show($memberId)["fullName"];
+
+                        }
+                    }
+
                     $checkListData = [];
                     foreach ($checkList = $client->api("cards")->checklists()->all($card["id"]) as $checkList) {
                         $checkListName = $checkList["name"];
@@ -100,38 +114,21 @@ class APIUtils
                         $checkListData[] = new CheckListData($checkListName, $checkData, $checkList['id']);
                     }
                     if ($taskData == null && $checkListData == [])
-                        $taskData = new TaskData($cardId, $title, $description, null);
+                        $taskData = new TaskData($cardId, $title, $description, null, $memberList);
                     else {
-                        $taskData = new TaskData($cardId, $title, $description, $checkListData);
+                        $taskData = new TaskData($cardId, $title, $description, $checkListData, $memberList);
+                    }
+                    foreach ($card['labels'] as $i => $label) {
+                        unset($label['id']);
+                        unset($label['idBoard']);
+                        $taskData->setLabels($label);
                     }
                     $taskList[] = $taskData;
                 }
             }
-
         };
 
         return $taskList;
-    }
-
-    /**
-     * @Route("/setCheckListItemCompleted")
-     */
-
-    public
-    function setCheckListItemCompleted()
-    {
-        $client = APIUtils::getClient();
-        $params['name'] = $_POST['checkItemName'];
-        $params['state'] = $_POST['state'];
-        $client->api('checklist')->items()->update($_POST['checkListId'], $_POST['checkListItemId'], $params);
-        $checkList = $client->api("checklists")->items()->all($_POST['checkListId']);
-        foreach ($checkList as $item) {
-            if ($item['name'] == $_POST['checkItemName']) {
-                return new Response($item['id']);
-            }
-        }
-        return new Response('Form funktioniert');
-
     }
 
     /**
@@ -166,6 +163,27 @@ class APIUtils
         $client = APIUtils::getClient();
         $boards = $client->api("member")->boards()->all();
         return $boards;
+    }
+
+    /**
+     * @Route("/setCheckListItemCompleted")
+     */
+
+    public
+    function setCheckListItemCompleted()
+    {
+        $client = APIUtils::getClient();
+        $params['name'] = $_POST['checkItemName'];
+        $params['state'] = $_POST['state'];
+        $client->api('checklist')->items()->update($_POST['checkListId'], $_POST['checkListItemId'], $params);
+        $checkList = $client->api("checklists")->items()->all($_POST['checkListId']);
+        foreach ($checkList as $item) {
+            if ($item['name'] == $_POST['checkItemName']) {
+                return new Response($item['id']);
+            }
+        }
+        return new Response('Form funktioniert');
+
     }
 }
 

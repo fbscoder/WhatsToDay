@@ -10,6 +10,13 @@ body {
     margin: 0 auto !important;
 }
 
+.person-popover {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: black;
+}
+
 .tasks {
     text-align: center;
     margin-top: 10%;
@@ -222,4 +229,18 @@ p {
 .warning {
     text-align: center;
     color: red;
+}
+
+.badge:empty {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    width: 5%;
+    height: 5%;
 }

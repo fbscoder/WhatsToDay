@@ -46,6 +46,11 @@ class Task extends AbstractController
                     $tasks[$count]['description'] = $task->description;
                     $tasks[$count]['checkListData'] = $task->checkListData;
                     $tasks[$count]['id'] = $task->id;
+                    $tasks[$count]['labels'] = $task->getLabels();
+                    $tasks[$count]['personsInCard'] = null;
+                    foreach ($task->personInCard as $name) {
+                        $tasks[$count]['personsInCard'] .= $name . ", ";
+                    }
                     $count++;
                 }
                 foreach ($params['taskTomorrow'] as $c => $task) {
@@ -53,6 +58,12 @@ class Task extends AbstractController
                     $tasksTomorrow[$count]['description'] = $task->description;
                     $tasksTomorrow[$count]['checkListData'] = $task->checkListData;
                     $tasksTomorrow[$count]['id'] = $task->id;
+                    $tasksTomorrow[$count]['labels'] = $task->getLabels();
+                    $tasksTomorrow[$count]['personsInCard'] = null;
+                    foreach ($task->personInCard as $name) {
+                        $tasksTomorrow[$count]['personsInCard'] .= $name . ", ";
+                    }
+
                     $count++;
                 }
             }
