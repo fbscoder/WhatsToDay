@@ -64,34 +64,50 @@ class APIUtils
     {
         $client = APIUtils::getClient();
         $taskList = [];
-        foreach ($client->api("boards")->cards()->all($board) as $card) {
-            $endDate = $card["due"];
-            if ($dateToCheck == date('Ymd', strtotime($endDate)) && !$card["dueComplete"]) {
-                $taskData = null;
-                $title = $card["name"];
-                $description = $card["desc"];
-                $cardId = $card["id"];
-                $checkListData = [];
-                foreach ($checkList = $client->api("cards")->checklists()->all($card["id"]) as $checkList) {
-                    $checkListName = $checkList["name"];
-                    $checkData = [];
-                    foreach ($client->api("checklists")->items()->all($checkList["id"]) as $checkItem) {
-                        $isChecked = true;
-                        if ($checkItem["state"] == "incomplete") {
-                            $isChecked = false;
+        $cards = null;
+        $ok = false;
+        $userID = $client->api("token")->getMember($_SESSION["PersonData"]->TOKEN);
+        foreach ($client->api("boards")->members()->filter($board, "admins") as $admin) {
+            if ($userID["id"] == $admin["id"])
+                $ok = true;
+        }
+        if ($ok == true) {
+            $cards = $client->api("boards")->cards()->all($board);
+        } else {
+            $cards = $client->api("member")->cards()->all($userID["id"]);
+        }
+
+        foreach ($cards as $card) {
+            if ($card["idBoard"] == $board) {
+                $endDate = $card["due"];
+                if ($dateToCheck == date('Ymd', strtotime($endDate)) && !$card["dueComplete"]) {
+                    $taskData = null;
+                    $title = $card["name"];
+                    $description = $card["desc"];
+                    $cardId = $card["id"];
+                    $checkListData = [];
+                    foreach ($checkList = $client->api("cards")->checklists()->all($card["id"]) as $checkList) {
+                        $checkListName = $checkList["name"];
+                        $checkData = [];
+                        foreach ($client->api("checklists")->items()->all($checkList["id"]) as $checkItem) {
+                            $isChecked = true;
+                            if ($checkItem["state"] == "incomplete") {
+                                $isChecked = false;
+                            }
+                            $checkName = $checkItem["name"];
+                            $checkData[] = new CheckData($checkName, $isChecked, $checkItem['id']);
                         }
-                        $checkName = $checkItem["name"];
-                        $checkData[] = new CheckData($checkName, $isChecked, $checkItem['id']);
+                        $checkListData[] = new CheckListData($checkListName, $checkData, $checkList['id']);
                     }
-                    $checkListData[] = new CheckListData($checkListName, $checkData, $checkList['id']);
+                    if ($taskData == null && $checkListData == [])
+                        $taskData = new TaskData($cardId, $title, $description, null);
+                    else {
+                        $taskData = new TaskData($cardId, $title, $description, $checkListData);
+                    }
+                    $taskList[] = $taskData;
                 }
-                if ($taskData == null && $checkListData == [])
-                    $taskData = new TaskData($cardId, $title, $description, null);
-                else {
-                    $taskData = new TaskData($cardId, $title, $description, $checkListData);
-                }
-                $taskList[] = $taskData;
             }
+
         };
 
         return $taskList;
@@ -101,7 +117,8 @@ class APIUtils
      * @Route("/setCheckListItemCompleted")
      */
 
-    public function setCheckListItemCompleted()
+    public
+    function setCheckListItemCompleted()
     {
         $client = APIUtils::getClient();
         $params['name'] = $_POST['checkItemName'];
@@ -116,12 +133,14 @@ class APIUtils
         return new Response('Form funktioniert');
 
     }
+
     /**
      * Get all cards from today form a board
      * @param integer $board Trello board id
      * @return array Trello card list
      */
-    public static function getBoardTasksToday($board)
+    public
+    static function getBoardTasksToday($board)
     {
         return APIUtils::getTaskList($board, date('Ymd'));
     }
@@ -131,7 +150,8 @@ class APIUtils
      * @param array $taskList card list to count
      * @return integer int get counted Cards
      */
-    public static function getCountedTasks($taskList)
+    public
+    static function getCountedTasks($taskList)
     {
         return count($taskList);
     }
@@ -140,7 +160,8 @@ class APIUtils
      * Get all Trello boards from a user
      * @return array mixed all boards from a user
      */
-    public static function getBoards()
+    public
+    static function getBoards()
     {
         $client = APIUtils::getClient();
         $boards = $client->api("member")->boards()->all();

@@ -49,8 +49,7 @@
                                                                                onchange="submitForm('checkBox_{{ checklist.name }}_{{ loop.index }}','CheckListId_{{ checklist.name }}','{{ subTask.name }}')"
                                                                                class="custom-control-input"
                                                                                id="checkBox_{{ checklist.name }}_{{ loop.index }}"
-                                                                               {% if subTask.isChecked %}checked
-                                                                               disabled{% endif %}
+                                                                               {% if subTask.isChecked %}checked{% endif %}
                                                                                value="{{ subTask.itemId }}">
                                                                         <label class="custom-control-label"
                                                                                for="checkBox_{{ checklist.name }}_{{ loop.index }}">{{ subTask.name }}</label>
@@ -113,8 +112,7 @@
                                                                                onchange="submitForm('checkBox_{{ checklist.name }}_{{ loop.index }}','CheckListId_{{ checklist.name }}','{{ subTask.name }}')"
                                                                                class="custom-control-input"
                                                                                id="checkBox_{{ checklist.name }}_{{ loop.index }}"
-                                                                               {% if subTask.isChecked %}checked
-                                                                               disabled{% endif %}
+                                                                               {% if subTask.isChecked %}checked{% endif %}
                                                                                value="{{ subTask.itemId }}">
                                                                         <label class="custom-control-label"
                                                                                for="checkBox_{{ checklist.name }}_{{ loop.index }}">{{ subTask.name }}</label>
